@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.canidiodino.it/</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.canidiodino.it/img/logo.png</image:loc>
+      <image:title>Cani di Odino Logo - Master GDR Professionali</image:title>
+      <image:caption>Logo dei Cani di Odino - Master professionali per fiere ludiche italiane</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.canidiodino.it/galleria.html</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.canidiodino.it/img/dado.png</image:loc>
+      <image:title>Dadi Personalizzati GDR</image:title>
+      <image:caption>Dadi personalizzati artigianali per giochi di ruolo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canidiodino.it/img/schermoDM.png</image:loc>
+      <image:title>Schermo Master Nordico</image:title>
+      <image:caption>Schermo del Dungeon Master con design nordico artigianale</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.canidiodino.it/tools.html</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.canidiodino.it/blog.html</loc>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

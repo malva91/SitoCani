@@ -1,0 +1,358 @@
+/* Main stylesheet - imports modular CSS files */
+/* Version: 2025.01.31 - Modularized */
+
+/* Import base styles and variables */
+@import url('base.css');
+
+/* Import component styles */
+@import url('components.css');
+
+/* Import navigation styles */
+@import url('navigation.css');
+
+/* Import section styles */
+@import url('sections.css');
+
+/* Import footer styles */
+@import url('footer.css');
+
+:root {
+    /* Colors */
+    --charcoal-black: #0d0d0d;
+    --dark-brown: #1a0f0a;
+    --blood-red: #5c1a1a;
+    --muted-brass: #8b6914;
+    --brass-hover: #a67c1a;
+    --iron-gray: #2d2d2d;
+    --parchment: #d4c4a0;
+    --dark-parchment: #b8a082;
+    
+    /* Typography */
+    --font-title: 'canidiodino', 'Cinzel', 'Times New Roman', serif;
+    --font-heading: 'canidiodino', 'Cinzel', 'Georgia', serif;
+    --font-body: 'canidiodino', 'Philosopher', 'Arial', sans-serif;
+    --font-runic: 'runic-fallback', 'canidiodino', monospace;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.375rem;
+    --font-size-2xl: 1.625rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    
+    /* Spacing */
+    --section-padding: 2rem 0;
+    --container-padding: 0 2rem;
+    --content-spacing: 1.5rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Layout */
+    --navbar-height: 70px;
+    --max-width: 1200px;
+    --content-max-width: 1000px;
+    --text-max-width: 700px;
+    --card-max-width: 350px;
+    --grid-min-width: 280px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--charcoal-black);
+    color: var(--parchment);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    font-display: swap;
+}
+
+/* Background Images */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(92, 26, 26, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 105, 20, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(45, 45, 45, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--content-spacing) !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--content-spacing);
+}
+
+.container-text {
+    max-width: var(--text-max-width);
+    margin: 0 auto;
+    padding: 0 var(--content-spacing);
+}
+
+/* La Compagnia */
+.compagnia-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.compagnia-text p {
+    margin-bottom: 1.5rem;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(45, 45, 45, 0.5);
+    border: 2px solid var(--muted-brass);
+    border-radius: 10px;
+    transition: var(--transition-normal);
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 105, 20, 0.3);
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--muted-brass);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--dark-parchment);
+    word-break: break-word;
+}
+
+/* La Forgia */
+.forgia-content {
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.forgia-text {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    overflow-x: hidden;
+}
+
+.forgia-text p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.forgia-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(45, 45, 45, 0.3);
+    border: 2px solid var(--muted-brass);
+    border-radius: 10px;
+    transition: var(--transition-normal);
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.preview-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 105, 20, 0.3);
+}
+
+.preview-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.preview-item span {
+    font-weight: 600;
+    color: var(--muted-brass);
+    word-break: break-word;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    
+    .compagnia-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .forgia-preview {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+    
+    .forgia-preview {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .preview-item {
+        padding: 0.8rem;
+    }
+    
+    .preview-item img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .compagnia-text p,
+    .forgia-text p {
+        font-size: 0.9rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+        max-width: 100%;
+    }
+    
+    .forgia-preview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .preview-item {
+        padding: 0.5rem;
+    }
+    
+    .preview-item img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .preview-item span {
+        font-size: 0.7rem;
+    }
+    
+    .compagnia-text p,
+    .forgia-text p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

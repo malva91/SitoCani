@@ -1,0 +1,116 @@
+/* Tools Preview Section Styles */
+/* Version: 2025.01.31 - Modularized */
+
+.tools-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.twitch-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.tool-card {
+    flex: 1;
+    min-width: var(--grid-min-width);
+    max-width: var(--card-max-width);
+}
+
+.feature-card {
+    flex: 1;
+    min-width: var(--grid-min-width);
+    max-width: var(--card-max-width);
+}
+
+.patreon-content {
+    text-align: center;
+}
+
+.patreon-text {
+    max-width: var(--text-max-width);
+    margin: 0 auto 2rem;
+}
+
+.patreon-text p {
+    margin-bottom: 1.2rem;
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+}
+
+.patreon-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tools-preview {
+        gap: 1.2rem;
+    }
+    
+    .twitch-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    
+    .feature-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .tool-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .twitch-features {
+        gap: 1rem;
+    }
+    
+    .feature-card {
+        max-width: 350px;
+    }
+    
+    .patreon-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .patreon-text p {
+        font-size: var(--font-size-base);
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-preview {
+        gap: 0.8rem;
+    }
+    
+    .patreon-text p {
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+}

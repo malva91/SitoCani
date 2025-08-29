@@ -1,0 +1,116 @@
+/* Achievements Section Styles */
+/* Version: 2025.01.31 - Modularized */
+
+.achievements-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width), 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.achievement-card {
+    padding: 1.5rem;
+    background: rgba(45, 45, 45, 0.5);
+    border: 2px solid var(--muted-brass);
+    border-radius: 10px;
+    transition: var(--transition-normal);
+    min-width: var(--grid-min-width);
+    max-width: var(--card-max-width);
+    width: 100%;
+}
+
+.achievement-card.featured {
+    flex: 1;
+    min-width: var(--grid-min-width);
+    max-width: var(--card-max-width);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 105, 20, 0.3);
+}
+
+.achievement-card h3 {
+    font-family: var(--font-heading);
+    color: var(--muted-brass);
+    margin-bottom: 0.8rem;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.achievement-card p {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.achievement-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievements-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .achievement-card.featured {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .achievement-card {
+        padding: 1.2rem;
+    }
+    
+    .achievement-card h3 {
+        font-size: var(--font-size-base);
+    }
+    
+    .achievement-card p {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-preview {
+        gap: 0.8rem;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .achievement-card {
+        padding: 1rem;
+    }
+    
+    .achievement-card h3 {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.5rem;
+    }
+    
+    .achievement-card p {
+        font-size: var(--font-size-xs);
+        line-height: 1.5;
+    }
+}

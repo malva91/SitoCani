@@ -1,0 +1,27 @@
+# robots.txt – aggiornato 2025-01-31
+
+# Regole generali per tutti i crawler
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Regole specifiche per Yandex
+User-agent: Yandex
+Crawl-delay: 1
+
+# Blocca i crawler che consumano eccessive risorse
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Mappa del sito
+Sitemap: https://www.canidiodino.it/sitemap.xml

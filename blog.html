@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog GDR | Articoli e Guide | Cani di Odino</title>
+    <meta name="description" content="Blog dedicato ai giochi di ruolo: guide per master, recensioni GDR, consigli per fiere ludiche, strategie RPG e contenuti esclusivi dai Cani di Odino.">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="blog GDR, guide master RPG, recensioni giochi di ruolo, consigli fiere ludiche, articoli gaming, strategie RPG, contenuti GDR, blog gaming italiano">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog GDR | Cani di Odino">
+    <meta property="og:description" content="Guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi">
+    <meta property="og:url" content="https://www.canidiodino.it/blog.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://www.canidiodino.it/blog.html">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    
+    <!-- Preload font -->
+    <link rel="preload" href="./CaniDiOdino.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Face Declaration -->
+    <style>
+        @font-face {
+            font-family: 'canidiodino';
+            src: url('./CaniDiOdino.ttf') format('truetype');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=2025.07">
+    <link rel="stylesheet" href="css/blog.css?v=2025.07">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./img/logo.png" alt="Cani di Odino Logo">
+                <span>Cani di Odino</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#compagnia" class="nav-link">Compagnia</a>
+                <a href="index.html#enigmi" class="nav-link">Enigmi</a>
+                <a href="index.html#forgia" class="nav-link">Forgia</a>
+                <a href="index.html#imprese" class="nav-link">Imprese</a>
+                <a href="index.html#twitch" class="nav-link">Twitch</a>
+                <a href="index.html#cani" class="nav-link">Cani</a>
+                <a href="galleria.html" class="nav-link">Galleria</a>
+                <a href="tools.html" class="nav-link">Strumenti</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="hero-title">CRONACHE DELLA TAVERNA</h1>
+            <p class="hero-subtitle">Guide, Recensioni e Storie dal Mondo dei GDR</p>
+            <div class="runes" aria-label="Rune nordiche decorative">ᛒ ᛚ ᛟ ᚷ ᚷ  ᚷ ᛞ ᚱ</div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <!-- Blog Content -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <!-- Filter Navigation -->
+            <div class="blog-filters">
+                <!-- Categories will be loaded dynamically from JSON -->
+            </div>
+
+            <!-- Featured Articles -->
+            <div class="featured-section" id="featured-section">
+                <h2 class="featured-title">Articoli in Evidenza</h2>
+                <div class="featured-grid" id="featured-grid">
+                    <!-- Featured articles will be loaded here -->
+                </div>
+            </div>
+
+            <!-- All Articles -->
+            <div class="articles-section">
+                <h2 class="articles-title">Tutte le Cronache</h2>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Articles will be loaded here -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
+                        <span>Carica Altri Articoli</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Social Section -->
+    <section class="social-section">
+        <div class="container">
+            <div class="social-shields">
+                <a href="https://www.youtube.com/@CaniDiOdino" class="social-shield youtube" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-youtube"></i></div>
+                        <span>YouTube</span>
+                        <div class="rune">ᚢ</div>
+                    </div>
+                </a>
+                <a href="https://www.tiktok.com/@canidiodino" class="social-shield tiktok" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+                        <span>TikTok</span>
+                        <div class="rune">ᛏ</div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/canidiodino" class="social-shield instagram" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                        <span>Instagram</span>
+                        <div class="rune">ᛁ</div>
+                    </div>
+                </a>
+                <a href="https://www.twitch.tv/canidiodino" class="social-shield twitch" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-twitch"></i></div>
+                        <span>Twitch</span>
+                        <div class="rune">ᛏᚹ</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./img/logo.png" alt="Logo Cani di Odino" loading="lazy">
+                    <span>Cani di Odino</span>
+                </div>
+                <div class="footer-info">
+                    <p>Email: info@canidiodino.it</p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
+                        <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cani di Odino. Tutti i diritti riservati.</p>
+                <p class="footer-tagline">"Una taverna dove leggende nascono e dadi rotolano eternamente"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2025.07" defer></script>
+    <script src="js/blog.js?v=2025.07" defer></script>
+</body>
+</html>

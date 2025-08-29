@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strumenti GDR Gratuiti | Generatori RPG | Cani di Odino</title>
+    <meta name="description" content="Strumenti GDR gratuiti per master e giocatori: generatore dadi, nomi fantasy, avventure, tesori, armi, città. Tools digitali professionali per giochi di ruolo.">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="strumenti GDR gratuiti, generatore dadi RPG, nomi fantasy generator, tools master GDR, generatore avventure, tesori RPG, armi fantasy, città generator, tools digitali giochi ruolo">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Strumenti GDR Gratuiti | Cani di Odino">
+    <meta property="og:description" content="Tools digitali gratuiti per master e giocatori di GDR: generatori di dadi, nomi, avventure, tesori e molto altro">
+    <meta property="og:url" content="https://www.canidiodino.it/tools.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.canidiodino.it/img/logo.png">
+    
+    <link rel="canonical" href="https://www.canidiodino.it/tools.html">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    
+    <!-- Preload font -->
+    <link rel="preload" href="./CaniDiOdino.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Face Declaration -->
+    <style>
+        @font-face {
+            font-family: 'canidiodino';
+            src: url('./CaniDiOdino.ttf') format('truetype');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=2025.07">
+    <link rel="stylesheet" href="css/tools.css?v=2025.07">
+    <link rel="stylesheet" href="css/tools-countdown.css?v=2025.07">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./img/logo.png" alt="Cani di Odino Logo">
+                <span>Cani di Odino</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#compagnia" class="nav-link">Compagnia</a>
+                <a href="index.html#enigmi" class="nav-link">Enigmi</a>
+                <a href="index.html#forgia" class="nav-link">Forgia</a>
+                <a href="index.html#imprese" class="nav-link">Imprese</a>
+                <a href="index.html#twitch" class="nav-link">Twitch</a>
+                <a href="index.html#cani" class="nav-link">Cani</a>
+                <a href="galleria.html" class="nav-link">Galleria</a>
+                <a href="tools.html" class="nav-link">Strumenti</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <h1 class="hero-title">STRUMENTI DELLA TAVERNA</h1>
+            <p class="hero-subtitle">Tools Digitali per Master e Giocatori</p>
+            <div class="runes" aria-label="Rune nordiche decorative">ᛏ ᛟ ᛟ ᛚ ᛋ  ᚷ ᛞ ᚱ</div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <!-- Tool Navigation -->
+            <div class="tool-navigation">
+                <button class="tool-nav-button active" data-tool="dice-tool">🎲 Dadi</button>
+                <button class="tool-nav-button" data-tool="name-tool">👤 Nomi</button>
+                <button class="tool-nav-button" data-tool="adventure-tool">⚔️ Avventure</button>
+                <button class="tool-nav-button" data-tool="treasure-tool">💎 Tesori</button>
+                <button class="tool-nav-button" data-tool="weapon-tool">🗡️ Armi</button>
+                <button class="tool-nav-button" data-tool="city-tool">🏰 Città</button>
+                <button class="tool-nav-button" data-tool="event-tool">📅 Eventi</button>
+                <button class="tool-nav-button" data-tool="bestemmie-tool">🤬 Bestemmie</button>
+            </div>
+
+            <!-- Tool Content -->
+            <div class="tool-content">
+                <!-- Dice Tool -->
+                <div class="tool-panel active" id="dice-tool">
+                    <h2 class="tool-title">Generatore di Dadi</h2>
+                    <div class="dice-controls">
+                        <div class="control-group">
+                            <label for="dice-count">Numero di Dadi</label>
+                            <input type="number" id="dice-count" min="1" max="20" value="1">
+                        </div>
+                        <div class="control-group">
+                            <label for="dice-type">Tipo di Dado</label>
+                            <select id="dice-type">
+                                <option value="4">d4</option>
+                                <option value="6">d6</option>
+                                <option value="8">d8</option>
+                                <option value="10">d10</option>
+                                <option value="12">d12</option>
+                                <option value="20" selected>d20</option>
+                                <option value="100">d100</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="dice-modifier">Modificatore</label>
+                            <input type="number" id="dice-modifier" value="0">
+                        </div>
+                    </div>
+                    <button class="tool-button" id="roll-dice">Lancia i Dadi</button>
+                    <div class="dice-result" id="dice-result">
+                        <div class="result-empty">Clicca per lanciare i dadi</div>
+                    </div>
+                    <div id="dice-history"></div>
+                </div>
+
+                <!-- Name Tool -->
+                <div class="tool-panel" id="name-tool">
+                    <h2 class="tool-title">Generatore di Nomi</h2>
+                    <div class="name-controls">
+                        <div class="control-group">
+                            <label for="name-category">Categoria</label>
+                            <select id="name-category">
+                                <option value="character">Personaggi</option>
+                                <option value="luoghi">Luoghi</option>
+                                <option value="creature">Creature</option>
+                                <option value="locande">Locande</option>
+                            </select>
+                        </div>
+                        <div class="control-group" id="name-subcategory-group">
+                            <label for="name-subcategory">Stile</label>
+                            <select id="name-subcategory">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="control-group" id="name-gender-group">
+                            <label for="name-gender">Genere</label>
+                            <select id="name-gender">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-name">Genera Nome</button>
+                    <div class="name-result" id="name-result">
+                        <div class="result-empty">Clicca per generare un nome</div>
+                    </div>
+                </div>
+
+                <!-- Adventure Tool -->
+                <div class="tool-panel" id="adventure-tool">
+                    <h2 class="tool-title">Generatore di Avventure</h2>
+                    <div class="adventure-controls">
+                        <div class="control-group">
+                            <label for="adventure-theme">Tema</label>
+                            <select id="adventure-theme">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="adventure-location">Ambientazione</label>
+                            <select id="adventure-location">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-adventure">Genera Avventura</button>
+                    <div class="adventure-result" id="adventure-result">
+                        <div class="result-empty">Clicca per generare un'avventura</div>
+                    </div>
+                </div>
+
+                <!-- Treasure Tool -->
+                <div class="tool-panel" id="treasure-tool">
+                    <h2 class="tool-title">Generatore di Tesori</h2>
+                    <div class="treasure-controls">
+                        <div class="control-group">
+                            <label for="treasure-setting">Ambientazione</label>
+                            <select id="treasure-setting">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-treasure">Genera Tesoro</button>
+                    <div class="treasure-result" id="treasure-result">
+                        <div class="result-empty">Clicca per generare un tesoro</div>
+                    </div>
+                </div>
+
+                <!-- Weapon Tool -->
+                <div class="tool-panel" id="weapon-tool">
+                    <h2 class="tool-title">Generatore di Armi</h2>
+                    <div class="weapon-controls">
+                        <div class="control-group">
+                            <label for="weapon-setting">Ambientazione</label>
+                            <select id="weapon-setting">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="weapon-type">Tipo</label>
+                            <select id="weapon-type">
+                                <option value="distanza">Distanza</option>
+                                <option value="ravvicinato">Ravvicinato</option>
+                                <option value="magiche">Magiche</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-weapon">Genera Arma</button>
+                    <div class="weapon-result" id="weapon-result">
+                        <div class="result-empty">Clicca per generare un'arma</div>
+                    </div>
+                </div>
+
+                <!-- City Tool -->
+                <div class="tool-panel" id="city-tool">
+                    <h2 class="tool-title">Generatore di Città</h2>
+                    <div class="city-controls">
+                        <div class="control-group">
+                            <label for="city-setting">Ambientazione</label>
+                            <select id="city-setting">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="city-size">Dimensione</label>
+                            <select id="city-size">
+                                <option value="village">Villaggio</option>
+                                <option value="town">Cittadina</option>
+                                <option value="city">Città</option>
+                                <option value="metropolis">Metropoli</option>
+                                <option value="megacity">Megacittà</option>
+                                <option value="capital">Capitale</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-city">Genera Città</button>
+                    <div class="city-result" id="city-result">
+                        <div class="result-empty">Clicca per generare una città</div>
+                    </div>
+                </div>
+
+                <!-- Event Tool -->
+                <div class="tool-panel" id="event-tool">
+                    <h2 class="tool-title">Generatore di Eventi</h2>
+                    <div class="event-controls">
+                        <div class="control-group">
+                            <label for="event-type">Tipo di Evento</label>
+                            <select id="event-type">
+                                <!-- Populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-button" id="generate-event">Genera Evento</button>
+                    <div class="event-result" id="event-result">
+                        <div class="result-empty">Clicca per generare un evento</div>
+                    </div>
+                </div>
+
+                <!-- Bestemmie Tool -->
+<div class="tool-panel" id="bestemmie-tool">
+    <h2 class="tool-title">Generatore di Bestemmie Fantasy</h2>
+    <div class="bestemmie-controls">
+        <div class="control-group">
+            <label for="bestemmie-divinita">Divinità</label>
+            <select id="bestemmie-divinita">
+                <!-- Popolato da JavaScript -->
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="bestemmie-stile">Stile</label>
+            <select id="bestemmie-stile">
+                <!-- Popolato da JavaScript -->
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="bestemmie-intensita">Intensità</label>
+            <select id="bestemmie-intensita">
+                <!-- Popolato da JavaScript -->
+            </select>
+        </div>
+    </div>
+    <button class="tool-button" id="generate-bestemmie">Genera Bestemmia</button>
+    <div class="bestemmie-result" id="bestemmie-result">
+        <div class="result-empty">Clicca per generare una bestemmia fantasy</div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section">
+        <div class="container">
+            <div class="social-shields">
+                <a href="https://www.youtube.com/@CaniDiOdino" class="social-shield youtube" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-youtube"></i></div>
+                        <span>YouTube</span>
+                        <div class="rune">ᚢ</div>
+                    </div>
+                </a>
+                <a href="https://www.tiktok.com/@canidiodino" class="social-shield tiktok" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+                        <span>TikTok</span>
+                        <div class="rune">ᛏ</div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/canidiodino" class="social-shield instagram" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                        <span>Instagram</span>
+                        <div class="rune">ᛁ</div>
+                    </div>
+                </a>
+                <a href="https://www.twitch.tv/canidiodino" class="social-shield twitch" target="_blank" rel="noopener noreferrer">
+                    <div class="shield-content">
+                        <div class="social-icon"><i class="fab fa-twitch"></i></div>
+                        <span>Twitch</span>
+                        <div class="rune">ᛏᚹ</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./img/logo.png" alt="Logo Cani di Odino">
+                    <span>Cani di Odino</span>
+                </div>
+                <div class="footer-info">
+                    <p>Email: info@canidiodino.it</p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
+                        <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cani di Odino. Tutti i diritti riservati.</p>
+                <p class="footer-tagline">"Una taverna dove leggende nascono e dadi rotolano eternamente"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2025.07" defer></script>
+    <script src="js/tools-unlock.js?v=2025.07" defer></script>
+    <script src="js/tools.js?v=2025.07" defer></script>
+</body>
+</html>

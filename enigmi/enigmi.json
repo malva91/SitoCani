@@ -1,0 +1,31 @@
+[
+{
+  "id": 1,
+  "title": "Enigma 1",
+  "rank": "Novizio",
+  "rankIcon": "🪓",
+  "type": "text",
+  "question": "⚔️ Sono l’albero che sostiene i nove mondi nella mitologia norrena. Chi sono?",
+  "answer": "Yggdrasill",
+  "password": "Cani2ax",
+  "unlockDate": "2025-09-13",
+  "hint": "Le radici arrivano a Hel, i rami agli dèi di Asgard."
+},
+
+  {
+  "id": 2,
+  "title": "Enigma 2",
+  "rank": "Novizio",
+  "rankIcon": "🧐",
+  "type": "text",
+  "question": "🕯 Chi sono quella figura mitologica norrena, ignorata dalla pop-culture, che veglia su Loki durante la sua punizione raccogliendo il veleno che gli cade sul viso… e il suo nome comincia con “S”?",
+  "answer": "Sigyn",
+  "password": "Cani4heim",
+  "unlockDate": "2025-09-13",
+  "hint": "Cerca la dea che, nonostante tutto, resta accanto al suo compagno…"
+}
+
+
+
+
+]

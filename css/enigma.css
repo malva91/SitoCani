@@ -1,0 +1,831 @@
+/* ========== Enigmi – CSS migliorato ========== */
+/* Palette colori moderna e accessibile */
+#weekly-riddle, #pw-modal {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #1a1a1c;
+  --bg-tertiary: #2a2a2d;
+  --surface: #1e1e21;
+  --surface-elevated: #252529;
+  --parchment: #f5f1e8;
+  --ink: #0f0f0f;
+  --iron: #4a5058;
+  --brass: #d4af37;
+  --brass-hover: #e6c547;
+  --brass-active: #c19b26;
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --text-primary: #f1f1f1;
+  --text-secondary: #c7c7c7;
+  --text-muted: #9ca3af;
+  --border: rgba(212, 175, 55, 0.2);
+  --border-focus: rgba(212, 175, 55, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.4);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container principale */
+#weekly-riddle {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--surface) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Effetto glow sottile */
+#weekly-riddle::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, transparent, var(--brass), transparent);
+  border-radius: var(--radius-lg);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Header migliorato */
+#weekly-riddle .riddle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, 
+    rgba(212, 175, 55, 0.08) 0%, 
+    rgba(212, 175, 55, 0.03) 50%,
+    transparent 100%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+#weekly-riddle .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#weekly-riddle .riddle-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.375rem;
+  letter-spacing: -0.025em;
+  color: var(--brass);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+#weekly-riddle .riddle-title::before {
+  content: '🧩';
+  font-size: 1.25rem;
+}
+
+/* Sistema di ranghi */
+#weekly-riddle .rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--brass) 0%, var(--brass-hover) 100%);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+#weekly-riddle .rank-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-smooth);
+}
+
+#weekly-riddle .rank-badge:hover::before {
+  left: 100%;
+}
+
+#weekly-riddle .rank-badge.current {
+  background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+
+#weekly-riddle .rank-icon {
+  font-size: 1.125rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+#weekly-riddle .progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+#weekly-riddle .level-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+
+#weekly-riddle .level-number {
+  background: var(--brass);
+  color: var(--ink);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.75rem;
+  min-width: 2rem;
+  text-align: center;
+}
+
+#weekly-riddle .progress-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+#weekly-riddle .stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Corpo del contenuto */
+#weekly-riddle .riddle-body {
+  padding: 2rem 1.75rem;
+}
+
+#weekly-riddle p {
+  line-height: 1.65;
+  margin: 0 0 1rem 0;
+  color: var(--text-secondary);
+}
+
+#weekly-riddle h3 {
+  color: var(--brass);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.015em;
+}
+
+#weekly-riddle blockquote {
+  background: var(--surface-elevated);
+  border-left: 3px solid var(--brass);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Azioni e controlli */
+#weekly-riddle .riddle-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Input migliorato */
+#weekly-riddle input[type="text"] {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.875rem 1.125rem;
+  background: var(--surface-elevated);
+  color: var(--parchment);
+  border: 1px solid var(--iron);
+  border-radius: var(--radius-md);
+  outline: none;
+  font-size: 15px;
+  transition: all var(--transition-fast);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#weekly-riddle input[type="text"]:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15), inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: var(--bg-tertiary);
+}
+
+#weekly-riddle input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+/* Bottoni migliorati */
+#weekly-riddle .btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.025em;
+  background: linear-gradient(135deg, var(--brass) 0%, var(--brass-hover) 100%);
+  color: var(--ink);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#weekly-riddle .btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform var(--transition-smooth);
+}
+
+#weekly-riddle .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, var(--brass-hover) 0%, var(--brass) 100%);
+}
+
+#weekly-riddle .btn:hover::before {
+  transform: translateX(100%);
+}
+
+#weekly-riddle .btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+#weekly-riddle .btn.ghost {
+  background: transparent;
+  color: var(--brass);
+  border: 1px solid var(--brass);
+  box-shadow: none;
+}
+
+#weekly-riddle .btn.ghost:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--brass-hover);
+  color: var(--brass-hover);
+}
+
+/* Immagini e media */
+#weekly-riddle figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+#weekly-riddle img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-smooth);
+}
+
+#weekly-riddle img:hover {
+  transform: scale(1.02);
+}
+
+#weekly-riddle figcaption {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Feedback migliorato */
+#weekly-riddle .status {
+  margin-top: 1rem;
+  min-height: 1.5rem;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#weekly-riddle .status.ok {
+  color: var(--success);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  animation: successPulse 0.6s ease-out;
+}
+
+#weekly-riddle .status.ok::before {
+  content: '✓';
+  font-weight: bold;
+}
+
+#weekly-riddle .status.err {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  animation: errorShake 0.5s ease-out;
+}
+
+#weekly-riddle .status.err::before {
+  content: '✗';
+  font-weight: bold;
+}
+
+/* Animazioni feedback */
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Stili per congratulazioni */
+#weekly-riddle .congrats-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+#weekly-riddle .congrats-icon {
+  font-size: 2rem;
+}
+
+#weekly-riddle .congrats-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+#weekly-riddle .congrats-rank {
+  color: var(--brass);
+  font-weight: 500;
+}
+
+#weekly-riddle .password-box {
+  background: var(--surface-elevated);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+#weekly-riddle .password-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+#weekly-riddle .password-code {
+  background: var(--bg-tertiary);
+  color: var(--brass);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+
+#weekly-riddle .next-level-info {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#weekly-riddle .next-enigma-locked {
+  background: var(--surface-elevated);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+#weekly-riddle .next-enigma-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+#weekly-riddle .next-enigma-title {
+  color: var(--brass);
+  font-weight: 500;
+}
+
+#weekly-riddle .next-enigma-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#weekly-riddle .next-enigma-rank {
+  color: var(--brass);
+}
+
+#weekly-riddle .next-enigma-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#weekly-riddle .mission-complete {
+  background: linear-gradient(135deg, var(--brass), var(--brass-hover));
+  color: var(--ink);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#weekly-riddle .mission-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#weekly-riddle .mission-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+#weekly-riddle .mission-subtitle {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Stili per enigmi di testo */
+#weekly-riddle .text-enigma {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#weekly-riddle .text-enigma h3 {
+  color: var(--brass);
+  margin-bottom: 1rem;
+}
+
+#weekly-riddle .text-enigma p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* Hint message */
+#weekly-riddle .hint-message {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: var(--warning);
+  margin-bottom: 1rem;
+}
+
+/* Modal migliorato */
+#pw-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 999999;
+  font-family: var(--font-body);
+  padding: 1rem;
+}
+
+#pw-modal[open] {
+  display: flex;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#pw-modal .dialog {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  width: min(480px, 90vw);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#pw-modal h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--brass);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+#pw-modal .row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+#pw-modal input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.875rem 1.125rem;
+  background: var(--bg-tertiary);
+  color: var(--parchment);
+  border: 1px solid var(--iron);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  transition: all var(--transition-fast);
+}
+
+#pw-modal input[type="text"]:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  outline: none;
+}
+
+#pw-modal .btn {
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+#pw-modal .btn.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--iron);
+}
+
+#pw-modal .btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+#pw-modal p.small {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Accessibilità */
+#weekly-riddle .sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visibile per accessibilità */
+#weekly-riddle button:focus-visible,
+#pw-modal button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Stati di caricamento */
+#weekly-riddle .loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+#weekly-riddle .loading::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--iron);
+  border-top-color: var(--brass);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive design migliorato */
+@media (max-width: 640px) {
+  #weekly-riddle {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  #weekly-riddle .riddle-header {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  #weekly-riddle .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #weekly-riddle .riddle-title {
+    font-size: 1.25rem;
+    justify-content: center;
+  }
+  
+  #weekly-riddle .riddle-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  #weekly-riddle .riddle-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  #weekly-riddle input[type="text"] {
+    min-width: unset;
+  }
+  
+  #pw-modal .dialog {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  #pw-modal .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #weekly-riddle .riddle-title {
+    font-size: 1.125rem;
+  }
+  
+  #weekly-riddle .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 13px;
+  }
+}
+
+/* Animazioni per transizioni fluide */
+#weekly-riddle .riddle-body > * {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Miglioramenti per il contrasto e la leggibilità */
+#weekly-riddle em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+#weekly-riddle strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Stili per codice inline */
+#weekly-riddle code {
+  background: var(--surface-elevated);
+  color: var(--brass);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+/* Miglioramenti per messaggi di stato */
+#weekly-riddle .status.ok {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+#weekly-riddle .status.err {
+  animation: errorShake 0.5s ease-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Miglioramenti per il contenuto */
+#weekly-riddle figure img {
+  transition: transform var(--transition-smooth), filter var(--transition-smooth);
+}
+
+#weekly-riddle figure img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+/* Stili per messaggi speciali */
+#weekly-riddle .special-message {
+  background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+#weekly-riddle .special-message.locked {
+  border-color: var(--iron);
+  color: var(--text-muted);
+}
+
+#weekly-riddle .special-message.success {
+  border-color: var(--success);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+}
+
+#weekly-riddle .special-message.warning {
+  border-color: var(--warning);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
