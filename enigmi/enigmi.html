@@ -116,7 +116,19 @@
       // Normalizzazione case-insensitive per input non testuali
       normalizeAnswer: (str) => {
         if (!str) return "";
-        return str.toString().trim().toUpperCase().replace(/\s+/g, "");
+        // Normalizzazione più robusta che gestisce tutti i caratteri speciali
+        return str.toString()
+          .trim()
+          .toLowerCase() // Cambiato in lowercase per maggiore compatibilità
+          .replace(/\s+/g, "") // Rimuove spazi
+          .replace(/[àáâãäå]/g, "a")
+          .replace(/[èéêë]/g, "e")
+          .replace(/[ìíîï]/g, "i")
+          .replace(/[òóôõö]/g, "o")
+          .replace(/[ùúûü]/g, "u")
+          .replace(/[ñ]/g, "n")
+          .replace(/[ç]/g, "c")
+          .replace(/[^a-z0-9]/g, ""); // Rimuove tutti i caratteri non alfanumerici
       },
       
       // Normalizzazione per password (case-insensitive)
@@ -221,7 +233,7 @@
             .map(e => ({
               ...e,
               id: parseInt(e.id, 10),
-              answer: utils.normalizeAnswer(e.answer),
+              answer: utils.normalizeAnswer(e.answer), // Ora normalizzato in lowercase
               title: e.title || `Enigma ${e.id}`,
               rank: e.rank || "Sconosciuto",
               rankIcon: e.rankIcon || "❓",
@@ -425,6 +437,14 @@
               </div>
             `;
           }
+          
+          // Aggiungi sempre la password del livello corrente
+          html += `
+            <div class="current-password-box" style="background: rgba(13, 13, 13, 0.8); border: 2px solid var(--muted-brass); border-radius: 10px; padding: 1rem; margin-top: 1.5rem; text-align: center;">
+              <div style="color: var(--dark-parchment); font-size: 0.875rem; margin-bottom: 0.5rem;">🗝️ Password di questo livello:</div>
+              <code style="background: var(--bg-tertiary); color: var(--brass); padding: 0.5rem 0.75rem; border-radius: 5px; font-family: var(--font-mono); font-size: 1.05rem; font-weight: 500; border: 1px solid var(--border); display: inline-block;">${enigma.password}</code>
+            </div>
+          `;
           
           elements.content.innerHTML = html;
         } catch (e) {
