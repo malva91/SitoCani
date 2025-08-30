@@ -92,8 +92,9 @@
         <div class="container">
             <article class="article-content">
                 <!-- Immagine principale (opzionale) -->
-                <div class="article-image">
+                <div class="article-hero-image">
                     <img src="[IMMAGINE PRINCIPALE]" alt="[ALT IMMAGINE]" loading="lazy">
+                    <div class="image-caption">[DIDASCALIA IMMAGINE PRINCIPALE]</div>
                 </div>
 
                 <!-- Introduzione -->
@@ -107,6 +108,12 @@
                     
                     <h2>Primo Paragrafo Principale</h2>
                     <p>[Contenuto del primo paragrafo principale. Sviluppa il primo punto chiave dell'articolo con esempi pratici e consigli utili.]</p>
+                    
+                    <!-- Immagine nel contenuto -->
+                    <div class="article-content-image">
+                        <img src="[IMMAGINE CONTENUTO 1]" alt="[ALT IMMAGINE 1]" loading="lazy">
+                        <div class="image-caption">[DIDASCALIA IMMAGINE 1]</div>
+                    </div>
                     
                     <h3>Sottosezione del Primo Paragrafo</h3>
                     <p>[Approfondimento del primo punto con dettagli specifici.]</p>
@@ -124,6 +131,24 @@
                     <h2>Secondo Paragrafo Principale</h2>
                     <p>[Contenuto del secondo paragrafo. Sviluppa il secondo punto chiave con esempi di gioco, riferimenti a manuali o regole specifiche.]</p>
                     
+                    <!-- Galleria di immagini -->
+                    <div class="article-image-gallery">
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="[IMMAGINE GALLERIA 1]" alt="[ALT GALLERIA 1]" loading="lazy">
+                                <div class="gallery-caption">[DIDASCALIA 1]</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="[IMMAGINE GALLERIA 2]" alt="[ALT GALLERIA 2]" loading="lazy">
+                                <div class="gallery-caption">[DIDASCALIA 2]</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="[IMMAGINE GALLERIA 3]" alt="[ALT GALLERIA 3]" loading="lazy">
+                                <div class="gallery-caption">[DIDASCALIA 3]</div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <h3>Esempi Pratici</h3>
                     <p>[Esempi concreti di applicazione dei concetti discussi, situazioni di gioco reali.]</p>
                     
@@ -133,11 +158,52 @@
                         <li>[Step 3 - terzo passo con risultato atteso]</li>
                     </ol>
                     
+                    <!-- Box informativo -->
+                    <div class="info-box">
+                        <div class="info-box-header">
+                            <span class="info-icon">💡</span>
+                            <h4>Consiglio del Master</h4>
+                        </div>
+                        <p>[Consiglio pratico o informazione importante evidenziata in un box speciale]</p>
+                    </div>
+                    
                     <h2>Terzo Paragrafo Principale</h2>
                     <p>[Contenuto del terzo paragrafo. Approfondimenti, varianti, consigli avanzati o collegamenti ad altri argomenti.]</p>
                     
+                    <!-- Immagine nel contenuto -->
+                    <div class="article-content-image">
+                        <img src="[IMMAGINE CONTENUTO 2]" alt="[ALT IMMAGINE 2]" loading="lazy">
+                        <div class="image-caption">[DIDASCALIA IMMAGINE 2]</div>
+                    </div>
+                    
                     <h3>Consigli Avanzati</h3>
                     <p>[Suggerimenti per chi vuole approfondire l'argomento o applicare tecniche più sofisticate.]</p>
+                    
+                    <!-- Tabella comparativa -->
+                    <div class="comparison-table">
+                        <h4>Tabella Comparativa</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Aspetto</th>
+                                    <th>Opzione A</th>
+                                    <th>Opzione B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[Criterio 1]</td>
+                                    <td>[Valore A1]</td>
+                                    <td>[Valore B1]</td>
+                                </tr>
+                                <tr>
+                                    <td>[Criterio 2]</td>
+                                    <td>[Valore A2]</td>
+                                    <td>[Valore B2]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     
                     <h2>Conclusioni</h2>
                     <p>[Riassunto dei punti chiave dell'articolo, invito all'azione, suggerimenti per il prossimo passo o collegamenti a risorse utili.]</p>
@@ -145,12 +211,50 @@
                     <!-- FINE CONTENUTO ARTICOLO -->
                 </div>
 
+                <!-- Sezione Acquisti -->
+                <div class="purchase-section">
+                    <h3>🛒 Dove Acquistare</h3>
+                    <p>Se vuoi aggiungere [NOME PRODOTTO] alla tua collezione, puoi trovarlo qui:</p>
+                    <div class="purchase-links">
+                        <a href="[LINK EDITORE]" class="purchase-button primary" target="_blank" rel="noopener">
+                            <span class="purchase-icon">🏪</span>
+                            <div class="purchase-info">
+                                <div class="purchase-title">Editore Ufficiale</div>
+                                <div class="purchase-subtitle">[NOME EDITORE]</div>
+                            </div>
+                        </a>
+                        <a href="[LINK AMAZON]" class="purchase-button" target="_blank" rel="noopener">
+                            <span class="purchase-icon">📦</span>
+                            <div class="purchase-info">
+                                <div class="purchase-title">Amazon</div>
+                                <div class="purchase-subtitle">Spedizione veloce</div>
+                            </div>
+                        </a>
+                        <a href="[LINK NEGOZIO]" class="purchase-button" target="_blank" rel="noopener">
+                            <span class="purchase-icon">🏬</span>
+                            <div class="purchase-info">
+                                <div class="purchase-title">Negozi Specializzati</div>
+                                <div class="purchase-subtitle">Supporta i negozi locali</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="purchase-note">
+                        <p><em>I link potrebbero essere affiliati. Acquistando tramite questi link supporti il nostro lavoro senza costi aggiuntivi.</em></p>
+                    </div>
+                </div>
+
                 <!-- Call to Action -->
                 <div class="article-cta">
                     <h3>Ti è piaciuto questo articolo?</h3>
-                    <p>Seguici sui social per non perdere i prossimi contenuti!</p>
+                    <p>Seguici sui social per non perdere i prossimi contenuti e condividi questo articolo con la tua community!</p>
                     <div class="cta-buttons">
                         <a href="../blog.html" class="cta-button secondary">Altri Articoli</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=[URL_ARTICOLO]" class="cta-button social facebook" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i> Condividi
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=[URL_ARTICOLO]&text=[TITOLO_ARTICOLO]" class="cta-button social twitter" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </a>
                     </div>
                 </div>
             </article>

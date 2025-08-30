@@ -14,19 +14,12 @@ class BlogManager {
         this.categoriesData = null;
         this.displayedArticles = [];
         this.isLoading = false;
-        this.unlockDate = new Date('2025-02-15T00:00:00');
         
         this.init();
     }
 
     async init() {
         try {
-            // Check if blog is unlocked
-            if (!this.isBlogUnlocked()) {
-                console.log('Blog not yet unlocked, countdown will be shown');
-                return;
-            }
-            
             await this.loadArticlesData();
             this.renderCategoryFilters();
             this.initFilterButtons();
@@ -37,19 +30,6 @@ class BlogManager {
             console.error('Error initializing blog:', error);
             this.showError('Errore nell\'inizializzazione del blog');
         }
-    }
-
-    /**
-     * Check if blog is unlocked
-     */
-    isBlogUnlocked() {
-        // Check if manually unlocked via password
-        if (localStorage.getItem('blog_unlocked') === 'true') {
-            return true;
-        }
-        
-        // Check if unlock date has passed
-        return new Date() >= this.unlockDate;
     }
 
     /**
