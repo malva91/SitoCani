@@ -14,12 +14,19 @@ class BlogManager {
         this.categoriesData = null;
         this.displayedArticles = [];
         this.isLoading = false;
+        this.unlockDate = new Date('2025-02-15T00:00:00');
         
         this.init();
     }
 
     async init() {
         try {
+            // Check if blog is unlocked
+            if (!this.isBlogUnlocked()) {
+                console.log('Blog not yet unlocked, countdown will be shown');
+                return;
+            }
+            
             await this.loadArticlesData();
             this.renderCategoryFilters();
             this.initFilterButtons();
@@ -29,6 +36,33 @@ class BlogManager {
         } catch (error) {
             console.error('Error initializing blog:', error);
             this.showError('Errore nell\'inizializzazione del blog');
+        }
+    }
+
+    /**
+     * Check if blog is unlocked
+     */
+    isBlogUnlocked() {
+        // Check if manually unlocked via password
+        if (localStorage.getItem('blog_unlocked') === 'true') {
+            return true;
+        }
+        
+        // Check if unlock date has passed
+        return new Date() >= this.unlockDate;
+    }
+
+    /**
+     * Check if individual article is unlocked
+     */
+    isArticleUnlocked(article) {
+        if (!article.unlockDate) return true;
+        
+        try {
+            const unlockDate = new Date(article.unlockDate);
+            return new Date() >= unlockDate;
+        } catch {
+            return true; // If date parsing fails, assume unlocked
         }
     }
 
@@ -72,8 +106,12 @@ class BlogManager {
             
             // Validate articles data
             this.articlesData = this.articlesData.filter(article => {
-                return article.id && article.title && article.slug && 
-                       article.category && article.excerpt;
+                // Filter out locked articles
+                const isValidStructure = article.id && article.title && article.slug && 
+                                       article.category && article.excerpt;
+                const isUnlocked = this.isArticleUnlocked(article);
+                
+                return isValidStructure && isUnlocked;
             });
             
             // Sort articles by date (newest first)
@@ -143,7 +181,9 @@ class BlogManager {
         
         if (!featuredGrid || !this.articlesData) return;
 
-        const featuredArticles = this.articlesData.filter(article => article.featured === true);
+        const featuredArticles = this.articlesData.filter(article => 
+            article.featured === true && this.isArticleUnlocked(article)
+        );
         
         if (featuredArticles.length === 0) {
             // Hide featured section if no featured articles
@@ -195,7 +235,12 @@ class BlogManager {
         
         if (this.currentFilter !== 'all') {
             filteredArticles = this.articlesData.filter(article => 
-                article.category === this.currentFilter
+                article.category === this.currentFilter && this.isArticleUnlocked(article)
+            );
+        } else {
+            // Even for 'all', filter out locked articles
+            filteredArticles = this.articlesData.filter(article => 
+                this.isArticleUnlocked(article)
             );
         }
 

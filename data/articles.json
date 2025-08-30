@@ -1,0 +1,53 @@
+{
+  "categories": {
+    "guide-master": {
+      "name": "Guide Master",
+      "description": "Guide pratiche per Dungeon Master e Game Master",
+      "icon": "🎯"
+    },
+    "recensioni": {
+      "name": "Recensioni GDR",
+      "description": "Recensioni approfondite di giochi di ruolo",
+      "icon": "📝"
+    },
+    "fiere": {
+      "name": "Fiere Ludiche",
+      "description": "Resoconti e novità dalle fiere ludiche italiane",
+      "icon": "🎪"
+    },
+    "consigli": {
+      "name": "Consigli Pratici",
+      "description": "Tips e consigli per giocatori e master",
+      "icon": "💡"
+    },
+    "storie": {
+      "name": "Storie dalla Taverna",
+      "description": "Racconti e aneddoti dal nostro tavolo",
+      "icon": "📚"
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "title": "Primi Articoli in Arrivo",
+      "slug": "coming-soon",
+      "excerpt": "Il blog dei Cani di Odino sta per iniziare! Presto guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi.",
+      "category": "guide-master",
+      "categoryName": "Guide Master",
+      "author": "Cani di Odino",
+      "date": "2025-02-15",
+      "dateHuman": "15 Febbraio 2025",
+      "readTime": 2,
+      "featured": true,
+      "published": true,
+      "unlockDate": "2025-02-15T00:00:00",
+      "image": "./img/logo.png",
+      "imageAlt": "Logo Cani di Odino",
+      "tags": ["Coming Soon", "Blog", "Novità"],
+      "seo": {
+        "metaDescription": "Il blog dei Cani di Odino sta per iniziare! Presto guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi.",
+        "keywords": ["blog GDR", "guide master", "recensioni giochi di ruolo", "fiere ludiche", "coming soon"]
+      }
+    }
+  ]
+}
