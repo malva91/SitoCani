@@ -1,0 +1,814 @@
+{
+  "fantasy": {
+    "nomi": [
+      "Lunargento",
+      "Stellaverde",
+      "Aurealba",
+      "Ventoluna",
+      "Boscodoro",
+      "Pietraferro",
+      "Monteoro",
+      "Roccaforte",
+      "Valleacciaio",
+      "Borgomartello",
+      "Portoverde",
+      "Mareblu",
+      "Ondachiara",
+      "Corallino",
+      "Algaville",
+      "Sabbiadora",
+      "Oasiverde",
+      "Dunasole",
+      "Miraggiocity",
+      "Cactusburgh",
+      "Ghiaccioforte",
+      "Ventolungo",
+      "Pietrabianca",
+      "Monteneve",
+      "Valleghiaccio",
+      "Giadaverde",
+      "Dragopoli",
+      "Lunanuova",
+      "Ciliegiofiore",
+      "Bambucittà"
+    ],
+    "rulers": [
+      "Un sindaco eletto dal popolo con saggezza e giustizia, amato da tutti i cittadini",
+      "Un nobile anziano che governa con mano ferma ma giusta da generazioni",
+      "Una sacerdotessa che guida con compassione divina e saggezza spirituale",
+      "Un ex-avventuriero che protegge la città dai pericoli con esperienza sul campo",
+      "Un arcimago che governa con saggezza arcana e potere magico",
+      "Una duchessa saggia che protegge il suo popolo come una madre amorevole",
+      "Un generale veterano che ha trasformato la città in una fortezza inespugnabile",
+      "Un re filosofo che governa secondo principi di saggezza antica"
+    ],
+    "districts": [
+      "Quartiere Nobile - Ville lussuose con giardini privati e servitù numerosa",
+      "Borgo Artigiano - Case modeste di lavoratori specializzati e botteghe",
+      "Mercato Centrale - Piazza principale con bancarelle colorate e negozi",
+      "Distretto Magico - Torri e laboratori di maghi e alchimisti misteriosi",
+      "Zona Portuale - Magazzini, cantieri navali e uffici commerciali",
+      "Distretto Religioso - Templi, monasteri e luoghi di culto sacri",
+      "Quartiere Universitario - Scuole, biblioteche e centri di studio"
+    ],
+    "landmarks": [
+      "Cattedrale Maestosa - Imponente tempio della divinità principale della città",
+      "Palazzo Municipale - Sede del governo locale e centro amministrativo",
+      "Fortezza Cittadina - Struttura difensiva principale e simbolo di potere",
+      "Torre del Mago - Dimora di un potente incantatore e centro magico",
+      "Biblioteca Pubblica - Deposito di conoscenza e cultura cittadina",
+      "Arena Gladiatoria - Combattimenti e spettacoli violenti per il pubblico",
+      "Monastero Antico - Complesso religioso con biblioteca sacra e giardini"
+    ]
+  },
+  "moderno": {
+    "nomi": [
+      "Neo Tokyo",
+      "Cyber City",
+      "New Angeles",
+      "Tech Valley",
+      "Silicon Heights",
+      "Digital Bay",
+      "Quantum City",
+      "Neural Network",
+      "Data Harbor",
+      "Cloud District",
+      "Smart Town",
+      "Future City",
+      "Nano Village",
+      "Hologram Heights",
+      "Virtual Valley",
+      "Pixel Port",
+      "Binary Bay",
+      "Code City",
+      "Matrix Metro",
+      "Cyber Central",
+      "Tech Tower",
+      "Digital Downtown",
+      "Smart Square",
+      "Future Falls",
+      "Nano North",
+      "Quantum Quarter",
+      "Virtual Vista",
+      "Pixel Plaza",
+      "Binary Beach",
+      "Code Corner"
+    ],
+    "rulers": [
+      "Un CEO visionario di una mega-corporazione tecnologica",
+      "Un sindaco eletto tramite voto elettronico blockchain",
+      "Un'intelligenza artificiale benevola che amministra la città",
+      "Un consiglio di scienziati e ingegneri di fama mondiale",
+      "Un ex-hacker diventato riformatore digitale",
+      "Una startup founder che ha rivoluzionato l'urbanistica",
+      "Un generale cyborg veterano delle guerre robotiche",
+      "Una neuroscienziata che governa tramite consenso mentale"
+    ],
+    "districts": [
+      "Distretto Tecnologico - Grattacieli smart e laboratori di ricerca",
+      "Zona Residenziale Intelligente - Appartamenti automatizzati e sostenibili",
+      "Centro Commerciale Virtuale - Negozi olografici e marketplace digitali",
+      "Quartiere Industriale Robotico - Fabbriche automatizzate e droni",
+      "Distretto Finanziario Crypto - Banche digitali e trading centers",
+      "Zona Universitaria Digitale - Campus virtuali e laboratori AI",
+      "Distretto Medico Biotech - Ospedali robotici e cliniche genetiche"
+    ],
+    "landmarks": [
+      "Torre di Controllo Centrale - Cervello AI che gestisce la città",
+      "Palazzo del Governo Digitale - Sede dell'amministrazione elettronica",
+      "Centro Ricerca Quantica - Laboratori di fisica avanzata",
+      "Biblioteca Digitale Globale - Accesso a tutta la conoscenza umana",
+      "Arena Virtuale - Competizioni in realtà aumentata",
+      "Ospedale Robotico Centrale - Chirurgia automatizzata e cure AI",
+      "Stazione Spaziale Urbana - Porto per viaggi interplanetari"
+    ]
+  },
+  "population_ranges": {
+    "village": {
+      "min": 100,
+      "max": 500,
+      "description": "Piccolo insediamento"
+    },
+    "town": {
+      "min": 500,
+      "max": 2000,
+      "description": "Centro abitato di medie dimensioni"
+    },
+    "city": {
+      "min": 2000,
+      "max": 10000,
+      "description": "Importante centro urbano"
+    },
+    "metropolis": {
+      "min": 10000,
+      "max": 50000,
+      "description": "Grande città cosmopolita"
+    },
+    "megacity": {
+      "min": 50000,
+      "max": 200000,
+      "description": "Enorme centro urbano"
+    },
+    "capital": {
+      "min": 100000,
+      "max": 500000,
+      "description": "Capitale di regno o impero"
+    }
+  },
+  "problems": [
+    "Banditi stanno minacciando le carovane commerciali lungo le strade principali",
+    "Creature magiche disturbano la pace notturna con i loro attacchi improvvisi",
+    "Le tasse sono troppo alte e il popolo è scontento del governo attuale",
+    "Una malattia misteriosa si sta diffondendo tra gli abitanti causando panico",
+    "La disoccupazione è alta e molte famiglie soffrono la fame quotidianamente",
+    "Una gilda di ladri controlla il mercato nero e corrompe le guardie",
+    "Un culto segreto sta reclutando seguaci per rituali oscuri e pericolosi",
+    "Una guerra civile minaccia di dividere la città in fazioni nemiche",
+    "La siccità ha prosciugato i pozzi e l'acqua scarseggia pericolosamente",
+    "Un incendio ha distrutto il granaio principale causando carestia"
+  ],
+  "economy": [
+    "Agricoltura e allevamento come base dell'economia locale",
+    "Commercio e artigianato specializzato in prodotti unici",
+    "Estrazione mineraria di metalli preziosi e gemme rare",
+    "Pesca e attività marittime per città costiere",
+    "Turismo e pellegrinaggi religiosi",
+    "Produzione tessile e lavorazione della lana",
+    "Fabbricazione di armi e armature di qualità",
+    "Commercio di spezie e prodotti esotici",
+    "Produzione di vino e bevande alcoliche pregiate",
+    "Lavorazione del legno e costruzione navale",
+    "Estrazione e lavorazione di pietre preziose",
+    "Produzione di libri e pergamene",
+    "Alchimia e produzione di pozioni magiche",
+    "Produzione di ceramiche e vasellame artistico",
+    "Lavorazione dei metalli e oreficeria",
+    "Commercio di pellicce e pelli esotiche",
+    "Produzione di strumenti musicali",
+    "Allevamento di creature magiche",
+    "Industria manifatturiera avanzata",
+    "Commercio di tecnologie innovative",
+    "Servizi finanziari e bancari"
+  ],
+  "culture": [
+    "Cultura guerriera che onora il coraggio in battaglia",
+    "Tradizione mercantile che valorizza l'astuzia negli affari",
+    "Società magica dove gli incantatori sono rispettati",
+    "Cultura religiosa dominata da ordini monastici",
+    "Tradizione artigianale che tramanda antiche tecniche",
+    "Società nomade che valorizza la libertà di movimento",
+    "Cultura marinara legata al mare e alla navigazione",
+    "Tradizione accademica che promuove la conoscenza",
+    "Società aristocratica con rigide gerarchie sociali",
+    "Cultura artistica che celebra bellezza e creatività",
+    "Tradizione agricola legata ai cicli delle stagioni",
+    "Società multiculturale che accoglie stranieri",
+    "Cultura militare disciplinata e organizzata",
+    "Tradizione bardica che preserva storie e leggende",
+    "Società egualitaria senza distinzioni di classe",
+    "Cultura misteriosa che nasconde antichi segreti",
+    "Tradizione diplomatica che evita i conflitti",
+    "Società tecnologica all'avanguardia",
+    "Cultura spirituale in armonia con la natura",
+    "Tradizione rivoluzionaria che sfida l'autorità"
+  ],
+  "government": [
+    "Monarchia assoluta guidata da un sovrano ereditario",
+    "Repubblica democratica con elezioni popolari",
+    "Oligarchia mercantile controllata dai ricchi",
+    "Teocrazia governata da leader religiosi",
+    "Consiglio di anziani che prende decisioni collettive",
+    "Dittatura militare sotto controllo dell'esercito",
+    "Anarchia organizzata senza governo centrale",
+    "Federazione di distretti autonomi",
+    "Magiocrazia governata da potenti incantatori",
+    "Gilda-stato controllata dalle corporazioni",
+    "Gerontocrazia guidata dai più anziani",
+    "Meritocrazia basata su competenza e abilità",
+    "Plutocrazia dove i ricchi detengono il potere",
+    "Tecnocrazia governata da esperti e scienziati",
+    "Democrazia diretta con assemblee popolari",
+    "Autocrazia sotto un leader carismatico",
+    "Confederazione di città alleate",
+    "Reggenza temporanea in attesa di un erede",
+    "Governo provvisorio dopo una rivoluzione",
+    "Amministrazione coloniale di un impero distante"
+  ],
+  "postapocalittico": {
+    "nomi": [
+      "Ruggine Alta",
+      "Cenereporto",
+      "Nuova Polvere",
+      "Ossidiana",
+      "Fenditura 7",
+      "Siccità",
+      "Rifugio Delta",
+      "Campo Dynamo",
+      "Bunker Argo",
+      "Cratere Blu"
+    ],
+    "rulers": [
+      "Capo della Carovana",
+      "Consiglio dei Pozzi",
+      "Signore della Ruggine",
+      "Archivista del Rifugio",
+      "Maestro dei Filtri",
+      "Capobanda"
+    ],
+    "districts": [
+      "Mercato dello Scambio",
+      "Campo dei Rottami",
+      "Fattoria Idroponica",
+      "Cupole Solari",
+      "Zona Radiata",
+      "Stazione del Treno Fermato"
+    ],
+    "landmarks": [
+      "Torre delle Antenne",
+      "Cisterna Principale",
+      "Vecchia Autostrada",
+      "Centrale a Turbine",
+      "Cancello d'Acciaio",
+      "Obelisco dei Razzi"
+    ],
+    "style": [
+      "polveroso",
+      "metallico arrugginito",
+      "patchwork",
+      "improvvisato",
+      "segnaletica sbiadita",
+      "arrugginito"
+    ]
+  },
+  "desertico": {
+    "nomi": [
+      "Sabbiadoro",
+      "Qasr al-Nur",
+      "Dune Khepri",
+      "Oasi Ar-Raha",
+      "Vento Salmastro",
+      "Yebrinn",
+      "Carovanseraio Amon",
+      "Qalat Saffron"
+    ],
+    "rulers": [
+      "Emiro delle Dune",
+      "Matriarca dell'Oasi",
+      "Consiglio delle Carovane",
+      "Custode dei Pozzi",
+      "Capo dei Mercanti di Sale"
+    ],
+    "districts": [
+      "Suk delle Spezie",
+      "Tende dei Nomadi",
+      "Giardini a Qanat",
+      "Bazar del Sale",
+      "Quartiere degli Orefici",
+      "Porta del Deserto"
+    ],
+    "landmarks": [
+      "Minareto del Sole",
+      "Pietra del Vento",
+      "Fortezza a Fango",
+      "Torre dei Falchi",
+      "Mosaico delle Stelle",
+      "Piazza delle Acque"
+    ],
+    "style": [
+      "intonaco ocra",
+      "legni scolpiti",
+      "archi a ferro di cavallo",
+      "tessuti ricamati",
+      "motivi geometrici",
+      "ocra",
+      "archi",
+      "tessuti",
+      "legno scolpito"
+    ]
+  },
+  "marino_pirati": {
+    "nomi": [
+      "Porto Teschio",
+      "Baia Sirena",
+      "Arcipelago Nereide",
+      "Costa del Corvo",
+      "Porto Barracuda",
+      "Calafuria",
+      "Salsedine",
+      "Mare Fosco"
+    ],
+    "rulers": [
+      "Capitano-Re",
+      "Consorzio dei Corsari",
+      "Ammiraglia Rossa",
+      "Dogana Ombra",
+      "Mastro Carpentiere"
+    ],
+    "districts": [
+      "Cantiere Navale",
+      "Taverne del Molo",
+      "Mercato del Pesce",
+      "Covo dei Bucanieri",
+      "Faro Spezzato",
+      "Magazzini delle Spezie"
+    ],
+    "landmarks": [
+      "Gabbia dei Pirati",
+      "Campana della Nebbia",
+      "Relitto Ancorato",
+      "Palo della Tempesta",
+      "Isola della Forca",
+      "Scoglio del Kraken",
+      "Faro Spezzato"
+    ],
+    "style": [
+      "legno catramato",
+      "cordami",
+      "ottone marinaro",
+      "mappe nautiche",
+      "patine saline"
+    ]
+  },
+  "gotico": {
+    "nomi": [
+      "Nocturnia",
+      "Val di Bruma",
+      "Ravenburg",
+      "Tenebria",
+      "Lacrimarum",
+      "Sanguis",
+      "Umbriacastel",
+      "Candelabro"
+    ],
+    "rulers": [
+      "Conte Notturno",
+      "Badessa del Convento",
+      "Sinedrio dei Notai",
+      "Guardiano del Cimitero",
+      "Visconte della Bruma"
+    ],
+    "districts": [
+      "Quartiere delle Candele",
+      "Clausura",
+      "Vicolo dei Becchini",
+      "Piazza delle Gargolle",
+      "Chiostro",
+      "Mura a Contrafforti"
+    ],
+    "landmarks": [
+      "Cattedrale a Vetrate",
+      "Ossario",
+      "Torre a Picchi",
+      "Biblioteca Incatenata",
+      "Lago del Velo",
+      "Cripta dei Capifamiglia"
+    ],
+    "style": [
+      "pietra scura",
+      "vetrate",
+      "gargolle",
+      "cera colata",
+      "nebbia persistente"
+    ]
+  },
+  "orientale": {
+    "nomi": [
+      "Hanamori",
+      "Shanhe",
+      "Yamata",
+      "Lotus City",
+      "Kurokawa",
+      "Yueliang",
+      "Sakura-no-miya",
+      "Fenghuang"
+    ],
+    "rulers": [
+      "Shōgun",
+      "Consiglio degli Anziani",
+      "Mandarino Reggente",
+      "Abate Guerriero",
+      "Daimyō del Fiume"
+    ],
+    "districts": [
+      "Mercato del Tè",
+      "Officine della Carta",
+      "Tempio sulla Collina",
+      "Ponte Rosso",
+      "Quartiere dei Tessitori",
+      "Dojo"
+    ],
+    "landmarks": [
+      "Pagoda del Drago",
+      "Torii sul Mare",
+      "Giardino delle Pietre",
+      "Campana di Bronzo",
+      "Lanterna dei Mille",
+      "Biblioteca di Bambù"
+    ],
+    "style": [
+      "legno laccato",
+      "carta di riso",
+      "tetti curvi",
+      "motivi floreali",
+      "lacche rosse e nere"
+    ]
+  },
+  "romano": {
+    "nomi": [
+      "Aurelia",
+      "Portus Maximus",
+      "Castrum Alba",
+      "Via Triumphalis",
+      "Tiberium",
+      "Aquileia Nova"
+    ],
+    "rulers": [
+      "Console",
+      "Pretore Urbano",
+      "Edile",
+      "Legato",
+      "Pontifex"
+    ],
+    "districts": [
+      "Foro",
+      "Insulae",
+      "Castrum",
+      "Terme",
+      "Anfiteatro",
+      "Porticus"
+    ],
+    "landmarks": [
+      "Acquedotto",
+      "Arco di Trionfo",
+      "Ara",
+      "Colonna Miliare",
+      "Circo",
+      "Basilica"
+    ],
+    "style": [
+      "marmo bianco",
+      "mattoni rossi",
+      "colonne scanalate",
+      "mosaici",
+      "statue classiche",
+      "marmo",
+      "colonne",
+      "statue"
+    ]
+  },
+  "lovecraftiano": {
+    "nomi": [
+      "Innsmouth Nuova",
+      "Arkham del Nord",
+      "R’lyehtown",
+      "Dagon Bay",
+      "Miskatonic Reach",
+      "Y’ha-nthlei Porto"
+    ],
+    "rulers": [
+      "Confraternita del Profondo",
+      "Rettore Esoterico",
+      "Sovrintendente dei Tomi",
+      "Consiglio dei Pescatori Iniziati"
+    ],
+    "districts": [
+      "Quartiere dei Tomi",
+      "Banchine Umide",
+      "Vicolo dell’Innominabile",
+      "Caserma Sussurrante",
+      "Museo Antiquario"
+    ],
+    "landmarks": [
+      "Obelisco Algoso",
+      "Biblioteca Miskatonic",
+      "Cripta Ciclopica",
+      "Faro Occhiuto",
+      "Pozzo Abissale",
+      "Tempio Dagoniano"
+    ],
+    "style": [
+      "umido",
+      "alghe e conchiglie",
+      "pietra ciclopica",
+      "odor di salmastro",
+      "colori spenti"
+    ]
+  },
+  "far_west": {
+    "nomi": [
+      "Dusty Creek",
+      "Coyote Ridge",
+      "Silver Gulch",
+      "Deadman’s Rest",
+      "Mesquite Flats",
+      "Goldwater"
+    ],
+    "rulers": [
+      "Sceriffo",
+      "Sindaco",
+      "Barone Ferroviario",
+      "Capo Miniera",
+      "Predicatore"
+    ],
+    "districts": [
+      "Main Street",
+      "Saloon",
+      "Ufficio Postale",
+      "Deposito Ferrovia",
+      "Baraccopoli Minatori",
+      "Recinti"
+    ],
+    "landmarks": [
+      "Forca",
+      "Canyon del Tuono",
+      "Torre dell’Acqua",
+      "Miniera 23",
+      "Ranch del Sole",
+      "Pietra Gufo"
+    ],
+    "style": [
+      "legno grezzo",
+      "lamiera",
+      "polvere",
+      "segatura",
+      "insegne dipinte a mano"
+    ]
+  },
+  "feudale_giapponese": {
+    "nomi": [
+      "Kokorogawa",
+      "Hoshiumi",
+      "Amanogawa",
+      "Kitsunehara",
+      "Takayama",
+      "Uchigawa"
+    ],
+    "rulers": [
+      "Daimyō",
+      "Hatamoto",
+      "Monaco Guerriero",
+      "Anziani del Villaggio",
+      "Intendente del Riso"
+    ],
+    "districts": [
+      "Risaie Terrazzate",
+      "Castello",
+      "Botteghe degli Artigiani",
+      "Porticati",
+      "Villaggio dei Ronin",
+      "Casa da Tè"
+    ],
+    "landmarks": [
+      "Castello in Legno",
+      "Pietre del Giardino Secco",
+      "Santuario di Volpe",
+      "Ponte Luna",
+      "Campane del Tempio"
+    ],
+    "style": [
+      "tatami",
+      "scorrevoli shōji",
+      "giardini zen",
+      "armature laccate",
+      "tetti in scandole"
+    ]
+  },
+  "sci_fi": {
+    "nomi": [
+      "Orbitea Prime",
+      "Aurelia-7",
+      "Stazione Kessler",
+      "New Delphi IX",
+      "Helios Spire",
+      "Lambda Port"
+    ],
+    "rulers": [
+      "Governatore Planetario",
+      "IA Custode",
+      "Consorzio Stellare",
+      "Ammiragliato",
+      "Sindacato dei Cantieri Orbitali"
+    ],
+    "districts": [
+      "Cintura dei Dock",
+      "Cupola Agricola",
+      "Modulo Residenziale",
+      "Anello Commerciale",
+      "Laboratori di Ricerca",
+      "Nodo Quantico"
+    ],
+    "landmarks": [
+      "Ascensore Spaziale",
+      "Anello Hab",
+      "Specchio Solare",
+      "Archivio Stellare",
+      "Criptoporto",
+      "Museo dei Relitti"
+    ],
+    "style": [
+      "bianco lucido",
+      "pannelli esagonali",
+      "vetro rinforzato",
+      "illuminazione fredda",
+      "tipografia sans",
+      "esagonali"
+    ]
+  },
+  "urbano_noir": {
+    "nomi": [
+      "Grim City",
+      "Vantablack",
+      "Pioggia Lunga",
+      "Lanterna Spenta",
+      "Cenere Town",
+      "Vicolo 13"
+    ],
+    "rulers": [
+      "Commissioner",
+      "Sindaco Ombra",
+      "Boss del Quartiere",
+      "Detective in Capo",
+      "Giudice Notturno"
+    ],
+    "districts": [
+      "Docks",
+      "Chinatown",
+      "Zona Teatri",
+      "Distretto Finanza",
+      "Strada dei Neon",
+      "Viali Piovosi"
+    ],
+    "landmarks": [
+      "Insegna al Neon",
+      "Tettoia della Stazione",
+      "Ponte Ferro",
+      "Ufficio Investigazioni",
+      "Club del Fumo",
+      "Vicoli dei Poster"
+    ],
+    "style": [
+      "pioggia",
+      "neon",
+      "sigarette",
+      "trench",
+      "ombre alte/basse",
+      "fumo"
+    ]
+  },
+  "steampunk": {
+    "nomi": [
+      "Vaporelia",
+      "Aeronimbus",
+      "Ottoneporto",
+      "Ingranopolis",
+      "Ferroriva",
+      "Meccania",
+      "Ramecittà",
+      "Nebbiala"
+    ],
+    "rulers": [
+      "Concilio dei Gilde",
+      "Magnate Industriale",
+      "Direttorio Tecnocratico",
+      "Casa Nobiliare"
+    ],
+    "districts": [
+      "Quartiere Mercato",
+      "Darsena",
+      "Distretto Artigiani",
+      "Accademia/Università",
+      "Cintura Residenziale"
+    ],
+    "landmarks": [
+      "Torre dell'Orologio",
+      "Grande Officina",
+      "Cupola dell'Osservatorio",
+      "Ponte a Catena",
+      "Archivio Civico"
+    ],
+    "style": [
+      "ottone",
+      "ingranaggi",
+      "vapore",
+      "vernici smaltate",
+      "gadget vittoriani"
+    ]
+  },
+  "cyberpunk": {
+    "nomi": [
+      "Neo-Týr",
+      "VantaBay",
+      "Chromeholm",
+      "Datafjord",
+      "Apex-9",
+      "Arcanet",
+      "Zenith City",
+      "Bytehaven"
+    ],
+    "rulers": [
+      "Consorzio Megacorp",
+      "IA Amministratrice",
+      "Sindacati di Strada",
+      "Consiglio degli Azionisti"
+    ],
+    "districts": [
+      "Zona Neon",
+      "Cintura dei Server",
+      "Livelli Sotterranei",
+      "Cittadella di Sicurezza",
+      "Parco Droni"
+    ],
+    "landmarks": [
+      "Ago di Vetro",
+      "Cattedrale dei Dati",
+      "Nodo Quantico",
+      "Galleria Antigrav",
+      "Piazza degli Avatar"
+    ],
+    "style": [
+      "neon",
+      "vetro e cromo",
+      "ologrammi",
+      "pioggia",
+      "cartelloni giganteschi"
+    ]
+  },
+  "nordico": {
+    "nomi": [
+      "Skjoldvik",
+      "Hrafnholm",
+      "Frostheim",
+      "Bjornfjord",
+      "Ulvstad",
+      "Stormvik",
+      "Jotunfall",
+      "Runeborg"
+    ],
+    "rulers": [
+      "Jarl del Fiordo",
+      "Thing dei Libri",
+      "Custode del Tempio",
+      "Regina Scudo"
+    ],
+    "districts": [
+      "Molo delle Lunghe Navi",
+      "Sala del Meadhall",
+      "Quartiere dei Pescatori",
+      "Bosco Sacro",
+      "Cintura dei Tumuli"
+    ],
+    "landmarks": [
+      "Pietra delle Rune",
+      "Cascata del Gigante",
+      "Palo dei Venti",
+      "Torre del Corvo"
+    ],
+    "style": [
+      "legno scolpito",
+      "pelli",
+      "ferro brunito",
+      "totem",
+      "tetti erbosi"
+    ]
+  }
+}

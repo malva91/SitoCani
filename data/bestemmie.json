@@ -1,0 +1,41 @@
+{
+  "divinita": {
+    "cristiana": ["Madonna", "Gesù", "Cristo", "Dio", "San Giuseppe", "Santa Maria", "San Pietro", "San Michele", "San Francesco", "San Giovanni", "Sant'Antonio", "San Gabriele"],
+    "pagana": ["Zeus", "Thor", "Odino", "Apollo", "Artemide", "Afrodite", "Ade", "Atena", "Freya", "Loki", "Demetra", "Eris"],
+    "egizia": ["Ra", "Anubi", "Iside", "Osiride", "Horus", "Bastet", "Sekhmet", "Thot", "Seth", "Maat", "Sobek", "Nephthys"],
+    "induista": ["Shiva", "Vishnu", "Brahma", "Ganesha", "Kali", "Durga", "Lakshmi", "Parvati", "Hanuman", "Krishna", "Rama", "Saraswati"],
+    "nordica": ["Baldr", "Heimdall", "Skadi", "Hel", "Njord", "Ymir", "Fenrir", "Jormungandr", "Tyr", "Sif", "Hodr", "Bragi"],
+    "mesoamericana": ["Quetzalcoatl", "Tezcatlipoca", "Huitzilopochtli", "Tlaloc", "Xipe Totec", "Chalchiuhtlicue", "Centeotl", "Mictlantecuhtli"],
+    "orientale": ["Amaterasu", "Susanoo", "Tsukuyomi", "Fujin", "Raijin", "Benzaiten", "Hachiman", "Inari", "Daikokuten"],
+    "celtica": ["Dagda", "Brigid", "Lugh", "Cernunnos", "Morrigan", "Arawn", "Nuada", "Epona"]
+  },
+  "stili": {
+    "classico": ["dannato", "sacrale", "benedetto", "santo", "divino", "angelico", "profetico", "glorioso", "redento"],
+    "steampunk": ["a vapore", "a ingranaggi", "meccanico", "a pistoni", "bronzeo", "d'ottone", "artigianale", "a molla", "industriale"],
+    "cyberpunk": ["digitale", "cyber", "virtuale", "elettronico", "binario", "quantico", "neon", "sintetico", "glitchato", "hackerato"],
+    "lovecraft": ["tentacolare", "abissale", "cosmico", "indicibile", "ancestrale", "primordiale", "innominabile", "ultraterreno", "alieno", "mostruoso"],
+    "fantasy": ["magico", "incantato", "fatato", "draconico", "elfico", "nanico", "runico", "arcano", "misterioso", "celestiale"],
+    "horror": ["spettrale", "demoniaco", "infernale", "macabro", "sinistro", "tenebroso", "sanguinario", "mostruoso", "ossesso", "posseduto"],
+    "postapocalittico": ["radioattivo", "contaminato", "arrugginito", "desolato", "bruciato", "mutante", "marcescente", "polveroso", "collassato", "sopravvissuto"],
+    "mitologico": ["epico", "leggendario", "immortale", "oracolare", "sovrannaturale", "eroico", "pantheonico", "ancestrale", "sacro"]
+  },
+  "intensita": {
+    "lieve": ["cane", "somaro", "sciocco", "tonto", "matto", "pazzo", "svitato", "bischero", "scemo", "gonzo"],
+    "moderato": ["stronzo", "bastardo", "idiota", "cretino", "imbecille", "deficiente", "coglione", "mona", "rintronato", "pirla"],
+    "forte": ["porco", "merda", "cazzo", "fottuto", "schifoso", "maledetto", "lurido", "pezzo di merda", "cane rognoso", "sacco di merda"],
+    "estremo": ["figlio di puttana", "coglione di merda", "testa di cazzo", "infame", "merdoso bastardo", "schifoso figlio di troia", "putrido verme", "bestia immonda", "feccia umana", "abominio vivente"]
+  },
+"template": [
+  "Per {divinita} in stile {stile}, {intensita}!",
+  "Giuro su {divinita} in versione {stile}: {intensita}!",
+  "{divinita}, in salsa {stile}: {intensita}.",
+  "Che {divinita} formato {stile} mi assista: {intensita}!",
+  "Oh {divinita} dal tono {stile}, {intensita}!",
+  "Davanti a {divinita} mood {stile}, {intensita}!",
+  "{divinita} settaggio {stile}: {intensita}!",
+  "Per tutti gli dèi, {divinita} in chiave {stile}: {intensita}!",
+  "Se {divinita} versione {stile} esiste, {intensita}!",
+  "Onore a {divinita} taglio {stile}: {intensita}!"
+]
+
+}

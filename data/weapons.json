@@ -1,0 +1,795 @@
+{
+  "fantasy": {
+    "distanza": {
+      "weapons": [
+        "Arco Lungo Elfico",
+        "Balestra Nanica Pesante",
+        "Arco Ricurvo Centauro",
+        "Balestra a Ripetizione",
+        "Arco Composito Orchesco",
+        "Fionda Gigante",
+        "Arco Magico Stellare",
+        "Balestra Automatica",
+        "Arco del Cacciatore Ranger",
+        "Balestra Benedetta",
+        "Arco Lunare Argentato",
+        "Balestra Draghesca"
+      ],
+      "characteristics": [
+        "Frecce che non mancano mai il bersaglio",
+        "Gittata infinita sotto la luna piena",
+        "Dardi che attraversano le armature",
+        "Ricarica automatica magica",
+        "Frecce esplosive elementali",
+        "Mira guidata dagli spiriti"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Spada Lunga Benedetta",
+        "Ascia da Guerra Nanica",
+        "Martello da Guerra Titanico",
+        "Lancia Draghesca",
+        "Spada Bastarda Regale",
+        "Mazza Ferrata Sacra",
+        "Alabarda Elfica",
+        "Scimitarra Desertica",
+        "Spadone a Due Mani",
+        "Ascia Bipenne Barbarica",
+        "Mazza Stellare",
+        "Lancia Cavalleresca"
+      ],
+      "characteristics": [
+        "Lama che brucia con fuoco sacro",
+        "Colpi che frantumano le ossa",
+        "Taglio che attraversa qualsiasi armatura",
+        "Peso che aumenta con la rabbia",
+        "Lama che si affilata con il sangue nemico",
+        "Impugnatura che si adatta alla mano"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Bastone del Potere Arcano",
+        "Verga Elementale",
+        "Scettro Regale Magico",
+        "Bacchetta delle Meraviglie",
+        "Orbe di Controllo Mentale",
+        "Cristallo di Canalizzazione",
+        "Amuleto di Potere",
+        "Anello Magico",
+        "Pergamena Esplosiva",
+        "Pozione da Lancio",
+        "Runa Attivabile",
+        "Talismano Offensivo"
+      ],
+      "characteristics": [
+        "Amplifica il potere magico del 200%",
+        "Permette di lanciare incantesimi senza componenti",
+        "Rigenera automaticamente i punti magia",
+        "Converte danni fisici in energia magica",
+        "Lancia incantesimi casuali quando colpisce",
+        "Assorbe la magia nemica per potenziarsi"
+      ]
+    }
+  },
+  "moderno": {
+    "distanza": {
+      "weapons": [
+        "Fucile d'Assalto Tattico",
+        "Pistola Laser Compatta",
+        "Fucile di Precisione",
+        "Pistola Plasma",
+        "Lanciagranate Intelligente",
+        "Fucile Elettromagnetico",
+        "Pistola Automatica",
+        "Fucile Energia",
+        "Arco Compound Moderno",
+        "Balestra Tattica",
+        "Fucile Sniper Avanzato",
+        "Pistola Quantica"
+      ],
+      "characteristics": [
+        "Munizioni a ricerca automatica",
+        "Mirino laser intelligente",
+        "Proiettili perforanti al tungsteno",
+        "Ricarica automatica rapida",
+        "Munizioni esplosive programmabili",
+        "Sistema di puntamento neurale"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Spada Laser Retrattile",
+        "Coltello Vibro",
+        "Bastone Elettrico",
+        "Guanti Energetici",
+        "Katana Monomolecolare",
+        "Martello Pneumatico",
+        "Ascia Energetica",
+        "Lancia Shock",
+        "Pugnale Plasma",
+        "Mazza Elettrificata",
+        "Spada Energetica",
+        "Artigli Cibernetici"
+      ],
+      "characteristics": [
+        "Lama che taglia a livello molecolare",
+        "Scariche elettriche paralizzanti",
+        "Vibrazione ultrasonica devastante",
+        "Energia che cauterizza le ferite",
+        "Lama che si adatta alla resistenza",
+        "Feedback tattile neurale"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Guanto dell'Infinito Tecnologico",
+        "Impianto Neurale Offensivo",
+        "Drone Attacco Personale",
+        "Scudo Energetico",
+        "Proiettore Olografico Offensivo",
+        "Amplificatore Psichico",
+        "Generatore di Campo",
+        "Manipolatore Quantico",
+        "Nanobots Offensivi",
+        "Virus Informatico Fisico",
+        "Disruptor Molecolare",
+        "Cannone Sonico Portatile"
+      ],
+      "characteristics": [
+        "Controlla la tecnologia nemica",
+        "Hackera i sistemi di difesa avversari",
+        "Crea illusioni olografiche letali",
+        "Manipola la realtà quantica",
+        "Disintegra la materia a livello atomico",
+        "Emette frequenze che distruggono i circuiti"
+      ]
+    }
+  },
+  "postapocalittico": {
+    "distanza": {
+      "weapons": [
+        "Balestra da Rottami",
+        "Fionda a Cuscinetti",
+        "Fucile a Canna Segata",
+        "Lanciacoltelli a Molla",
+        "Arco Composito Riciclato"
+      ],
+      "characteristics": [
+        "Munizioni Improvvisate",
+        "Scarsa Precisione",
+        "Rumoroso",
+        "Affidabilità Variabile"
+      ],
+      "style": [
+        "sporco",
+        "nastro isolante",
+        "vernici sbeccate"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Mazza Chiodata",
+        "Machete da Carrozzeria",
+        "Piede di Porco",
+        "Coltello a Lamierino",
+        "Lancia del Rottamaio"
+      ],
+      "characteristics": [
+        "Pesante",
+        "Taglio Grezzo",
+        "Penetrazione Bassa",
+        "Intimidatorio"
+      ],
+      "style": [
+        "ruggine",
+        "spigoli vivi"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Bottiglia del Fulmine",
+        "Guanto Radiante",
+        "Scettro del Geiger"
+      ],
+      "characteristics": [
+        "Instabile",
+        "Area Ristretta",
+        "Sovraccarico"
+      ],
+      "style": [
+        "verde acido",
+        "giallo allarme"
+      ]
+    }
+  },
+  "desertico": {
+    "distanza": {
+      "weapons": [
+        "Arco Tuareg",
+        "Cerbottana delle Dune",
+        "Fucile a Pietra Focaia",
+        "Giavellotto del Sirocco"
+      ],
+      "characteristics": [
+        "Leggero",
+        "Sensibile al Vento",
+        "Portata Media",
+        "Manutenzione Sabbiosa"
+      ],
+      "style": [
+        "cuoio",
+        "intarsi ottone"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Khopesh",
+        "Jambiya",
+        "Lancia Qanat",
+        "Martello del Muraio",
+        "Bastone da Carovana"
+      ],
+      "characteristics": [
+        "Curvo",
+        "Bilanciato",
+        "Letale in Spinta",
+        "Elegante"
+      ],
+      "style": [
+        "damasco",
+        "manici avvolti"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Bastone del Miraggio",
+        "Pugnale del Djinn",
+        "Frusta di Sabbia"
+      ],
+      "characteristics": [
+        "Illusorio",
+        "Essiccante",
+        "Vincolante"
+      ],
+      "style": [
+        "sabbie dorate",
+        "azzurri profondi"
+      ]
+    }
+  },
+  "marino_pirati": {
+    "distanza": {
+      "weapons": [
+        "Archibugio da Borda",
+        "Arpione",
+        "Cannone a Scaglia",
+        "Balista da Ponte"
+      ],
+      "characteristics": [
+        "Rinculo Forte",
+        "Portata Breve",
+        "Bagnabile",
+        "Letale Contro Scafi"
+      ],
+      "style": [
+        "ottone marittimo",
+        "cordami"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Sciabola",
+        "Cutlass Pesante",
+        "Accetta da Borda",
+        "Gancio da Marinaio"
+      ],
+      "characteristics": [
+        "Rapida",
+        "Parabile",
+        "Aggancio",
+        "Ruggine Salmastra"
+      ],
+      "style": [
+        "patine saline",
+        "impugnature in cuoio"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Tridente della Marea",
+        "Lanterna dei Naufraghi",
+        "Conchiglia Urlante"
+      ],
+      "characteristics": [
+        "Acqueo",
+        "Paura",
+        "Nebbia"
+      ],
+      "style": [
+        "verde mare",
+        "blu profondo"
+      ]
+    }
+  },
+  "gotico": {
+    "distanza": {
+      "weapons": [
+        "Balestra Pesante",
+        "Arco Lungo Notturno",
+        "Pistola a Pietra Barocca"
+      ],
+      "characteristics": [
+        "Precisa",
+        "Ricarica Lenta",
+        "Silenziosa",
+        "Pesante"
+      ],
+      "style": [
+        "ornata",
+        "neri e rossi"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Spadone Chiaroscuro",
+        "Mazza Chiodata del Beccamorto",
+        "Pugnale d’Onice",
+        "Martello Benedetto"
+      ],
+      "characteristics": [
+        "Anticanonico",
+        "Tetra",
+        "Devastante",
+        "Consacrata"
+      ],
+      "style": [
+        "gigli",
+        "croci",
+        "incisioni"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Candelabro del Sigillo",
+        "Rosario Frustato",
+        "Campana del Vespro"
+      ],
+      "characteristics": [
+        "Stordente",
+        "Sacro/Empio",
+        "Area Limitata"
+      ],
+      "style": [
+        "luminosità fioca",
+        "nebbia"
+      ]
+    }
+  },
+  "romano": {
+    "distanza": {
+      "weapons": [
+        "Pilum",
+        "Verutum",
+        "Scorpio",
+        "Arcus Romanus"
+      ],
+      "characteristics": [
+        "Penetrazione Scudi",
+        "Monouso",
+        "Addestramento Richiesto"
+      ],
+      "style": [
+        "bronzi",
+        "cuoio"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Gladius",
+        "Spatha",
+        "Pugio",
+        "Hasta"
+      ],
+      "characteristics": [
+        "Compatta",
+        "Versatile",
+        "Robusta"
+      ],
+      "style": [
+        "impugnature avvolte",
+        "fodere ornate"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Vexillum del Fulmine",
+        "Lorica dei Lari",
+        "Scudo dell’Aquila"
+      ],
+      "characteristics": [
+        "Ispirazione",
+        "Protezione di Gruppo",
+        "Rito"
+      ],
+      "style": [
+        "porpora",
+        "oro",
+        "marmo"
+      ]
+    }
+  },
+  "lovecraftiano": {
+    "distanza": {
+      "weapons": [
+        "Lanciamixtura Ictiolite",
+        "Pistola Focheggiante",
+        "Balestra di Corallo"
+      ],
+      "characteristics": [
+        "Bagnato",
+        "Slittamento",
+        "Riflessi Innaturali"
+      ],
+      "style": [
+        "verdi malevoli",
+        "incrostazioni"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Dente di Profondo",
+        "Tridente Scaglioso",
+        "Coltello dei Cultisti"
+      ],
+      "characteristics": [
+        "Viscido",
+        "Taglio Irregolare",
+        "Sussurrante"
+      ],
+      "style": [
+        "alghe",
+        "perle nere"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Idolo Risonante",
+        "Lanterna Abissale",
+        "Libro del Mare Nero"
+      ],
+      "characteristics": [
+        "Follia",
+        "Richiamo",
+        "Nebbie"
+      ],
+      "style": [
+        "blu scuro",
+        "verde muffa"
+      ]
+    }
+  },
+  "far_west": {
+    "distanza": {
+      "weapons": [
+        "Fucile a Leva",
+        "Revolver a Singola Azione",
+        "Doppietta",
+        "Carabina da Cavalleria"
+      ],
+      "characteristics": [
+        "Rinculo",
+        "Estrazione Lenta",
+        "Affidabile"
+      ],
+      "style": [
+        "legno oliato",
+        "acciaio blu"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Coltello Bowie",
+        "Randello da Saloon",
+        "Ascia del Boscaiolo",
+        "Lazo"
+      ],
+      "characteristics": [
+        "Ampio Taglio",
+        "Disarmante",
+        "Controllo",
+        "Versatile"
+      ],
+      "style": [
+        "cuoio",
+        "corde"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Spolvero della Fortuna",
+        "Stella Benedetta",
+        "Harmonica del Vento"
+      ],
+      "characteristics": [
+        "Fortuna",
+        "Placante",
+        "Richiamo Cavalli"
+      ],
+      "style": [
+        "desaturato",
+        "polveroso"
+      ]
+    }
+  },
+  "feudale_giapponese": {
+    "distanza": {
+      "weapons": [
+        "Yumi",
+        "Tanegashima",
+        "Yari da Lancio"
+      ],
+      "characteristics": [
+        "Curvo",
+        "Portata Lunga",
+        "Ricarica Lenta"
+      ],
+      "style": [
+        "legno laccato",
+        "corde di canapa"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Katana",
+        "Naginata",
+        "Tanto",
+        "Kanabo"
+      ],
+      "characteristics": [
+        "Affilatura Eccelsa",
+        "Taglio Pulito",
+        "Onore"
+      ],
+      "style": [
+        "tsuba incise",
+        "foderi laccati"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Maschera dell’Onryō",
+        "Ventaglio del Tifone",
+        "Torii Portatile"
+      ],
+      "characteristics": [
+        "Spiriti",
+        "Vento",
+        "Sigillo"
+      ],
+      "style": [
+        "laccature",
+        "carta di riso"
+      ]
+    }
+  },
+  "sci_fi": {
+    "distanza": {
+      "weapons": [
+        "Carabina a Coil",
+        "Fucile Ionico",
+        "Pistola Smart",
+        "Droni d’Assalto"
+      ],
+      "characteristics": [
+        "Puntamento Assistito",
+        "Surriscaldamento",
+        "Ricarica a Celle"
+      ],
+      "style": [
+        "bianco lucido",
+        "LED freddi"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Lama Monomolecolare",
+        "Tonfa a Campo",
+        "Guanti Aptici"
+      ],
+      "characteristics": [
+        "Silenziosa",
+        "Letale",
+        "Ergonomica"
+      ],
+      "style": [
+        "carbonio",
+        "trame esagonali"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Proiettore di Scudo",
+        "Lancia di Plasma",
+        "Anello Grav"
+      ],
+      "characteristics": [
+        "EMP",
+        "Cono",
+        "Campo"
+      ],
+      "style": [
+        "ghiaccio",
+        "neon"
+      ]
+    }
+  },
+  "urbano_noir": {
+    "distanza": {
+      "weapons": [
+        "Revolver Snub",
+        "Fucile a Pompa Tattico",
+        "Pistola Compatta"
+      ],
+      "characteristics": [
+        "Rinculo",
+        "Portata Breve",
+        "Occultabile"
+      ],
+      "style": [
+        "neon",
+        "pioggia"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Manganello",
+        "Coltello da Tacco",
+        "Catena"
+      ],
+      "characteristics": [
+        "Rapido",
+        "Ancorante",
+        "Intimidatorio"
+      ],
+      "style": [
+        "trench",
+        "guanti"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Tesserino Stregato",
+        "Sigaretta dell’Oblio",
+        "Lampione dell’Ombra"
+      ],
+      "characteristics": [
+        "Sussurro",
+        "Calma",
+        "Nebbia"
+      ],
+      "style": [
+        "fumo",
+        "controluce"
+      ]
+    }
+  },
+  "steampunk": {
+    "distanza": {
+      "weapons": [
+        "Fucile a Vapore",
+        "Moschetto a Bobine",
+        "Arco Pneumatico",
+        "Pistola ad Eterite",
+        "Lanciarotelle"
+      ],
+      "characteristics": [
+        "Sovrapressione",
+        "Ricarica Lenta",
+        "Raffica Irregolare",
+        "Precisione Meccanica",
+        "Surriscaldamento",
+        "Rumoroso"
+      ],
+      "style": [
+        "ottone",
+        "vapore"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Chiave a Pappagallo",
+        "Bastone Telescopico",
+        "Lama a Seghetto",
+        "Martello Rivettatore",
+        "Ascia Dentata"
+      ],
+      "characteristics": [
+        "Pesante",
+        "Smonta Armature",
+        "Taglio Seghettato",
+        "Vibrazione",
+        "Bilanciamento Precario"
+      ],
+      "style": [
+        "manici in cuoio",
+        "ingranaggi"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Canne dei Venti",
+        "Guanto d'Etere",
+        "Bacchetta Barometrica",
+        "Lanterna Eterea"
+      ],
+      "characteristics": [
+        "Scarica Eterica",
+        "Area di Effetto",
+        "Instabile",
+        "Consumo di Carburante"
+      ],
+      "style": [
+        "vetro fumé",
+        "rune tecniche"
+      ]
+    }
+  },
+  "cyberpunk": {
+    "distanza": {
+      "weapons": [
+        "Pistola Smart",
+        "Carabina Bullpup 4mm",
+        "Fucile a Rail",
+        "Microdroni d'Attacco",
+        "Lanciagranate Stun"
+      ],
+      "characteristics": [
+        "Puntamento Assistito",
+        "Recoil Ridotto",
+        "Foratura",
+        "Rumorosità Bassa",
+        "Firma Termica"
+      ],
+      "style": [
+        "polimeri",
+        "cavi"
+      ]
+    },
+    "ravvicinato": {
+      "weapons": [
+        "Lama Monomolecolare",
+        "Manganello Retrattile",
+        "Katana in Carbonio",
+        "Guanti Tattici"
+      ],
+      "characteristics": [
+        "Leggero",
+        "Letale",
+        "Smorzatore",
+        "Ergonomico"
+      ],
+      "style": [
+        "carbonio",
+        "gomme tecniche"
+      ]
+    },
+    "magiche": {
+      "weapons": [
+        "Proiettore a Campo",
+        "Frusta a Plasma",
+        "Emettitore EMP"
+      ],
+      "characteristics": [
+        "Scarica a Cono",
+        "Ricarica Necessaria",
+        "Interferenze"
+      ],
+      "style": [
+        "neon",
+        "scintille"
+      ]
+    }
+  }
+}
