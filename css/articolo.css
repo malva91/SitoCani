@@ -114,6 +114,258 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Article Hero Image */
+.article-hero-image {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.article-hero-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid var(--muted-brass);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.image-caption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--dark-parchment);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Content Images */
+.article-content-image {
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+.article-content-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--muted-brass);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Gallery */
+.article-image-gallery {
+    margin: 3rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--muted-brass);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--dark-parchment);
+    font-style: italic;
+}
+
+/* Info Box */
+.info-box {
+    background: rgba(139, 105, 20, 0.1);
+    border: 2px solid var(--muted-brass);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.info-box-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+}
+
+.info-box h4 {
+    font-family: var(--font-heading);
+    color: var(--muted-brass);
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.info-box p {
+    margin: 0;
+    color: var(--parchment);
+    line-height: 1.6;
+}
+
+/* Comparison Table */
+.comparison-table {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.comparison-table h4 {
+    font-family: var(--font-heading);
+    color: var(--muted-brass);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(45, 45, 45, 0.5);
+    border: 2px solid var(--muted-brass);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--iron-gray);
+}
+
+.comparison-table th {
+    background: rgba(139, 105, 20, 0.2);
+    color: var(--muted-brass);
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+.comparison-table td {
+    color: var(--parchment);
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Purchase Section */
+.purchase-section {
+    background: rgba(13, 13, 13, 0.8);
+    border: 2px solid var(--muted-brass);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 3rem 0;
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+}
+
+.purchase-section h3 {
+    font-family: var(--font-heading);
+    color: var(--muted-brass);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.purchase-section > p {
+    color: var(--parchment);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.purchase-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.purchase-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(45, 45, 45, 0.8);
+    border: 2px solid var(--iron-gray);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--parchment);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.purchase-button:hover {
+    border-color: var(--muted-brass);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 105, 20, 0.3);
+}
+
+.purchase-button.primary {
+    background: var(--muted-brass);
+    color: var(--charcoal-black);
+    border-color: var(--muted-brass);
+}
+
+.purchase-button.primary:hover {
+    background: var(--brass-hover);
+    color: var(--charcoal-black);
+}
+
+.purchase-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.purchase-info {
+    flex: 1;
+}
+
+.purchase-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.purchase-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.purchase-note {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.purchase-note p {
+    font-size: 0.85rem;
+    color: var(--dark-parchment);
+    margin: 0;
+}
+
 .article-intro {
     font-size: 1.25rem;
     line-height: 1.8;
@@ -219,8 +471,30 @@
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--muted-brass);
+    color: var(--charcoal-black);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 2px solid var(--muted-brass);
+}
+
+.cta-button:hover {
+    background: var(--brass-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 105, 20, 0.4);
 }
 
 .cta-button.secondary {
@@ -232,6 +506,30 @@
 .cta-button.secondary:hover {
     background: var(--muted-brass);
     color: var(--charcoal-black);
+}
+
+.cta-button.social {
+    background: transparent;
+    border-color: var(--iron-gray);
+    color: var(--parchment);
+}
+
+.cta-button.social:hover {
+    border-color: var(--muted-brass);
+    color: var(--muted-brass);
+    background: rgba(139, 105, 20, 0.1);
+}
+
+.cta-button.facebook:hover {
+    border-color: #1877f2;
+    color: #1877f2;
+    background: rgba(24, 119, 242, 0.1);
+}
+
+.cta-button.twitter:hover {
+    border-color: #1da1f2;
+    color: #1da1f2;
+    background: rgba(29, 161, 242, 0.1);
 }
 
 /* Related Articles */
@@ -336,9 +634,67 @@
         padding: 1rem;
     }
     
+    .article-hero-image img {
+        max-width: 100%;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+    
+    .purchase-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .purchase-button {
+        padding: 1rem;
+    }
+    
+    .purchase-icon {
+        font-size: 1.5rem;
+    }
+    
+    .purchase-title {
+        font-size: 1rem;
+    }
+    
+    .purchase-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.8rem;
+    }
+    
+    .info-box {
+        padding: 1.2rem;
+    }
+    
+    .info-box h4 {
+        font-size: 1.1rem;
+    }
+    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
     
     .related-grid {
@@ -401,6 +757,67 @@
     .tag {
         font-size: 0.7rem;
         padding: 0.2rem 0.6rem;
+    }
+    
+    .article-hero-image {
+        margin-bottom: 2rem;
+    }
+    
+    .article-content-image {
+        margin: 2rem 0;
+    }
+    
+    .gallery-item img {
+        height: 120px;
+    }
+    
+    .purchase-section {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .purchase-button {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+    
+    .purchase-icon {
+        font-size: 1.3rem;
+    }
+    
+    .purchase-title {
+        font-size: 0.95rem;
+    }
+    
+    .purchase-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .info-box {
+        padding: 1rem;
+    }
+    
+    .info-box-header {
+        gap: 0.5rem;
+    }
+    
+    .info-icon {
+        font-size: 1.2rem;
+    }
+    
+    .info-box h4 {
+        font-size: 1rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
