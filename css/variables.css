@@ -1,0 +1,81 @@
+/* CSS Variables - Optimized Root Configuration */
+/* Version: 2025.02.01 - Simplified and Mobile-First */
+
+:root {
+    /* === COLORS === */
+    --charcoal: #0d0d0d;
+    --brass: #8b6914;
+    --brass-hover: #a67c1a;
+    --iron: #2d2d2d;
+    --iron-light: #4a5058;
+    --parchment: #d4c4a0;
+    --parchment-dark: #b8a082;
+    
+    /* === BACKGROUNDS === */
+    --bg-dark: rgba(26, 15, 10, 0.8);
+    --bg-card: rgba(45, 45, 45, 0.5);
+    --bg-surface: rgba(13, 13, 13, 0.8);
+    
+    /* === TYPOGRAPHY === */
+    --font-main: 'canidiodino', 'Cinzel', serif;
+    --font-body: 'canidiodino', 'Philosopher', sans-serif;
+    
+    /* === FONT SIZES - Mobile First === */
+    --text-xs: 1rem;
+    --text-sm: 1.1rem;
+    --text-base: 1.2rem;
+    --text-lg: 1.2rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.8rem;
+    --text-3xl: 2.2rem;
+    
+    /* === SPACING - Mobile First === */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.8rem;
+    --spacing: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* === LAYOUT === */
+    --nav-height: 60px;
+    --max-width: 1200px;
+    --content-width: 800px;
+    --border-radius: 8px;
+    
+    /* === EFFECTS === */
+    --transition: 0.3s ease;
+    --shadow: 0 8px 25px rgba(139, 105, 20, 0.3);
+    
+    /* === GRID === */
+    --grid-gap: var(--spacing);
+    --card-min: 250px;
+    --card-max: 350px;
+}
+
+/* === DESKTOP OVERRIDES === */
+@media (min-width: 769px) {
+    :root {
+        --text-base: 1.1rem;
+        --text-lg: 1.25rem;
+        --text-xl: 1.5rem;
+        --text-2xl: 2rem;
+        --text-3xl: 2.5rem;
+        
+        --spacing: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-2xl: 4rem;
+        
+        --nav-height: 70px;
+        --grid-gap: 2rem;
+    }
+}
+
+/* === LARGE DESKTOP === */
+@media (min-width: 1200px) {
+    :root {
+        --text-3xl: 3rem;
+        --spacing-2xl: 5rem;
+    }
+}

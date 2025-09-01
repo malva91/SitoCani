@@ -546,6 +546,11 @@
   animation: fadeIn 0.2s ease-out;
 }
 
+#progressInfo{
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

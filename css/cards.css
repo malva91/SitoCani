@@ -1,0 +1,112 @@
+/* Card Components - Unified and Mobile First */
+/* Version: 2025.02.01 - Simplified */
+
+/* === BASE CARD === */
+.card-base,
+.tool-card,
+.feature-card,
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    border: 2px solid var(--brass);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    text-align: center;
+    min-width: var(--card-min);
+    max-width: var(--card-max);
+}
+
+.card-base:hover,
+.tool-card:hover,
+.feature-card:hover,
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.card-base h3,
+.tool-card h3,
+.feature-card h3,
+.achievement-card h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--text-lg);
+}
+
+.card-base p,
+.tool-card p,
+.feature-card p,
+.achievement-card p {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* === ICONS === */
+.tool-icon,
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* === ACHIEVEMENT CARDS === */
+.achievement-card.featured {
+    flex: 1;
+    min-width: var(--card-min);
+    max-width: var(--card-max);
+}
+
+.achievements-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min), 1fr));
+    gap: var(--spacing);
+    margin-bottom: var(--spacing-lg);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min), 1fr));
+    gap: var(--spacing);
+    margin-top: var(--spacing-lg);
+}
+
+/* === TOGGLE BUTTON === */
+.toggle-achievements {
+    display: block;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing) var(--spacing-lg);
+    background: transparent;
+    color: var(--brass);
+    border: 2px solid var(--brass);
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: var(--text-base);
+}
+
+.toggle-achievements:hover {
+    background: var(--brass);
+    color: var(--charcoal);
+    transform: translateY(-2px);
+}
+
+/* === DESKTOP IMPROVEMENTS === */
+@media (min-width: 769px) {
+    .tool-icon,
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .achievements-preview {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}

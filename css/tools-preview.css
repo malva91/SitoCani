@@ -59,13 +59,13 @@
     .tools-preview {
         gap: 1.2rem;
     }
-    
+
     .twitch-features {
         flex-direction: column;
         align-items: center;
         gap: 1.2rem;
     }
-    
+
     .feature-card {
         width: 100%;
         max-width: 400px;
@@ -78,26 +78,29 @@
         align-items: center;
         gap: 1rem;
     }
-    
+
     .tool-card {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .twitch-features {
         gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    
+
     .feature-card {
         max-width: 350px;
     }
-    
+
     .patreon-features {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-    
+
     .patreon-text p {
         font-size: var(--font-size-base);
         margin-bottom: 1rem;
@@ -107,8 +110,11 @@
 @media (max-width: 480px) {
     .tools-preview {
         gap: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    
+
     .patreon-text p {
         font-size: var(--font-size-sm);
         line-height: 1.6;

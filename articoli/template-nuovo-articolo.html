@@ -1,300 +1,206 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[TITOLO ARTICOLO] | Blog Cani di Odino</title>
-    <meta name="description" content="[DESCRIZIONE ARTICOLO]">
-    <meta name="keywords" content="[KEYWORDS ARTICOLO]">
-    <meta name="author" content="[AUTORE]">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="[TITOLO ARTICOLO] | Cani di Odino">
-    <meta property="og:description" content="[DESCRIZIONE ARTICOLO]">
-    <meta property="og:url" content="https://www.canidiodino.it/articoli/[SLUG].html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.canidiodino.it/img/logo.png">
-    
-    <link rel="canonical" href="https://www.canidiodino.it/articoli/[SLUG].html">
-    <link rel="icon" type="image/png" href="../img/logo.png">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=2025.07">
-    <link rel="stylesheet" href="../css/articolo.css?v=2025.07">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[TITOLO ARTICOLO] | Blog Cani di Odino</title>
+  <meta name="description" content="[DESCRIZIONE ARTICOLO — 150/160 caratteri]">
+  <meta name="keywords" content="[KEYWORDS ARTICOLO]">
+  <meta name="author" content="[AUTORE]">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="[TITOLO ARTICOLO] | Cani di Odino">
+  <meta property="og:description" content="[DESCRIZIONE ARTICOLO]">
+  <meta property="og:url" content="https://www.canidiodino.it/articoli/[SLUG].html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="[URL IMMAGINE OG]">
+
+  <link rel="canonical" href="https://www.canidiodino.it/articoli/[SLUG].html">
+  <link rel="icon" type="image/png" href="../img/logo.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css?v=2025.15">
+  <link rel="stylesheet" href="../css/articolo.css?v=2025.15">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[TITOLO ARTICOLO]",
+    "description": "[DESCRIZIONE ARTICOLO]",
+    "image": ["[URL IMMAGINE OG]"],
+    "author": {"@type":"Person","name":"[AUTORE]"},
+    "publisher": {"@type":"Organization","name":"Cani di Odino","logo":{"@type":"ImageObject","url":"https://www.canidiodino.it/img/logo.png"}},
+    "datePublished": "[DATA ISO: 2025-09-01]",
+    "dateModified": "[DATA ISO]",
+    "articleSection": "[CATEGORIA NOME]",
+    "keywords": "[KEYWORDS ARTICOLO]"
+  }
+  </script>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="../img/logo.png" alt="Cani di Odino Logo">
-                <span>Cani di Odino</span>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="../index.html#home" class="nav-link">Home</a>
-                <a href="../index.html#compagnia" class="nav-link">Compagnia</a>
-                <a href="../index.html#enigmi" class="nav-link">Enigmi</a>
-                <a href="../index.html#forgia" class="nav-link">Forgia</a>
-                <a href="../index.html#imprese" class="nav-link">Imprese</a>
-                <a href="../index.html#twitch" class="nav-link">Twitch</a>
-                <a href="../index.html#cani" class="nav-link">Cani</a>
-                <a href="../galleria.html" class="nav-link">Galleria</a>
-                <a href="../tools.html" class="nav-link">Strumenti</a>
-                <a href="../blog.html" class="nav-link">Blog</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="../img/logo.png" alt="Cani di Odino Logo">
+        <span>Cani di Odino</span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#compagnia" class="nav-link">Compagnia</a>
+        <a href="../index.html#enigmi" class="nav-link">Enigmi</a>
+        <a href="../index.html#forgia" class="nav-link">Forgia</a>
+        <a href="../index.html#imprese" class="nav-link">Imprese</a>
+        <a href="../index.html#twitch" class="nav-link">Twitch</a>
+        <a href="../index.html#cani" class="nav-link">Cani</a>
+        <a href="../galleria.html" class="nav-link">Galleria</a>
+        <a href="../tools.html" class="nav-link">Strumenti</a>
+        <a href="../blog.html" class="nav-link">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">›</span>
+        <span>[CATEGORIA NOME]</span>
+      </nav>
+
+      <h1 class="article-title">[TITOLO ARTICOLO]</h1>
+
+      <div class="article-meta" aria-label="Metadati articolo">
+        <div class="meta-item"><span class="meta-icon">📅</span><span>[DATA PUBBLICAZIONE]</span></div>
+        <div class="meta-item"><span class="meta-icon">✍️</span><span>by [AUTORE]</span></div>
+        <div class="meta-item"><span class="meta-icon">🏷️</span><span>[CATEGORIA NOME]</span></div>
+        <div class="meta-item"><span class="meta-icon">⏱️</span><span>[TEMPO LETTURA] min di lettura</span></div>
+      </div>
+
+      <!-- TAGS -->
+      <div class="article-tags">[INSERIRE TAGS QUI]</div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <main class="article-main" role="main">
+    <div class="container">
+      <article class="article-content">
+
+        <!-- Intro -->
+        <div class="article-intro">[ABSTRACT / INTRO — NON inserire HTML, testo semplice]</div>
+
+        <!-- Hero Image -->
+        <figure class="article-hero-image">
+          <img src="[IMMAGINE PRINCIPALE]" alt="[ALT IMMAGINE]" loading="lazy" width="1200" height="675">
+          <figcaption class="image-caption">[DIDASCALIA IMMAGINE PRINCIPALE]</figcaption>
+        </figure>
+
+        <!-- Info Box -->
+        <section class="info-box" aria-label="Info rapida (opzionale)">
+          <div class="info-box-header">
+            <div class="info-icon" aria-hidden="true">ℹ️</div>
+            <h4>In breve</h4>
+          </div>
+          <p><strong>Autore:</strong> [AUTORE CONTENUTO] · <strong>Editore:</strong> [NOME EDITORE] · <strong>Anno:</strong> [ANNO] · <strong>Formato:</strong> [LIBRO / COFANETTO / PDF]</p>
+        </section>
+
+        <!-- Capitolo 1 -->
+        <section class="article-section">
+          <h2>[TITOLO CAPITOLO 1 — redazionale]</h2>
+          <pre>[TESTO DAL DOCUMENTO — PARTE 1]</pre>
+        </section>
+
+        <!-- Capitolo 2 -->
+        <section class="article-section">
+          <h2>[TITOLO CAPITOLO 2 — redazionale]</h2>
+          <pre>[TESTO DAL DOCUMENTO — PARTE 2]</pre>
+        </section>
+
+        <!-- Capitolo 3 -->
+        <section class="article-section">
+          <h2>[TITOLO CAPITOLO 3 — redazionale]</h2>
+          <pre>[TESTO DAL DOCUMENTO — PARTE 3]</pre>
+        </section>
+
+        <!-- Galleria -->
+        <section class="article-image-gallery" aria-label="Galleria immagini (opzionale)">
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img src="[IMG_1]" alt="[ALT IMG 1]" loading="lazy" width="600" height="400">
+              <figcaption class="gallery-caption">[DIDASCALIA 1]</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Citazione -->
+        <blockquote class="article-quote">
+          “[CITAZIONE TESTUALE BREVE DAL DOCUMENTO]”
+        </blockquote>
+
+        <!-- Acquisti -->
+        <div class="purchase-section">
+          <h3>🛒 Dove Acquistare</h3>
+          <p>Se vuoi aggiungere <em>[NOME PRODOTTO]</em> alla tua collezione, puoi trovarlo qui:</p>
+          <div class="purchase-links">
+            <a href="[LINK EDITORE]" class="purchase-button primary" target="_blank" rel="noopener" aria-label="Acquista da [NOME EDITORE] (apre in nuova scheda)">
+              <span class="purchase-icon" aria-hidden="true">🏪</span>
+              <div class="purchase-info">
+                <div class="purchase-title">Editore Ufficiale</div>
+                <div class="purchase-subtitle">[NOME EDITORE]</div>
+              </div>
+            </a>
+          </div>
         </div>
-    </nav>
 
-    <!-- Article Header -->
-    <header class="article-header">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../blog.html">Blog</a>
-                <span>›</span>
-                <span>[CATEGORIA NOME]</span>
-            </div>
-            <h1 class="article-title">[TITOLO ARTICOLO]</h1>
-            <div class="article-meta">
-                <div class="meta-item">
-                    <span class="meta-icon">📅</span>
-                    <span>[DATA PUBBLICAZIONE]</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-icon">✍️</span>
-                    <span>by [AUTORE]</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-icon">🏷️</span>
-                    <span>[CATEGORIA NOME]</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-icon">⏱️</span>
-                    <span>[TEMPO LETTURA] min di lettura</span>
-                </div>
-            </div>
-            <div class="article-tags">
-                <!-- Esempio: <span class="tag">Master</span><span class="tag">Principianti</span> -->
-                [INSERIRE TAGS QUI]
-            </div>
+        <!-- CTA -->
+        <div class="article-cta">
+          <h3>Ti è piaciuto questo articolo?</h3>
+          <p>Seguici sui social per non perdere i prossimi contenuti e condividi questo articolo con la tua community!</p>
+          <div class="cta-buttons">
+            <a href="../blog.html" class="cta-button secondary">Altri Articoli</a>
+          </div>
         </div>
-    </header>
+      </article>
+  </main>
 
-    <!-- Article Content -->
-    <main class="article-main">
-        <div class="container">
-            <article class="article-content">
-                <!-- Immagine principale (opzionale) -->
-                <div class="article-hero-image">
-                    <img src="[IMMAGINE PRINCIPALE]" alt="[ALT IMMAGINE]" loading="lazy">
-                    <div class="image-caption">[DIDASCALIA IMMAGINE PRINCIPALE]</div>
-                </div>
-
-                <!-- Introduzione -->
-                <div class="article-intro">
-                    <p>[INTRODUZIONE ARTICOLO - Paragrafo di apertura che cattura l'attenzione del lettore e introduce l'argomento]</p>
-                </div>
-
-                <!-- Contenuto principale -->
-                <div class="article-body">
-                    <!-- INIZIO CONTENUTO ARTICOLO -->
-                    
-                    <h2>Primo Paragrafo Principale</h2>
-                    <p>[Contenuto del primo paragrafo principale. Sviluppa il primo punto chiave dell'articolo con esempi pratici e consigli utili.]</p>
-                    
-                    <!-- Immagine nel contenuto -->
-                    <div class="article-content-image">
-                        <img src="[IMMAGINE CONTENUTO 1]" alt="[ALT IMMAGINE 1]" loading="lazy">
-                        <div class="image-caption">[DIDASCALIA IMMAGINE 1]</div>
-                    </div>
-                    
-                    <h3>Sottosezione del Primo Paragrafo</h3>
-                    <p>[Approfondimento del primo punto con dettagli specifici.]</p>
-                    
-                    <ul>
-                        <li>[Punto elenco 1 - consiglio pratico]</li>
-                        <li>[Punto elenco 2 - esempio concreto]</li>
-                        <li>[Punto elenco 3 - suggerimento avanzato]</li>
-                    </ul>
-                    
-                    <blockquote>
-                        <p>"[Citazione importante, consiglio chiave o spunto di riflessione che riassume il concetto principale]"</p>
-                    </blockquote>
-                    
-                    <h2>Secondo Paragrafo Principale</h2>
-                    <p>[Contenuto del secondo paragrafo. Sviluppa il secondo punto chiave con esempi di gioco, riferimenti a manuali o regole specifiche.]</p>
-                    
-                    <!-- Galleria di immagini -->
-                    <div class="article-image-gallery">
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="[IMMAGINE GALLERIA 1]" alt="[ALT GALLERIA 1]" loading="lazy">
-                                <div class="gallery-caption">[DIDASCALIA 1]</div>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="[IMMAGINE GALLERIA 2]" alt="[ALT GALLERIA 2]" loading="lazy">
-                                <div class="gallery-caption">[DIDASCALIA 2]</div>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="[IMMAGINE GALLERIA 3]" alt="[ALT GALLERIA 3]" loading="lazy">
-                                <div class="gallery-caption">[DIDASCALIA 3]</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h3>Esempi Pratici</h3>
-                    <p>[Esempi concreti di applicazione dei concetti discussi, situazioni di gioco reali.]</p>
-                    
-                    <ol>
-                        <li>[Step 1 - primo passo pratico]</li>
-                        <li>[Step 2 - secondo passo con esempio]</li>
-                        <li>[Step 3 - terzo passo con risultato atteso]</li>
-                    </ol>
-                    
-                    <!-- Box informativo -->
-                    <div class="info-box">
-                        <div class="info-box-header">
-                            <span class="info-icon">💡</span>
-                            <h4>Consiglio del Master</h4>
-                        </div>
-                        <p>[Consiglio pratico o informazione importante evidenziata in un box speciale]</p>
-                    </div>
-                    
-                    <h2>Terzo Paragrafo Principale</h2>
-                    <p>[Contenuto del terzo paragrafo. Approfondimenti, varianti, consigli avanzati o collegamenti ad altri argomenti.]</p>
-                    
-                    <!-- Immagine nel contenuto -->
-                    <div class="article-content-image">
-                        <img src="[IMMAGINE CONTENUTO 2]" alt="[ALT IMMAGINE 2]" loading="lazy">
-                        <div class="image-caption">[DIDASCALIA IMMAGINE 2]</div>
-                    </div>
-                    
-                    <h3>Consigli Avanzati</h3>
-                    <p>[Suggerimenti per chi vuole approfondire l'argomento o applicare tecniche più sofisticate.]</p>
-                    
-                    <!-- Tabella comparativa -->
-                    <div class="comparison-table">
-                        <h4>Tabella Comparativa</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Aspetto</th>
-                                    <th>Opzione A</th>
-                                    <th>Opzione B</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>[Criterio 1]</td>
-                                    <td>[Valore A1]</td>
-                                    <td>[Valore B1]</td>
-                                </tr>
-                                <tr>
-                                    <td>[Criterio 2]</td>
-                                    <td>[Valore A2]</td>
-                                    <td>[Valore B2]</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <h2>Conclusioni</h2>
-                    <p>[Riassunto dei punti chiave dell'articolo, invito all'azione, suggerimenti per il prossimo passo o collegamenti a risorse utili.]</p>
-                    
-                    <!-- FINE CONTENUTO ARTICOLO -->
-                </div>
-
-                <!-- Sezione Acquisti -->
-                <div class="purchase-section">
-                    <h3>🛒 Dove Acquistare</h3>
-                    <p>Se vuoi aggiungere [NOME PRODOTTO] alla tua collezione, puoi trovarlo qui:</p>
-                    <div class="purchase-links">
-                        <a href="[LINK EDITORE]" class="purchase-button primary" target="_blank" rel="noopener">
-                            <span class="purchase-icon">🏪</span>
-                            <div class="purchase-info">
-                                <div class="purchase-title">Editore Ufficiale</div>
-                                <div class="purchase-subtitle">[NOME EDITORE]</div>
-                            </div>
-                        </a>
-                        <a href="[LINK AMAZON]" class="purchase-button" target="_blank" rel="noopener">
-                            <span class="purchase-icon">📦</span>
-                            <div class="purchase-info">
-                                <div class="purchase-title">Amazon</div>
-                                <div class="purchase-subtitle">Spedizione veloce</div>
-                            </div>
-                        </a>
-                        <a href="[LINK NEGOZIO]" class="purchase-button" target="_blank" rel="noopener">
-                            <span class="purchase-icon">🏬</span>
-                            <div class="purchase-info">
-                                <div class="purchase-title">Negozi Specializzati</div>
-                                <div class="purchase-subtitle">Supporta i negozi locali</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="purchase-note">
-                        <p><em>I link potrebbero essere affiliati. Acquistando tramite questi link supporti il nostro lavoro senza costi aggiuntivi.</em></p>
-                    </div>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="article-cta">
-                    <h3>Ti è piaciuto questo articolo?</h3>
-                    <p>Seguici sui social per non perdere i prossimi contenuti e condividi questo articolo con la tua community!</p>
-                    <div class="cta-buttons">
-                        <a href="../blog.html" class="cta-button secondary">Altri Articoli</a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=[URL_ARTICOLO]" class="cta-button social facebook" target="_blank" rel="noopener">
-                            <i class="fab fa-facebook-f"></i> Condividi
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=[URL_ARTICOLO]&text=[TITOLO_ARTICOLO]" class="cta-button social twitter" target="_blank" rel="noopener">
-                            <i class="fab fa-twitter"></i> Tweet
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Related Articles -->
-            <aside class="related-articles">
-                <h3>Potrebbero interessarti</h3>
-                <div class="related-grid" id="related-articles">
-                    <!-- Gli articoli correlati verranno caricati automaticamente -->
-                </div>
-            </aside>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="../img/logo.png" alt="Logo Cani di Odino">
+          <span>Cani di Odino</span>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../img/logo.png" alt="Logo Cani di Odino">
-                    <span>Cani di Odino</span>
-                </div>
-                <div class="footer-info">
-                    <p>Email: info@canidiodino.it</p>
-                    <div class="footer-social">
-                        <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
-                        <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Cani di Odino. Tutti i diritti riservati.</p>
-                <p class="footer-tagline">"Una taverna dove leggende nascono e dadi rotolano eternamente"</p>
-            </div>
+        <div class="footer-info">
+          <p>Email: info@canidiodino.it</p>
+          <div class="footer-social">
+            <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cani di Odino. Tutti i diritti riservati.</p>
+        <p class="footer-tagline">"Una taverna dove leggende nascono e dadi rotolano eternamente"</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="../js/main.js?v=2025.07" defer></script>
-    <script src="../js/articolo.js?v=2025.07" defer></script>
+  <!-- Scripts -->
+  <script src="../js/main.js?v=2025.15" defer></script>
+  <script src="../js/articolo.js?v=2025.15" defer></script>
 </body>
 </html>

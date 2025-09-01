@@ -176,12 +176,38 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            background-image: url('./img/SfondoPC.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 13, 13, 0.6);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
         }
 
         .runes {
             font-family: 'Segoe UI Symbol', 'Arial Unicode MS', monospace;
             font-size: 1.5rem;
             letter-spacing: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                background-image: url('./img/SfondoSmartphone.webp');
+            }
         }
     </style>
 
@@ -191,10 +217,10 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=2025.07">
-    <link rel="stylesheet" href="css/cani.css?v=2025.07">
-    <link rel="stylesheet" href="css/achievements.css?v=2025.07">
-    <link rel="stylesheet" href="css/tools-preview.css?v=2025.07">
+    <link rel="stylesheet" href="css/style.css?v=2025.15">
+    <link rel="stylesheet" href="css/cani.css?v=2025.15">
+    <link rel="stylesheet" href="css/achievements.css?v=2025.15">
+    <link rel="stylesheet" href="css/tools-preview.css?v=2025.15">
 
     <!-- Font Awesome loaded asynchronously -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -707,7 +733,7 @@
             }, 3000);
         }
     </script>
-    <script src="js/main.js?v=2025.07" defer></script>
+    <script src="js/main.js?v=2025.15" defer></script>
 </body>
 
 </html>
