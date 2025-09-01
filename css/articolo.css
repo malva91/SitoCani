@@ -1,12 +1,35 @@
 /* Article Styles - Mobile First */
 /* Version: 2025.02.01 - Optimized */
+/* --- Separatore con ornamento centrale (rombo) ---
+   Usa: <div class="chapter-sep"></div>
+*/
 
-section {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #aaa;
-  border-radius: 8px;
-  background: #f9f9f9;
+.chapter-sep {
+  position: relative;
+  display: block;
+  height: 2px;
+  margin: 3rem auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--brass) 15%,
+    var(--brass) 85%,
+    transparent 100%
+  );
+  border-radius: 999px;
+}
+
+.chapter-sep::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--brass);
+  border-radius: 2px;
+  outline: 4px solid var(--parchment-dark);
 }
 
 .article-header {
