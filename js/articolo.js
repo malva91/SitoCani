@@ -1,5 +1,5 @@
 // Article page functionality
-// Version: 2025.02.01
+// Version: 2025.02.01 - Simplified with JSON date handling
 
 class ArticleManager {
     constructor() {
@@ -35,7 +35,8 @@ class ArticleManager {
             const relatedArticles = data.articles
                 .filter(article => 
                     article.category === currentArticle.category && 
-                    article.slug !== this.currentArticleSlug
+                    article.slug !== this.currentArticleSlug &&
+                    this.isArticleUnlocked(article)
                 )
                 .slice(0, 3);
 
@@ -44,7 +45,8 @@ class ArticleManager {
                 const additionalArticles = data.articles
                     .filter(article => 
                         article.category !== currentArticle.category && 
-                        article.slug !== this.currentArticleSlug
+                        article.slug !== this.currentArticleSlug &&
+                        this.isArticleUnlocked(article)
                     )
                     .slice(0, 3 - relatedArticles.length);
                 
@@ -58,6 +60,38 @@ class ArticleManager {
         }
     }
 
+    /**
+     * Check if article is unlocked based on JSON date
+     */
+    isArticleUnlocked(article) {
+        if (!article.date) return true;
+        
+        try {
+            const articleDate = new Date(article.date);
+            return new Date() >= articleDate;
+        } catch {
+            return true;
+        }
+    }
+
+    /**
+     * Format date using JSON date
+     */
+    formatDate(dateString) {
+        if (!dateString) return '';
+        
+        try {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('it-IT', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        } catch {
+            return dateString;
+        }
+    }
+
     renderRelatedArticles(articles) {
         const container = document.getElementById('related-articles');
         if (!container || articles.length === 0) return;
@@ -68,7 +102,7 @@ class ArticleManager {
                 <p>${article.excerpt}</p>
                 <div class="related-meta">
                     <span class="related-category">${article.categoryName}</span>
-                    <span class="related-date">${article.dateHuman}</span>
+                    <span class="related-date">${this.formatDate(article.date)}</span>
                 </div>
             </a>
         `).join('');

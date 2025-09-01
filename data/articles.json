@@ -28,11 +28,7 @@
       "date": "2025-02-15T00:00:00",
       "image": "./img/logo.png",
       "imageAlt": "Logo Cani di Odino",
-      "tags": ["Coming Soon", "Blog", "Novità"],
-      "seo": {
-        "metaDescription": "Il blog dei Cani di Odino sta per iniziare! Presto guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi.",
-        "keywords": ["blog GDR", "guide master", "recensioni giochi di ruolo", "fiere ludiche", "coming soon"]
-      }
+      "tags": ["Coming Soon", "Blog", "Novità"]
     },
     {
       "id": 2,
@@ -41,15 +37,11 @@
       "excerpt": "Un GdR investigativo dove le Signore del Giallo, tra tè, biscotti e misteri, indagano sui segreti di un villaggio del New England. Un gioco unico che mescola comicità e tensione.",
       "category": "recensioni",
       "categoryName": "Recensioni GDR",
-      "author": "Grim e i Cani di Odino",
+      "author": "Grim",
       "date": "2025-08-29T00:00:00",
       "image": "./img/brindlewood.jpg",
       "imageAlt": "I Misteri di Brindlewood Bay - Gioco di Ruolo",
-      "tags": ["GdR", "Investigativo", "Recensione", "Brindlewood Bay"],
-      "seo": {
-        "metaDescription": "Scopri 'I Misteri di Brindlewood Bay', il gioco di ruolo investigativo pubblicato in Italia dalla Compagnia delle 12 gemme. Tra Signore del Giallo, misteri e culti segreti.",
-        "keywords": ["Brindlewood Bay", "gioco di ruolo", "GDR investigativo", "Compagnia delle 12 gemme", "recensione GdR"]
-      }
+      "tags": ["GdR", "Investigativo", "Recensione", "Brindlewood Bay"]
     },
     {
       "id": 3,
@@ -58,15 +50,11 @@
       "excerpt": "Un libro game immersivo e vincitore del Libro Game Magnifico 2025. Vivi l'avventura di Drystan Dragonhart nella Baronia di Hellwinter tra disperazione e speranza.",
       "category": "libri-game",
       "categoryName": "Libri Game",
-      "author": "Grim e i Cani di Odino",
+      "author": "Grim",
       "date": "2025-08-30T00:00:00",
       "image": "./img/hellwinter.jpg",
       "imageAlt": "Hellwinter: La Porta della Luna - Libro Game",
-      "tags": ["Libro Game", "Hellwinter", "Recensione", "Fantasy"],
-      "seo": {
-        "metaDescription": "Recensione di Hellwinter: La Porta della Luna, libro game di Andrea Tupac Mollica edito da Aristea. Un'esperienza immersiva tra avventura, emozioni e gioco di ruolo.",
-        "keywords": ["Hellwinter", "La Porta della Luna", "libro game", "Andrea Tupac Mollica", "Aristea", "recensione libro game"]
-      }
+      "tags": ["Libro Game", "Hellwinter", "Recensione", "Fantasy"]
     }
   ]
 }

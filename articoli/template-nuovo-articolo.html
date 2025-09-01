@@ -81,7 +81,7 @@
       <h1 class="article-title">[TITOLO ARTICOLO]</h1>
 
       <div class="article-meta" aria-label="Metadati articolo">
-        <div class="meta-item"><span class="meta-icon">📅</span><span>[DATA AUTOMATICA DAL JSON]</span></div>
+        <div class="meta-item"><span class="meta-icon">📅</span><span id="article-date">[DATA AUTOMATICA DAL JSON]</span></div>
         <div class="meta-item"><span class="meta-icon">✍️</span><span>by [AUTORE]</span></div>
         <div class="meta-item"><span class="meta-icon">🏷️</span><span>[CATEGORIA NOME]</span></div>
       </div>
@@ -206,5 +206,32 @@
   <!-- Scripts -->
   <script src="../js/main.js?v=2025.15" defer></script>
   <script src="../js/articolo.js?v=2025.15" defer></script>
+  
+  <!-- Auto-populate date from JSON -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('../data/articles.json');
+        const data = await response.json();
+        const slug = '[SLUG]'; // Replace with actual slug
+        const article = data.articles.find(a => a.slug === slug);
+        
+        if (article && article.date) {
+          const formattedDate = new Date(article.date).toLocaleDateString('it-IT', {
+            day: 'numeric',
+            month: 'long', 
+            year: 'numeric'
+          });
+          
+          const dateElement = document.getElementById('article-date');
+          if (dateElement) {
+            dateElement.textContent = formattedDate;
+          }
+        }
+      } catch (error) {
+        console.error('Error loading article date:', error);
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 // Blog functionality for Cani di Odino website
-// Version: 2025.02.01 - Simplified system with unified date handling
+// Version: 2025.02.01 - Simplified system with JSON date handling
 
 /**
- * Blog manager class - Simplified
+ * Blog manager class - Optimized for easy article management
  */
 class BlogManager {
     constructor() {
@@ -31,7 +31,7 @@ class BlogManager {
     }
 
     /**
-     * Check if article is unlocked based on date
+     * Check if article is unlocked based on date from JSON
      */
     isArticleUnlocked(article) {
         if (!article.date) return true;
@@ -45,7 +45,7 @@ class BlogManager {
     }
 
     /**
-     * Format date for display
+     * Format date for display using JSON date
      */
     formatDate(dateString) {
         if (!dateString) return '';
@@ -97,7 +97,7 @@ class BlogManager {
             this.articlesData = data.articles;
             this.categoriesData = data.categories;
             
-            // Filter unlocked articles and sort by date
+            // Filter unlocked articles and sort by date (newest first)
             this.articlesData = this.articlesData
                 .filter(article => {
                     const isValid = article.id && article.title && article.slug && article.category && article.excerpt;
@@ -145,7 +145,6 @@ class BlogManager {
      * Show loading state
      */
     showLoading() {
-        const featuredGrid = document.getElementById('featured-grid');
         const blogGrid = document.getElementById('blog-grid');
         
         const loadingHTML = `
@@ -154,58 +153,17 @@ class BlogManager {
             </div>
         `;
         
-        if (featuredGrid) featuredGrid.innerHTML = loadingHTML;
         if (blogGrid) blogGrid.innerHTML = loadingHTML;
     }
 
     /**
-     * Render featured articles
+     * Render featured articles (if any have featured: true)
      */
     renderFeaturedArticles() {
-        const featuredGrid = document.getElementById('featured-grid');
+        // Featured articles are handled by checking if any article has featured: true
+        // For now, we'll skip featured section since it's not in the simplified structure
         const featuredSection = document.getElementById('featured-section');
-        
-        if (!featuredGrid || !this.articlesData) return;
-
-        const featuredArticles = this.articlesData.filter(article => 
-            article.featured === true && this.isArticleUnlocked(article)
-        );
-        
-        if (featuredArticles.length === 0) {
-            if (featuredSection) featuredSection.style.display = 'none';
-            return;
-        }
-
-        if (featuredSection) featuredSection.style.display = 'block';
-        
-        const html = featuredArticles.map(article => {
-            const categoryName = this.getCategoryName(article.category);
-            const formattedDate = this.formatDate(article.date);
-            
-            return `
-                <article class="featured-card" data-category="${article.category}">
-                    <img src="${article.image || './img/logo.png'}" 
-                         alt="${article.imageAlt || article.title}" 
-                         class="featured-image" 
-                         loading="lazy"
-                         onerror="this.src='./img/logo.png'">
-                    <div class="featured-content">
-                        <div class="featured-meta">
-                            <span class="featured-category">${categoryName}</span>
-                            <span class="featured-date">${formattedDate}</span>
-                        </div>
-                        <h3 class="featured-title">${article.title}</h3>
-                        <p class="featured-excerpt">${article.excerpt}</p>
-                        <a href="articoli/${article.slug}.html" class="featured-link">
-                            Leggi Articolo
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-            `;
-        }).join('');
-
-        featuredGrid.innerHTML = html;
+        if (featuredSection) featuredSection.style.display = 'none';
     }
 
     /**
@@ -243,7 +201,6 @@ class BlogManager {
         }
         
         const html = this.displayedArticles.map(article => {
-            const categoryName = this.getCategoryName(article.category);
             const formattedDate = this.formatDate(article.date);
             const tagsHTML = (article.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('');
             
@@ -254,7 +211,7 @@ class BlogManager {
                              alt="${article.imageAlt || article.title}" 
                              loading="lazy"
                              onerror="this.src='./img/logo.png'">
-                        <div class="card-category">${categoryName}</div>
+                        <div class="card-category">${article.categoryName}</div>
                     </div>
                     <div class="card-content">
                         <div class="article-meta">
@@ -281,21 +238,10 @@ class BlogManager {
     }
 
     /**
-     * Get category name
-     */
-    getCategoryName(categoryKey) {
-        if (this.categoriesData && this.categoriesData[categoryKey]) {
-            return this.categoriesData[categoryKey].name;
-        }
-        return 'Articolo';
-    }
-
-    /**
      * Show error message
      */
     showError(message) {
         const blogGrid = document.getElementById('blog-grid');
-        const featuredGrid = document.getElementById('featured-grid');
         
         const errorHtml = `
             <div class="error-message">
@@ -305,7 +251,6 @@ class BlogManager {
         `;
         
         if (blogGrid) blogGrid.innerHTML = errorHtml;
-        if (featuredGrid) featuredGrid.innerHTML = '';
     }
 
     /**
@@ -393,11 +338,11 @@ class BlogManager {
     }
 
     /**
-     * Add new article (simplified)
+     * Add new article - simplified for easy management
      */
     addArticle(articleData) {
         // Validate required fields
-        const required = ['title', 'slug', 'excerpt', 'category', 'author', 'date'];
+        const required = ['title', 'slug', 'excerpt', 'category', 'categoryName', 'author', 'date'];
         for (const field of required) {
             if (!articleData[field]) {
                 console.error(`Campo obbligatorio mancante: ${field}`);
@@ -405,32 +350,20 @@ class BlogManager {
             }
         }
 
-        // Set defaults
+        // Set defaults for optional fields
         const newArticle = {
             id: Date.now(), // Auto-generate ID
-            featured: false,
-            published: true,
             image: './img/logo.png',
             imageAlt: articleData.title,
             tags: [],
-            seo: {
-                metaDescription: articleData.excerpt,
-                keywords: []
-            },
             ...articleData
         };
 
-        // Add category name if not provided
-        if (!newArticle.categoryName && this.categoriesData[newArticle.category]) {
-            newArticle.categoryName = this.categoriesData[newArticle.category].name;
-        }
-
-        // Add to beginning of array
+        // Add to beginning of array (newest first)
         this.articlesData.unshift(newArticle);
         
         // Re-render
         this.renderCategoryFilters();
-        this.renderFeaturedArticles();
         this.renderAllArticles();
         this.updateLoadMoreButton();
         
@@ -442,7 +375,7 @@ class BlogManager {
 document.addEventListener('DOMContentLoaded', () => {
     const blog = new BlogManager();
 
-    // Simplified API for external access
+    // Simple API for external access
     window.BlogAPI = {
         addArticle: (articleData) => blog.addArticle(articleData),
         getArticles: () => blog.articlesData,
