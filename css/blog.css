@@ -189,15 +189,12 @@
 
 .card-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-top: auto;
     font-size: var(--text-xs);
 }
 
-.read-time {
-    color: var(--parchment-dark);
-}
 
 .card-link {
     color: var(--brass);
