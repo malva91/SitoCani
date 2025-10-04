@@ -9,8 +9,9 @@
 
 /* === TOOL NAVIGATION === */
 .tool-navigation {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--spacing-xs);
     margin-bottom: var(--spacing-xl);
     padding: 0 var(--spacing);
@@ -114,6 +115,7 @@
     margin: 0 auto;
     display: block;
     width: fit-content;
+    margin-bottom: 10px;
 }
 
 .tool-button:hover {

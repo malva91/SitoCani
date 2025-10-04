@@ -1,0 +1,133 @@
+
+/* Cookie Banner - Cani di Odino (themed)
+   Usa variabili di progetto se disponibili (fallback inclusi).
+   Richiede che il sito carichi prima: /css/variables.css e /css/style.css
+*/
+
+:root {
+  /* Fallback solo se le variabili non sono già definite nel progetto */
+  --co-banner-bg: var(--charcoal, #0b0c0e);
+  --co-banner-fg: var(--text, #f3f4f6);
+  --co-banner-link: var(--link, #93c5fd);
+  --co-banner-border: color-mix(in oklab, var(--co-banner-bg), white 10%);
+  --co-success: var(--success, var(--accent, #b8a082));
+  --co-danger: var(--danger, #8b6914);
+  --co-muted: var(--muted, #e5e7eb);
+  --co-on-strong: var(--on-accent, #0b0c0e);
+
+  --space-xs: var(--spacing-xs, 8px);
+  --space-sm: var(--spacing-sm, 12px);
+  --space: var(--spacing, 16px);
+  --radius: var(--radius, 8px);
+  --container-w: min(100% - 2rem, var(--container, 1100px));
+  --shadow-md: var(--shadow-md, 0 6px 18px rgba(0,0,0,.25));
+}
+
+/* Strato base, appiccicato in basso, sopra la navbar */
+#cookie-banner {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  display: none;
+  background: var(--co-banner-bg);
+  color: var(--co-banner-fg);
+  padding: var(--space);
+  z-index: 99999;
+  box-shadow: var(--shadow-md);
+  border-top: 1px solid var(--co-banner-border);
+  font: inherit;
+}
+
+/* Evita che copra CTA o footer su schermi piccoli */
+html:has(#cookie-banner.show) body {
+  padding-bottom: max(0px,  env(safe-area-inset-bottom));
+}
+
+/* Layout interno coerente con il container del sito */
+#cookie-banner .container {
+  width: var(--container-w);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* Tipografia */
+#cookie-banner p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1rem);
+}
+
+#cookie-banner a {
+  color: var(--co-banner-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Azioni */
+#cookie-banner .actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin-left: auto;
+}
+
+#cookie-banner button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  transition: transform .06s ease, opacity .2s ease;
+  will-change: transform;
+}
+
+#cookie-banner button:active { transform: translateY(1px); }
+
+/* Bottoni in stile tema (fallback compresi) */
+#cookie-accept {
+  background: var(--co-success);
+  color: var(--co-on-strong);
+  font-weight: 700;
+}
+
+#cookie-reject {
+  background: var(--co-danger);
+  color: var(--co-on-strong);
+}
+
+#cookie-settings {
+  background: var(--co-muted);
+  color: var(--co-banner-bg);
+}
+
+/* Stato visibile */
+#cookie-banner.show { display: block; }
+
+/* Motion rispettosa */
+@media (prefers-reduced-motion: no-preference) {
+  #cookie-banner {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  #cookie-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  #cookie-banner .actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #cookie-banner .container {
+    gap: var(--space);
+  }
+}

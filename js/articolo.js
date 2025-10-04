@@ -160,13 +160,13 @@ class ArticleManager {
                 
                 // Track milestones
                 if (maxScroll >= 25 && maxScroll < 50) {
-                    console.log('Article 25% read');
+
                 } else if (maxScroll >= 50 && maxScroll < 75) {
-                    console.log('Article 50% read');
+
                 } else if (maxScroll >= 75 && maxScroll < 100) {
-                    console.log('Article 75% read');
+
                 } else if (maxScroll >= 100) {
-                    console.log('Article 100% read');
+
                 }
             }
         });

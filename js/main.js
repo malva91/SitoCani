@@ -10,7 +10,7 @@ class PerformanceMonitor {
             window.addEventListener('load', function() {
                 setTimeout(() => {
                     const perfData = performance.getEntriesByType('navigation')[0];
-                    console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+
                 }, 0);
             });
         }
@@ -364,8 +364,7 @@ class App {
         // Initialize utilities
         LazyLoader.init();
         ErrorHandler.init();
-        
-        console.log('Cani di Odino website initialized successfully');
+
     }
 }
 

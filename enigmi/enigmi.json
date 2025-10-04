@@ -1,31 +1,122 @@
 [
-{
-  "id": 1,
-  "title": "Enigma 1",
-  "rank": "Novizio",
-  "rankIcon": "🪓",
-  "type": "text",
-  "question": "⚔️ Sono l’albero che sostiene i nove mondi nella mitologia norrena. Chi sono?",
-  "answer": "yggdrasill",
-  "password": "Cani2ax",
-  "unlockDate": "2025-09-13",
-  "hint": "Le radici arrivano a Hel, i rami agli dèi di Asgard."
-},
-
   {
-  "id": 2,
-  "title": "Enigma 2",
-  "rank": "Novizio",
-  "rankIcon": "🧐",
-  "type": "text",
-  "question": "🕯 Chi sono quella figura mitologica norrena, ignorata dalla pop-culture, che veglia su Loki durante la sua punizione raccogliendo il veleno che gli cade sul viso… e il suo nome comincia con “S”?",
-  "answer": "sigyn",
-  "password": "Cani4heim",
-  "unlockDate": "2025-09-13",
-  "hint": "Cerca la dea che, nonostante tutto, resta accanto al suo compagno…"
-}
-
-
-
-
+    "id": 1,
+    "title": "Enigma 1",
+    "rank": "Novizio",
+    "rankIcon": "🪓",
+    "type": "text",
+    "question": "⚔️ Sono l’albero che sostiene i nove mondi nella mitologia norrena. Chi sono?",
+    "answer": "yggdrasill",
+    "password": "Cani2ax",
+    "unlockDate": "2025-09-08",
+    "hint": "Le radici arrivano a Hel, i rami agli dèi di Asgard."
+  },
+  {
+    "id": 2,
+    "title": "Enigma 2",
+    "rank": "Novizio",
+    "rankIcon": "🧐",
+    "type": "text",
+    "question": "🕯 Chi è quella figura mitologica norrena, ignorata dalla pop-culture, che veglia su Loki durante la sua punizione raccogliendo il veleno che gli cade sul viso ?",
+    "answer": "sigyn",
+    "password": "Cani4heim",
+    "unlockDate": "2025-09-20",
+    "hint": "Cerca la dea che, nonostante tutto, resta accanto al suo compagno…"
+  },
+  {
+    "id": 3,
+    "title": "Enigma 3",
+    "rank": "Novizio",
+    "rankIcon": "🎲",
+    "type": "text",
+    "question": "♟️ Qual è il nome del gioco da tavolo vichingo in cui un re, con l’aiuto delle sue guardie, deve scappare su una casella d’angolo del tavoliere mentre viene accerchiato dai pezzi nemici?",
+    "answer": "hnefatafl",
+    "password": "Cani6ax",
+    "unlockDate": "2025-09-27",
+    "hint": "Conosciuto anche come \"scacchi vichinghi\"."
+  },
+  {
+    "id": 4,
+    "title": "Enigma 4",
+    "rank": "Novizio",
+    "rankIcon": "🛡️",
+    "type": "text",
+    "question": "🌸 Nella mitologia norrena, metà dei guerrieri caduti in battaglia non va nel Valhalla ma in un altro luogo governato da una dea. Qual è il nome di questo luogo?",
+    "answer": "folkvangr",
+    "password": "Cani8heim",
+    "unlockDate": "2025-10-04",
+    "hint": "Freyja accoglie metà dei guerrieri caduti."
+  },
+  {
+    "id": 5,
+    "title": "Enigma 5",
+    "rank": "Novizio",
+    "rankIcon": "⚔️",
+    "type": "text",
+    "question": "🐻 Come venivano chiamati quei guerrieri vichinghi che combattevano in preda a una furia selvaggia, indossando spesso pelli d’orso?",
+    "answer": "berserker",
+    "password": "Cani10ax",
+    "unlockDate": "2025-10-11",
+    "hint": "Il termine significa \"camicia d'orso\"."
+  },
+  {
+    "id": 6,
+    "title": "Enigma 6",
+    "rank": "Novizio",
+    "rankIcon": "🧙",
+    "type": "text",
+    "question": "🏰 In quale celebre gioco da tavolo fantasy degli anni ’80 quattro eroi (Barbaro, Nano, Elfo e Mago) esplorano sotterranei pieni di mostri e tesori, ostacolati da un malvagio stregone?",
+    "answer": "heroquest",
+    "password": "Cani12heim",
+    "unlockDate": "2025-10-18",
+    "hint": "Pubblicato dalla MB nel 1989."
+  },
+  {
+    "id": 7,
+    "title": "Enigma 7",
+    "rank": "Novizio",
+    "rankIcon": "🪄",
+    "type": "text",
+    "question": "👑 In quale gioco da tavolo fantasy i giocatori si sfidano per ottenere il leggendario talismano e conquistare la Corona del Comando al centro del tabellone?",
+    "answer": "talisman",
+    "password": "Cani14ax",
+    "unlockDate": "2025-10-25",
+    "hint": "Pubblicato per la prima volta dalla Games Workshop nel 1983."
+  },
+  {
+    "id": 8,
+    "title": "Enigma 8",
+    "rank": "Novizio",
+    "rankIcon": "🤔",
+    "type": "text",
+    "question": "🎭 Come si chiama la pratica scorretta nei giochi di ruolo in cui un giocatore utilizza informazioni che il suo personaggio non dovrebbe conoscere?",
+    "answer": "metagaming",
+    "password": "Cani16heim",
+    "unlockDate": "2025-11-01",
+    "hint": "Letteralmente significa \"gioco nel gioco\"."
+  },
+  {
+    "id": 9,
+    "title": "Enigma 9",
+    "rank": "Novizio",
+    "rankIcon": "🗡️",
+    "type": "text",
+    "question": "🗡️ Qual era il nome della spada, andata in frantumi, che riuscì a tagliare l’Unico Anello dalla mano di Sauron?",
+    "answer": "narsil",
+    "password": "Cani18ax",
+    "unlockDate": "2025-11-08",
+    "hint": "Riforgiata a Gran Burrone, fu ribattezzata Andúril."
+  },
+  {
+    "id": 10,
+    "title": "Enigma 10",
+    "rank": "Novizio",
+    "rankIcon": "🐲",
+    "type": "text",
+    "question": "🐉 Qual è il nome della regina dei draghi malvagi a cinque teste nell’universo di Dungeons & Dragons?",
+    "answer": "tiamat",
+    "password": "Cani20heim",
+    "unlockDate": "2025-11-15",
+    "hint": "Divinità draconica malvagia, nemesi di Bahamut."
+  }
 ]

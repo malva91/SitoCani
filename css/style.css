@@ -2,19 +2,19 @@
 /* Version: 2025.02.01 - Mobile First with Clean Imports */
 
 /* === IMPORT ORDER - CRITICAL === */
-@import url('variables.css');
-@import url('base.css');
-@import url('navigation.css');
-@import url('components.css');
-@import url('cards.css');
-@import url('footer.css');
-@import url('blog.css');
-@import url('tools.css');
-@import url('gallery.css');
-@import url('articolo.css');
-@import url('cani.css');
-@import url('enigma.css');
-@import url('tools-countdown.css');
+@import url('/css/variables.css');
+@import url('/css/base.css');
+@import url('/css/navigation.css');
+@import url('/css/components.css');
+@import url('/css/cards.css');
+@import url('/css/footer.css');
+@import url('/css/blog.css');
+@import url('/css/tools.css');
+@import url('/css/gallery.css');
+@import url('/css/articolo.css');
+@import url('/css/cani.css');
+@import url('/css/enigma.css');
+@import url('/css/tools-countdown.css');
 
 /* === ACCESSIBILITY === */
 @media (prefers-reduced-motion: reduce) {
@@ -55,4 +55,10 @@ select:focus {
         box-shadow: none;
         border: 1px solid #000;
     }
+}
+
+.policy-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 1rem 2rem; /* 100px in alto così non viene coperto */
 }

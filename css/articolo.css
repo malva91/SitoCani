@@ -32,6 +32,15 @@
   outline: 4px solid var(--parchment-dark);
 }
 
+.frame {
+  background: var(--bg-card);
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+
 .article-header {
     padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-lg);
     background: linear-gradient(135deg, var(--bg-dark), var(--charcoal));

@@ -11,7 +11,7 @@
     text-align: center;
     position: relative;
     padding: 0 var(--spacing);
-    background-image: url('../img/SfondoSmartphone.webp');
+    background-image: url('/img/SfondoSmartphone.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -202,7 +202,7 @@
 /* === DESKTOP IMPROVEMENTS === */
 @media (min-width: 769px) {
     .hero {
-        background-image: url('../img/SfondoPC.webp');
+        background-image: url('/img/SfondoPC.webp');
     }
 
     .hero-content {

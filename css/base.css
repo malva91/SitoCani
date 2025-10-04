@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'canidiodino';
-    src: url('../CaniDiOdino.ttf') format('truetype');
+    src: url('/CaniDiOdino.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -263,7 +263,14 @@ strong {
     font-size: var(--text-xl);
     font-weight: 600;
     color: var(--brass);
+    text-align: center;
+
+    margin-top: 10px;
     margin-bottom: var(--spacing);
+
+    border: 2px solid var(--brass);
+    border-radius: 8px;
+    padding: 8px 12px;
 }
 
 /* === LOADING === */

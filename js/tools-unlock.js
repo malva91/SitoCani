@@ -64,12 +64,12 @@ class ToolsUnlockManager {
                     <h2 class="countdown-title">Strumenti in Arrivo</h2>
                     <p class="countdown-description">
                         I nostri strumenti GDR professionali saranno disponibili il 
-                        <strong>${this.unlockDate.toLocaleDateString('it-IT', { 
+                        <p>${this.unlockDate.toLocaleDateString('it-IT', { 
                             weekday: 'long', 
                             year: 'numeric', 
                             month: 'long', 
                             day: 'numeric' 
-                        })}</strong>
+                        })}</p>
                     </p>
                     
                     <div class="countdown-timer" id="countdown-timer">
@@ -156,7 +156,7 @@ class ToolsUnlockManager {
             passwordForm.style.display = isVisible ? 'none' : 'block';
             
             if (!isVisible) {
-                setTimeout(() => passwordInput?.focus(), 100);
+                setTimeout(() => passwordInput?.focus({ preventScroll: true }), 100);
             }
         });
 

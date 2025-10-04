@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0ZWMDRKM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WQ0ZWMDRKM');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[TITOLO ARTICOLO] | Blog Cani di Odino</title>
@@ -19,8 +28,8 @@
   <link rel="icon" type="image/png" href="../img/logo.png">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../css/style.css?v=2025.15">
-  <link rel="stylesheet" href="../css/articolo.css?v=2025.15">
+  <link rel="stylesheet" href="../css/style.css?v=2025.22">
+  <link rel="stylesheet" href="../css/articolo.css?v=2025.22">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
@@ -41,6 +50,16 @@
     "keywords": "[KEYWORDS ARTICOLO]"
   }
   </script>
+  
+<!-- Cookie Banner (IT) - include in <head> -->
+<link rel="stylesheet" href="../css/cookie-banner.css">
+<script>
+  // Imposta il tuo ID di misurazione GA4 (es. G-ABCDE12345)
+  window.GA_MEASUREMENT_ID = 'G-WQ0ZWMDRKM';
+</script>
+<script defer src="../js/cookie-banner.js"></script>
+<!-- Fine Cookie Banner -->
+
 </head>
 
 <body>
@@ -48,14 +67,14 @@
   <nav class="navbar" role="navigation" aria-label="Principale">
     <div class="nav-container">
       <div class="nav-logo">
-        <img src="../img/logo.png" alt="Cani di Odino Logo">
+        <img src="../img/logo.png" alt="Cani di Odino Logo" loading="lazy">
         <span>Cani di Odino</span>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
       <div class="nav-menu" id="nav-menu">
-        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html" class="nav-link">Home</a>
         <a href="../index.html#compagnia" class="nav-link">Compagnia</a>
         <a href="../index.html#enigmi" class="nav-link">Enigmi</a>
         <a href="../index.html#forgia" class="nav-link">Forgia</a>
@@ -89,6 +108,7 @@
       <!-- TAGS -->
       <div class="article-tags">[INSERIRE TAGS QUI]</div>
     </div>
+
   </header>
 
   <!-- Article Content -->
@@ -117,7 +137,7 @@
         <!-- Capitolo 1 -->
         <section class="article-section">
           <h2>[TITOLO CAPITOLO 1 — redazionale]</h2>
-          <pre>[TESTO DAL DOCUMENTO — PARTE 1]</pre>
+          <pre> <div class="frame">[TESTO DAL DOCUMENTO — PARTE 1]</div></pre>
         </section>
 
              <div class="chapter-sep chapter-sep--ornament"></div>
@@ -126,14 +146,14 @@
         <!-- Capitolo 2 -->
         <section class="article-section">
           <h2>[TITOLO CAPITOLO 2 — redazionale]</h2>
-          <pre>[TESTO DAL DOCUMENTO — PARTE 2]</pre>
+          <pre><div class="frame">[TESTO DAL DOCUMENTO — PARTE 2]</div></pre>
         </section>
              <div class="chapter-sep chapter-sep--ornament"></div>
 
         <!-- Capitolo 3 -->
         <section class="article-section">
           <h2>[TITOLO CAPITOLO 3 — redazionale]</h2>
-          <pre>[TESTO DAL DOCUMENTO — PARTE 3]</pre>
+          <pre><div class="frame">[TESTO DAL DOCUMENTO — PARTE 3]</div></pre>
         </section>
              <div class="chapter-sep chapter-sep--ornament"></div>
 
@@ -183,7 +203,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="../img/logo.png" alt="Logo Cani di Odino">
+          <img src="../img/logo.png" alt="Logo Cani di Odino" loading="lazy">
           <span>Cani di Odino</span>
         </div>
         <div class="footer-info">
@@ -204,8 +224,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/main.js?v=2025.15" defer></script>
-  <script src="../js/articolo.js?v=2025.15" defer></script>
+  <script src="../js/main.js?v=2025.22" defer></script>
+  <script src="../js/articolo.js?v=2025.22" defer></script>
   
   <!-- Auto-populate date from JSON -->
   <script>
@@ -232,6 +252,7 @@
         console.error('Error loading article date:', error);
       }
     });
-  </script>
+  </script><script type="module" src="/js/blog-comments.js" defer></script>
+    
 </body>
 </html>

@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0ZWMDRKM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WQ0ZWMDRKM');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog GDR | Articoli e Guide | Cani di Odino</title>
-    <meta name="description" content="Blog dedicato ai giochi di ruolo: guide per master, recensioni GDR, consigli per fiere ludiche, strategie RPG e contenuti esclusivi dai Cani di Odino.">
-    
+    <meta name="description"
+        content="Blog dedicato ai giochi di ruolo: guide per master, recensioni GDR, consigli per fiere ludiche, strategie RPG e contenuti esclusivi dai Cani di Odino.">
+
     <!-- SEO Keywords -->
-    <meta name="keywords" content="blog GDR, guide master RPG, recensioni giochi di ruolo, consigli fiere ludiche, articoli gaming, strategie RPG, contenuti GDR, blog gaming italiano">
-    
+    <meta name="keywords"
+        content="blog GDR, guide master RPG, recensioni giochi di ruolo, consigli fiere ludiche, articoli gaming, strategie RPG, contenuti GDR, blog gaming italiano">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Blog GDR | Cani di Odino">
-    <meta property="og:description" content="Guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi">
+    <meta property="og:description"
+        content="Guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi">
     <meta property="og:url" content="https://www.canidiodino.it/blog.html">
     <meta property="og:type" content="website">
-    
+
     <link rel="canonical" href="https://www.canidiodino.it/blog.html">
     <link rel="icon" type="image/png" href="./img/logo.png">
-    
+
     <!-- Preload font -->
     <link rel="preload" href="./CaniDiOdino.ttf" as="font" type="font/ttf" crossorigin>
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Face Declaration -->
     <style>
         @font-face {
@@ -34,13 +49,24 @@
             font-style: normal;
         }
     </style>
-    
+
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=2025.15">
-    <link rel="stylesheet" href="css/blog.css?v=2025.15">
-    
+    <link rel="stylesheet" href="/css/style.css?v=2025.18">
+    <link rel="stylesheet" href="/css/blog.css?v=2025.18">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+    <!-- Cookie Banner (IT) - include in <head> -->
+    <link rel="stylesheet" href="./css/cookie-banner.css">
+    <script>
+        // Imposta il tuo ID di misurazione GA4 (es. G-ABCDE12345)
+        window.GA_MEASUREMENT_ID = 'G-WQ0ZWMDRKM';
+    </script>
+    <script defer src="./js/cookie-banner.js"></script>
+    <!-- Fine Cookie Banner -->
+
 </head>
 
 <body>
@@ -48,11 +74,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="./img/logo.png" alt="Cani di Odino Logo">
+                <img src="./img/logo.png" alt="Cani di Odino Logo" loading="lazy">
                 <span>Cani di Odino</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="index.html#compagnia" class="nav-link">Compagnia</a>
                 <a href="index.html#enigmi" class="nav-link">Enigmi</a>
                 <a href="index.html#forgia" class="nav-link">Forgia</a>
@@ -76,7 +102,7 @@
         <div class="container">
             <h1 class="hero-title">CRONACHE DELLA TAVERNA</h1>
             <p class="hero-subtitle">Guide, Recensioni e Storie dal Mondo dei GDR</p>
-            <div class="runes" aria-label="Rune nordiche decorative">ᛒ ᛚ ᛟ ᚷ ᚷ  ᚷ ᛞ ᚱ</div>
+            <div class="runes" aria-label="Rune nordiche decorative">ᛞ ᛟ ᛈ ᛟ ᚱ ᚲ ᛟ</div>
         </div>
     </section>
 
@@ -94,7 +120,7 @@
                 <div class="blog-grid" id="blog-grid">
                     <!-- Articles will be loaded here -->
                 </div>
-                
+
                 <!-- Load More Button -->
                 <div class="load-more-container">
                     <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
@@ -109,28 +135,32 @@
     <section class="social-section">
         <div class="container">
             <div class="social-shields">
-                <a href="https://www.youtube.com/@CaniDiOdino" class="social-shield youtube" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@CaniDiOdino" class="social-shield youtube" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="shield-content">
                         <div class="social-icon"><i class="fab fa-youtube"></i></div>
                         <span>YouTube</span>
                         <div class="rune">ᚢ</div>
                     </div>
                 </a>
-                <a href="https://www.tiktok.com/@canidiodino" class="social-shield tiktok" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@canidiodino" class="social-shield tiktok" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="shield-content">
                         <div class="social-icon"><i class="fab fa-tiktok"></i></div>
                         <span>TikTok</span>
                         <div class="rune">ᛏ</div>
                     </div>
                 </a>
-                <a href="https://www.instagram.com/canidiodino" class="social-shield instagram" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/canidiodino" class="social-shield instagram" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="shield-content">
                         <div class="social-icon"><i class="fab fa-instagram"></i></div>
                         <span>Instagram</span>
                         <div class="rune">ᛁ</div>
                     </div>
                 </a>
-                <a href="https://www.twitch.tv/canidiodino" class="social-shield twitch" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.twitch.tv/canidiodino" class="social-shield twitch" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="shield-content">
                         <div class="social-icon"><i class="fab fa-twitch"></i></div>
                         <span>Twitch</span>
@@ -152,9 +182,12 @@
                 <div class="footer-info">
                     <p>Email: info@canidiodino.it</p>
                     <div class="footer-social">
-                        <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
-                        <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.youtube.com/@canidiodino" target="_blank"
+                            rel="noopener noreferrer">YouTube</a>
+                        <a href="https://www.tiktok.com/@canidiodino" target="_blank"
+                            rel="noopener noreferrer">TikTok</a>
+                        <a href="https://www.instagram.com/canidiodino" target="_blank"
+                            rel="noopener noreferrer">Instagram</a>
                         <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
                     </div>
                 </div>
@@ -166,7 +199,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=2025.15" defer></script>
-    <script src="js/blog.js?v=2025.15" defer></script>
+    <script src="/js/main.js?v=2025.18" defer></script>
+    <script src="/js/blog.js?v=2025.18" defer></script>
 </body>
+
 </html>

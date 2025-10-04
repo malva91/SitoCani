@@ -496,7 +496,7 @@
       resetInput: () => {
         elements.input.value = "";
         ui.clearFeedback();
-        setTimeout(() => elements.input.focus(), 150);
+        setTimeout(() => elements.input.focus({ preventScroll: true }), 150);
       },
       
       showFeedback: (type, message) => {
@@ -543,7 +543,7 @@
         const userAnswer = utils.normalizeAnswer(elements.input.value);
         if (!userAnswer) {
           ui.showFeedback("err", "Inserisci una risposta");
-          elements.input.focus();
+          elements.input.focus({ preventScroll: true });
           return;
         }
         
@@ -637,20 +637,20 @@
       open: () => {
         elements.pwModal.setAttribute('open', '');
         elements.pwInput.value = '';
-        setTimeout(() => elements.pwInput.focus(), 100);
+        setTimeout(() => elements.pwInput.focus({ preventScroll: true }), 100);
         utils.postHeight();
       },
       
       close: () => {
         elements.pwModal.removeAttribute('open');
-        elements.openPw.focus();
+        elements.openPw.focus({ preventScroll: true });
         utils.postHeight();
       },
       
       apply: () => {
         const password = elements.pwInput.value.trim();
         if (!password) {
-          elements.pwInput.focus();
+          elements.pwInput.focus({ preventScroll: true });
           return;
         }
         
@@ -1196,7 +1196,7 @@
       resetInput: () => {
         elements.input.value = "";
         ui.clearFeedback();
-        setTimeout(() => elements.input.focus(), 150);
+        setTimeout(() => elements.input.focus({ preventScroll: true }), 150);
       },
       
       showFeedback: (type, message) => {
@@ -1243,7 +1243,7 @@
         const userAnswer = utils.normalizeAnswer(elements.input.value);
         if (!userAnswer) {
           ui.showFeedback("err", "Inserisci una risposta");
-          elements.input.focus();
+          elements.input.focus({ preventScroll: true });
           return;
         }
         
@@ -1337,20 +1337,20 @@
       open: () => {
         elements.pwModal.setAttribute('open', '');
         elements.pwInput.value = '';
-        setTimeout(() => elements.pwInput.focus(), 100);
+        setTimeout(() => elements.pwInput.focus({ preventScroll: true }), 100);
         utils.postHeight();
       },
       
       close: () => {
         elements.pwModal.removeAttribute('open');
-        elements.openPw.focus();
+        elements.openPw.focus({ preventScroll: true });
         utils.postHeight();
       },
       
       apply: () => {
         const password = elements.pwInput.value.trim();
         if (!password) {
-          elements.pwInput.focus();
+          elements.pwInput.focus({ preventScroll: true });
           return;
         }
         

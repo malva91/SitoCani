@@ -1,74 +1,185 @@
 // Tools functionality for Cani di Odino website
-// Version: 2025.02.01 - Complete JSON-driven system
+// Version: 2025.02.01 - Optimized and coherent generators (Bestemmie selectors patched)
 
 /**
- * Data manager for loading JSON data
+ * Data manager for loading modular JSON data
  */
 class DataManager {
     constructor() {
         this.gameData = {
-            names: {},
-            adventures: {},
-            treasures: {},
-            weapons: {},
-            cities: {},
-            events: {},
-            bestemmie: {}
+            nanico: {},
+            elfico: {},
+            steampunk: {},
+            cyberpunk: {},
+            vichingo: {},
+            lovecraftiano: {},
+            orientale: {},
+            romano: {},
+            medievale: {},
+            fantasy: {}
         };
     }
 
     async loadGameData() {
         const paths = {
-            names: "data/names.json",
-            adventures: "data/adventures.json",
-            treasures: "data/treasures.json",
-            weapons: "data/weapons.json",
-            cities: "data/cities.json",
-            events: "data/events.json",
-            bestemmie: "data/bestemmie.json"
+            nanico: "data/nanico.json",
+            elfico: "data/elfico.json",
+            steampunk: "data/steampunk.json",
+            cyberpunk: "data/cyberpunk.json",
+            vichingo: "data/vichingo.json",
+            lovecraftiano: "data/lovecraftiano.json",
+            orientale: "data/orientale.json",
+            romano: "data/romano.json",
+            medievale: "data/medievale.json",
+            fantasy: "data/fantasy.json"
         };
 
         try {
             const loadPromises = Object.entries(paths).map(async ([key, path]) => {
                 const response = await fetch(path, { cache: "no-store" });
                 if (!response.ok) {
-                    throw new Error(`Impossibile caricare ${path}: ${response.status}`);
+                    console.warn(`Impossibile caricare ${path}: ${response.status}`);
+                    this.gameData[key] = {};
+                    return;
                 }
                 this.gameData[key] = await response.json();
             });
 
             await Promise.all(loadPromises);
-            console.log("Game data loaded from JSON files:", Object.keys(this.gameData));
+            this.createUnifiedStructures();
+            
+            console.log("Game data loaded from 10 modular JSON files:", Object.keys(this.gameData));
             return true;
         } catch (error) {
             console.error("Error loading game data:", error);
-            throw error;
+            // Non bloccare tutta l'app: procedi con ciò che è stato caricato
+            this.createUnifiedStructures();
+            return false;
         }
     }
 
-    showError(message) {
-        console.error(message);
+    createUnifiedStructures() {
+        const settings = this.getAvailableSettings();
+        
+        // Create unified adventures structure
+        this.gameData.adventures = {
+            hooks: {},
+            locations: {},
+            antagonisti: [],
+            complicazioni: []
+        };
+
+        settings.forEach(setting => {
+            const settingData = this.gameData[setting];
+            
+            if (settingData?.adventures?.hooks) {
+                this.gameData.adventures.hooks[setting] = settingData.adventures.hooks;
+            }
+            if (settingData?.adventures?.locations) {
+                this.gameData.adventures.locations[setting] = settingData.adventures.locations;
+            }
+        });
+
+        // Get shared data from first available setting
+        const firstSettingWithData = settings.find(setting => {
+            const data = this.gameData[setting];
+            return data?.antagonisti || data?.complicazioni;
+        });
+
+        if (firstSettingWithData) {
+            const data = this.gameData[firstSettingWithData];
+            this.gameData.adventures.antagonisti = data.antagonisti || [];
+            this.gameData.adventures.complicazioni = data.complicazioni || [];
+        }
+
+        // Create unified events structure
+        this.gameData.events = {
+            conseguenze: [],
+            involvement_levels: []
+        };
+
+        settings.forEach(setting => {
+            const settingData = this.gameData[setting];
+            if (settingData?.events) {
+                this.gameData.events[setting] = settingData.events;
+            }
+        });
+
+        // Get shared event data
+        const firstEventSetting = settings.find(setting => {
+            const data = this.gameData[setting];
+            return data?.conseguenze || data?.involvement_levels;
+        });
+
+        if (firstEventSetting) {
+            const data = this.gameData[firstEventSetting];
+            this.gameData.events.conseguenze = data.conseguenze || [];
+            this.gameData.events.involvement_levels = data.involvement_levels || [];
+        }
+
+        console.log("Unified structures created from modular data");
+    }
+
+    getAvailableSettings() {
+        return ['nanico', 'elfico', 'steampunk', 'cyberpunk', 'vichingo', 'lovecraftiano', 'orientale', 'romano', 'medievale', 'fantasy'];
+    }
+
+    getSettingData(setting) {
+        return this.gameData[setting] || {};
+    }
+
+    getUnifiedData(type) {
+        switch(type) {
+            case 'adventures':
+                return this.gameData.adventures || {};
+            case 'events':
+                return this.gameData.events || {};
+            case 'bestemmie':
+                return this.gameData.bestemmie || {};
+            default:
+                return {};
+        }
     }
 }
 
 /**
- * Utility function to populate select elements
+ * Utility functions
  */
 function clearAndFillSelect(select, values) {
     if (!select) return;
     
-    // Clear existing options
-    while (select.firstChild) {
-        select.removeChild(select.firstChild);
-    }
-    
-    // Add new options
+    select.innerHTML = '';
     values.forEach(value => {
         const option = document.createElement("option");
         option.value = value;
         option.textContent = value.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
         select.appendChild(option);
     });
+}
+
+function randomPick(arr) {
+    if (!Array.isArray(arr) || arr.length === 0) return '';
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function showError(message, container) {
+    if (container) {
+        container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
+    }
+}
+
+// Helper per mostrare/nascondere gruppi di campi
+function showOrHide(el, visible) {
+    if (!el) return;
+    el.style.display = visible ? '' : 'none';
+}
+
+// Sostituzione placeholder sicura
+function safeTemplateReplace(tpl, map) {
+    return Object.keys(map).reduce((acc, k) => {
+        const val = (map[k] ?? '').toString();
+        return acc.replace(new RegExp(`\\{${k}\\}`, 'g'), val);
+    }, tpl).replace(/\s{2,}/g, ' ').trim();
 }
 
 /**
@@ -225,12 +336,10 @@ class NameGenerator {
         generateButton?.addEventListener('click', () => this.generateName());
         categorySelect?.addEventListener('change', () => this.updateSubcategories());
         
-        // Initialize subcategories
         this.updateSubcategories();
     }
 
     updateSubcategories() {
-        const names = this.dataManager.gameData.names || {};
         const category = document.getElementById('name-category')?.value;
         const subcategorySelect = document.getElementById('name-subcategory');
         const genderSelect = document.getElementById('name-gender');
@@ -239,7 +348,6 @@ class NameGenerator {
 
         if (!subcategorySelect || !genderSelect) return;
 
-        // Clear existing options
         subcategorySelect.innerHTML = '';
         genderSelect.innerHTML = '';
 
@@ -247,51 +355,73 @@ class NameGenerator {
             subcategoryGroup.style.display = 'flex';
             genderGroup.style.display = 'flex';
             
-            const styles = names.character ? Object.keys(names.character) : [];
-            clearAndFillSelect(subcategorySelect, styles);
-            clearAndFillSelect(genderSelect, ['male', 'female', 'surnames']);
+            const availableSettings = this.dataManager.getAvailableSettings();
+            clearAndFillSelect(subcategorySelect, availableSettings);
+            
+            const genderOptions = [
+                {value:'male', label:'Maschile'},
+                {value:'female', label:'Femminile'}
+            ];
+            genderOptions.forEach(opt => {
+                const o = document.createElement('option');
+                o.value = opt.value; 
+                o.textContent = opt.label;
+                genderSelect.appendChild(o);
+            });
         } else {
             subcategoryGroup.style.display = 'flex';
             genderGroup.style.display = 'none';
             
-            const styles = names[category] ? Object.keys(names[category]) : [];
-            clearAndFillSelect(subcategorySelect, styles);
+            const availableSettings = this.dataManager.getAvailableSettings();
+            clearAndFillSelect(subcategorySelect, availableSettings);
         }
     }
 
     generateName() {
-        const names = this.dataManager.gameData.names || {};
         const category = document.getElementById('name-category')?.value;
         const subcategory = document.getElementById('name-subcategory')?.value;
         const gender = document.getElementById('name-gender')?.value;
         const resultContainer = document.getElementById('name-result');
 
-        let nameList = [];
+        if (!subcategory) {
+            return showError('Seleziona un\'ambientazione', resultContainer);
+        }
 
-        if (category === 'character' && names.character?.[subcategory]) {
-            nameList = names.character[subcategory][gender] || [];
-        } else if (names[category]?.[subcategory]) {
-            nameList = names[category][subcategory];
+        let nameList = [];
+        const settingData = this.dataManager.getSettingData(subcategory);
+
+        if (category === 'character') {
+            if (settingData?.names?.[gender]) {
+                nameList = settingData.names[gender];
+            }
+        } else {
+            // Map categories to JSON structure
+            const categoryMap = {
+                'luoghi': 'names',
+                'creature': 'names', // Fallback to names if no specific creature data
+                'locande': 'landmarks'
+            };
+            
+            const jsonKey = categoryMap[category] || 'names';
+            if (settingData?.cities?.[jsonKey]) {
+                nameList = settingData.cities[jsonKey];
+            }
         }
 
         if (!nameList || nameList.length === 0) {
-            return this.showError('Nessun nome disponibile per questa combinazione', resultContainer);
+            return showError('Nessun nome disponibile per questa combinazione', resultContainer);
         }
 
-        const randomName = nameList[Math.floor(Math.random() * nameList.length)];
+        const randomName = randomPick(nameList);
         
-        let html = '<div class="result-content">';
-        html += `<div class="result-title">${randomName}</div>`;
-        html += `<div class="result-description">Categoria: ${category} - ${subcategory}${category === 'character' ? ` (${gender})` : ''}</div>`;
-        html += '</div>';
+        const html = `
+            <div class="result-content">
+                <div class="result-title">${randomName}</div>
+                <div class="result-description">Categoria: ${category} - ${subcategory}${category === 'character' ? ` (${gender})` : ''}</div>
+            </div>
+        `;
         
         resultContainer.innerHTML = html;
-    }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
     }
 }
 
@@ -309,53 +439,47 @@ class AdventureGenerator {
     }
 
     generateAdventure() {
-        const adventures = this.dataManager.gameData.adventures || {};
-        const { hooks = {}, locations = {}, antagonisti = [], complicazioni = [] } = adventures;
-        
-        const theme = document.getElementById('adventure-theme')?.value;
         const location = document.getElementById('adventure-location')?.value;
         const resultContainer = document.getElementById('adventure-result');
 
-        const hooksList = hooks[theme] || [];
+        if (!location) { return showError('Seleziona ambientazione', resultContainer); }
+
+        const adventures = this.dataManager.getUnifiedData('adventures');
+        const { hooks = {}, locations = {}, antagonisti = [], complicazioni = [] } = adventures;
+        
+        // Use location setting for both hooks and locations
+        const hooksList = hooks[location] || [];
         const locationsList = locations[location] || [];
 
         if (hooksList.length === 0 || locationsList.length === 0) {
-            return this.showError('Dati insufficienti per generare un\'avventura', resultContainer);
+            return showError('Dati insufficienti per generare un\'avventura', resultContainer);
         }
-
-        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 
         const html = `
             <div class="result-content">
-                <div class="result-title">Avventura Generata</div>
+                <div class="result-title">Avventura</div>
                 <div class="result-details">
                     <div class="result-detail">
                         <span class="result-detail-label">Hook:</span>
-                        <span>${pick(hooksList)}</span>
+                        <span>${randomPick(hooksList)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Ambientazione:</span>
-                        <span>${pick(locationsList)}</span>
+                        <span>${randomPick(locationsList)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Antagonista:</span>
-                        <span>${pick(antagonisti || [])}</span>
+                        <span>${randomPick(antagonisti)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Complicazione:</span>
-                        <span>${pick(complicazioni || [])}</span>
+                        <span>${randomPick(complicazioni)}</span>
                     </div>
                 </div>
             </div>
         `;
         
         resultContainer.innerHTML = html;
-    }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
     }
 }
 
@@ -376,44 +500,52 @@ class TreasureGenerator {
         const setting = document.getElementById('treasure-setting')?.value;
         const resultContainer = document.getElementById('treasure-result');
         
-        const treasureData = (this.dataManager.gameData.treasures || {})[setting];
-        if (!treasureData) {
-            return this.showError('Ambientazione non trovata', resultContainer);
+        if (!setting) {
+            return showError('Seleziona un\'ambientazione', resultContainer);
         }
 
-        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+        const settingData = this.dataManager.getSettingData(setting.toLowerCase());
+        const treasureData = settingData?.treasures;
         
-        const item = pick(treasureData.items || []);
-        const origin = pick(treasureData.origins || []);
-        const material = pick(treasureData.materials || []);
+        if (!treasureData) {
+            return showError('Ambientazione non trovata', resultContainer);
+        }
+
+        const container = randomPick(treasureData.containers || []);
+        const type = randomPick(treasureData.types || []);
+        const material = randomPick(treasureData.materials || []);
+        const rarity = randomPick(treasureData.rarities || []);
+        const effect = randomPick(treasureData.effects || []);
 
         const html = `
             <div class="result-content">
                 <div class="result-title">Tesoro Generato</div>
                 <div class="result-details">
                     <div class="result-detail">
-                        <span class="result-detail-label">Oggetto:</span>
-                        <span>${item}</span>
+                        <span class="result-detail-label">Contenitore:</span>
+                        <span>${container}</span>
                     </div>
                     <div class="result-detail">
-                        <span class="result-detail-label">Origine:</span>
-                        <span>${origin}</span>
+                        <span class="result-detail-label">Oggetto:</span>
+                        <span>${type}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Materiale:</span>
                         <span>${material}</span>
+                    </div>
+                    <div class="result-detail">
+                        <span class="result-detail-label">Rarità:</span>
+                        <span>${rarity}</span>
+                    </div>
+                    <div class="result-detail">
+                        <span class="result-detail-label">Effetto:</span>
+                        <span>${effect}</span>
                     </div>
                 </div>
             </div>
         `;
         
         resultContainer.innerHTML = html;
-    }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
     }
 }
 
@@ -429,51 +561,86 @@ class WeaponGenerator {
         const generateButton = document.getElementById('generate-weapon');
         generateButton?.addEventListener('click', () => this.generateWeapon());
     }
+generateWeapon() {
+  const setting = document.getElementById('weapon-setting')?.value;
+  const resultContainer = document.getElementById('weapon-result');
 
-    generateWeapon() {
-        const setting = document.getElementById('weapon-setting')?.value;
-        const type = document.getElementById('weapon-type')?.value;
-        const resultContainer = document.getElementById('weapon-result');
-        
-        const weaponCategory = (this.dataManager.gameData.weapons || {})[setting];
-        if (!weaponCategory) {
-            return this.showError('Ambientazione non trovata', resultContainer);
-        }
+  if (!setting) {
+    return showError('Seleziona un\'ambientazione', resultContainer);
+  }
 
-        const weaponType = weaponCategory[type] || { weapons: [], characteristics: [] };
-        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
-        
-        const weapon = pick(weaponType.weapons || []);
-        const characteristic = pick(weaponType.characteristics || []);
+  const settingData = this.dataManager.getSettingData(setting.toLowerCase());
+  const weaponData = settingData?.weapons;
 
-        const html = `
-            <div class="result-content">
-                <div class="result-title">Arma Generata</div>
-                <div class="result-details">
-                    <div class="result-detail">
-                        <span class="result-detail-label">Arma:</span>
-                        <span>${weapon}</span>
-                    </div>
-                    <div class="result-detail">
-                        <span class="result-detail-label">Caratteristica:</span>
-                        <span>${characteristic}</span>
-                    </div>
-                    <div class="result-detail">
-                        <span class="result-detail-label">Tipo:</span>
-                        <span>${type}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        resultContainer.innerHTML = html;
+  if (!weaponData) {
+    return showError('Ambientazione non trovata', resultContainer);
+  }
+
+  const classes = weaponData.classes;
+  let classesPool = [];
+
+  if (Array.isArray(classes)) {
+    // Compatibilità con formato vecchio (lista piatta)
+    classesPool = classes;
+  } else if (classes && typeof classes === 'object') {
+    // Usa il tuo select esistente <select id="weapon-type">
+    const selectedRaw = document.getElementById('weapon-type')?.value || '';
+    const selected = selectedRaw.toLowerCase().trim();
+
+    // Mappa i valori HTML alle chiavi del JSON
+    const keyMap = {
+      ravvicinato: 'ravvicinate', // HTML usa singolare, JSON è al plurale
+      distanza: 'distanza',
+      magiche: 'magiche',
+    };
+    const jsonKey = keyMap[selected] || selected;
+
+    if (Array.isArray(classes[jsonKey])) {
+      classesPool = classes[jsonKey];
+    } else {
+      // Fallback: unisci tutte le sottoliste
+      classesPool = Object.values(classes).flat().filter(Boolean);
     }
+  }
 
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
-    }
+  if (!Array.isArray(classesPool) || classesPool.length === 0) {
+    return showError('Nessuna classe arma disponibile nel JSON', resultContainer);
+  }
+
+  const weaponClass = randomPick(classesPool);
+  const material    = randomPick(weaponData.materials  || []);
+  const prefix      = randomPick(weaponData.prefixes   || []);
+  const suffix      = randomPick(weaponData.suffixes   || []);
+  const quality     = randomPick(weaponData.qualities  || []);
+
+  const weaponName = [weaponClass, prefix, suffix].filter(Boolean).join(' ');
+
+  const html = `
+    <div class="result-content">
+      <div class="result-title">${weaponName}</div>
+      <div class="result-details">
+        <div class="result-detail">
+          <span class="result-detail-label">Tipo:</span>
+          <span>${weaponClass}</span>
+        </div>
+        <div class="result-detail">
+          <span class="result-detail-label">Materiale:</span>
+          <span>${material}</span>
+        </div>
+        <div class="result-detail">
+          <span class="result-detail-label">Qualità:</span>
+          <span>${quality}</span>
+        </div>
+        <div class="result-detail">
+          <span class="result-detail-label">Ambientazione:</span>
+          <span>${setting}</span>
+        </div>
+      </div>
+    </div>
+  `;
+  resultContainer.innerHTML = html;
+}
+
 }
 
 /**
@@ -494,21 +661,33 @@ class CityGenerator {
         const size = document.getElementById('city-size')?.value;
         const resultContainer = document.getElementById('city-result');
         
-        const cityData = (this.dataManager.gameData.cities || {})[setting];
-        if (!cityData) {
-            return this.showError('Ambientazione non trovata', resultContainer);
+        if (!setting || !size) {
+            return showError('Seleziona ambientazione e dimensione', resultContainer);
         }
 
-        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+        const settingData = this.dataManager.getSettingData(setting.toLowerCase());
+        const cityData = settingData?.cities;
         
-        const name = pick(cityData.nomi || []);
-        const ruler = pick(cityData.rulers || []);
-        const district = pick(cityData.districts || []);
-        const landmark = pick(cityData.landmarks || []);
+        if (!cityData) {
+            return showError('Ambientazione non trovata', resultContainer);
+        }
+
+        const name = randomPick(cityData.names || []);
+        const ruler = randomPick(cityData.rulers || []);
+        const district = randomPick(cityData.districts || []);
+        const landmark = randomPick(cityData.landmarks || []);
         
-        // Get population range
-        const ranges = (this.dataManager.gameData.cities || {}).population_ranges || {};
-        const range = ranges[size] || { min: 1000, max: 5000, description: "" };
+        // Population ranges
+        const populationRanges = {
+            village: { min: 100, max: 800, description: "Villaggio" },
+            town: { min: 800, max: 2000, description: "Cittadina" },
+            city: { min: 2000, max: 20000, description: "Città" },
+            metropolis: { min: 20000, max: 100000, description: "Metropoli" },
+            megacity: { min: 100000, max: 500000, description: "Megacittà" },
+            capital: { min: 500000, max: 1000000, description: "Capitale" }
+        };
+        
+        const range = populationRanges[size] || { min: 1000, max: 5000, description: "Città" };
         const population = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
 
         const html = `
@@ -529,19 +708,13 @@ class CityGenerator {
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Popolazione:</span>
-                        <span>${population.toLocaleString()} (${range.description || size})</span>
+                        <span>${population.toLocaleString()} (${range.description})</span>
                     </div>
                 </div>
             </div>
         `;
         
         resultContainer.innerHTML = html;
-    }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
     }
 }
 
@@ -562,16 +735,23 @@ class EventGenerator {
         const type = document.getElementById('event-type')?.value;
         const resultContainer = document.getElementById('event-result');
         
-        const events = this.dataManager.gameData.events || {};
-        const eventPool = events[type] || [];
+        if (!type) {
+            return showError('Seleziona un tipo di evento', resultContainer);
+        }
+
+        const settingData = this.dataManager.getSettingData(type.toLowerCase());
+        const localPool = Array.isArray(settingData?.events) ? settingData.events : [];
+
+        const events = this.dataManager.getUnifiedData('events');
+        const fromUnified = events[type.toLowerCase()] || [];
+        const eventPool = localPool.concat(Array.isArray(fromUnified) ? fromUnified : []);
+
         const conseguenze = events.conseguenze || [];
         const involvementLevels = events.involvement_levels || [];
 
         if (eventPool.length === 0) {
-            return this.showError('Nessun evento per questa categoria', resultContainer);
+            return showError('Nessun evento per questa categoria', resultContainer);
         }
-
-        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 
         const html = `
             <div class="result-content">
@@ -579,15 +759,15 @@ class EventGenerator {
                 <div class="result-details">
                     <div class="result-detail">
                         <span class="result-detail-label">Evento:</span>
-                        <span>${pick(eventPool)}</span>
+                        <span>${randomPick(eventPool)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Conseguenze:</span>
-                        <span>${pick(conseguenze || [])}</span>
+                        <span>${randomPick(conseguenze)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Coinvolgimento PG:</span>
-                        <span>${pick(involvementLevels || [])}</span>
+                        <span>${randomPick(involvementLevels)}</span>
                     </div>
                     <div class="result-detail">
                         <span class="result-detail-label">Tipo:</span>
@@ -599,20 +779,20 @@ class EventGenerator {
         
         resultContainer.innerHTML = html;
     }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
-    }
 }
 
 /**
- * Bestemmie generator functionality
+ * Bestemmie / Imprecazioni generator functionality
+ * (dataset non-religioso supportato: divinità opzionale)
  */
 class BestemmieGenerator {
     constructor(dataManager) {
         this.dataManager = dataManager;
+        this.bestemmieData = null;
+    }
+
+    setBestemmieData(data) {
+        this.bestemmieData = data;
     }
 
     init() {
@@ -621,93 +801,101 @@ class BestemmieGenerator {
         generateButton?.addEventListener('click', () => this.generateBestemmie());
     }
 
-    pick(arr) {
-        if (!Array.isArray(arr) || arr.length === 0) return '';
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-
+    // Normalizza i dati: divinità può mancare (dataset imprecazioni non-religioso)
     getDataSafe() {
-        const raw = this.dataManager?.gameData?.bestemmie || {};
-        const divinita = raw.divinita || raw['divinità'] || {};
-        const stili = raw.stili || {};
+        const raw = this.bestemmieData || this.dataManager?.getUnifiedData('bestemmie') || {};
+
+        const hasDiv = raw.divinita || raw['divinità'];
+        const divinita = hasDiv ? (raw.divinita || raw['divinità']) : { nessuna: [''] };
+
+        let stili = raw.stili || {};
+        if (Array.isArray(stili)) stili = { generico: stili };
+
         const intensita = raw.intensita || raw['intensità'] || {};
         const template = Array.isArray(raw.template) ? raw.template : null;
-        return { divinita, stili, intensita, template };
+
+        return { divinita, stili, intensita, template, hasDiv: !!hasDiv };
     }
 
-    populateControls() {
-        const { divinita, stili, intensita } = this.getDataSafe();
-        this.fillSelectFromKeys('bestemmie-divinita', divinita, '— scegli un pantheon —');
-        this.fillSelectFromKeys('bestemmie-stile', stili, '— scegli uno stile —');
-        this.fillSelectFromKeys('bestemmie-intensita', intensita, '— scegli intensità —') ||
-        this.fillSelectFromKeys('bestemmie-creatura', intensita, '— scegli intensità —');
+populateControls() {
+    const { divinita, stili, intensita, hasDiv } = this.getDataSafe();
+
+    const divSel = document.getElementById('bestemmie-divinita');
+    const divGroup = divSel?.closest('.form-group') || divSel?.parentElement;
+
+    if (!hasDiv) {
+        // nascondi campo pantheon se il dataset non lo prevede
+        showOrHide(divGroup, false);
+    } else {
+        // niente placeholder, prima voce subito selezionata
+        this.fillSelectFromKeys('bestemmie-divinita', divinita);
+        showOrHide(divGroup, true);
     }
 
-    fillSelectFromKeys(selectId, obj, placeholder = '— seleziona —') {
-        const sel = document.getElementById(selectId);
-        if (!sel || !obj || typeof obj !== 'object') return false;
+    this.fillSelectFromKeys('bestemmie-stile', stili);
+    this.fillSelectFromKeys('bestemmie-intensita', intensita);
+}
 
-        const keys = Object.keys(obj);
-        if (keys.length === 0) return false;
+fillSelectFromKeys(selectId, obj) {
+    const sel = document.getElementById(selectId);
+    if (!sel || !obj || typeof obj !== 'object') return false;
 
-        sel.innerHTML = '';
-        const ph = document.createElement('option');
-        ph.value = '';
-        ph.disabled = true;
-        ph.selected = true;
-        ph.textContent = placeholder;
-        sel.appendChild(ph);
+    const keys = Object.keys(obj);
+    sel.innerHTML = '';
 
-        keys.forEach(k => {
-            const opt = document.createElement('option');
-            opt.value = k;
-            opt.textContent = k; // 🔹 tolto il conteggio
-            sel.appendChild(opt);
-        });
+    keys.forEach((k, idx) => {
+        const opt = document.createElement('option');
+        opt.value = k;
+        opt.textContent = k;
+        if (idx === 0) opt.selected = true; // prima voce selezionata
+        sel.appendChild(opt);
+    });
 
-        return true;
-    }
+    return true;
+}
 
     generateBestemmie() {
         const resultContainer = document.getElementById('bestemmie-result');
-        const divinitaKey = document.getElementById('bestemmie-divinita')?.value;
+        const divSel = document.getElementById('bestemmie-divinita');
         const stileKey = document.getElementById('bestemmie-stile')?.value;
-        const intensitaKey =
-            document.getElementById('bestemmie-intensita')?.value ??
-            document.getElementById('bestemmie-creatura')?.value;
-
-        if (!divinitaKey || !stileKey || !intensitaKey) {
-            return this.showError('Seleziona tutte le opzioni (divinità, stile, intensità).', resultContainer);
-        }
+        const intensitaKey = document.getElementById('bestemmie-intensita')?.value;
 
         const { divinita, stili, intensita, template } = this.getDataSafe();
-        const divinitaList = divinita[divinitaKey] || [];
+
+        // divinità è opzionale
+        const divinitaKey = (divSel && divSel.offsetParent !== null) ? divSel.value : 'nessuna';
+
+        if (!stileKey || !intensitaKey) {
+            return showError('Seleziona stile e intensità', resultContainer);
+        }
+
+        const divinitaList = (divinita && divinitaKey && divinita[divinitaKey]) || [''];
         const stileList = stili[stileKey] || [];
         const intensitaList = intensita[intensitaKey] || [];
 
-        if (divinitaList.length === 0 || stileList.length === 0 || intensitaList.length === 0) {
-            return this.showError('Dati insufficienti (una o più liste vuote). Controlla il JSON.', resultContainer);
+        if (stileList.length === 0 || intensitaList.length === 0) {
+            return showError('Dati insufficienti (liste vuote)', resultContainer);
         }
 
-        const selectedDivinita = this.pick(divinitaList);
-        const selectedStile = this.pick(stileList);
-        const selectedIntensita = this.pick(intensitaList);
+        const selectedDivinita = randomPick(divinitaList) || '';
+        const selectedStile = randomPick(stileList) || '';
+        const selectedIntensita = randomPick(intensitaList) || '';
 
         const templates = template && template.length
             ? template
             : [
-                'Per {divinita} {stile}, {intensita}!',
-                '{divinita} {stile}, {intensita}!',
-                'Giuro su {divinita} {stile}, {intensita}!'
+                '{intensita}!',
+                '{stile}, {intensita}!',
+                '{intensita}, e basta!',
+                '{intensita}...'
             ];
 
-        const chosen = this.pick(templates);
-        const frase = chosen
-            .replace(/{divinita}/g, selectedDivinita)
-            .replace(/{stile}/g, selectedStile)
-            .replace(/{intensita}/g, selectedIntensita)
-            .replace(/\s{2,}/g, ' ')
-            .trim();
+        const chosen = randomPick(templates);
+        const frase = safeTemplateReplace(chosen, {
+            divinita: selectedDivinita,
+            stile: selectedStile,
+            intensita: selectedIntensita
+        });
 
         const html = `
             <div class="result-content">
@@ -715,12 +903,13 @@ class BestemmieGenerator {
                 <div class="result-details">
                     <div class="result-detail">
                         <span class="result-detail-label">Testo:</span>
-                        <span><strong>"${frase}"</strong></span>
+                        <span><p>"${frase}"</p></span>
                     </div>
+                    ${(divSel && divSel.offsetParent !== null) ? `
                     <div class="result-detail">
                         <span class="result-detail-label">Divinità:</span>
                         <span>${divinitaKey} (${selectedDivinita})</span>
-                    </div>
+                    </div>` : ''}
                     <div class="result-detail">
                         <span class="result-detail-label">Stile:</span>
                         <span>${stileKey} (${selectedStile})</span>
@@ -732,17 +921,10 @@ class BestemmieGenerator {
                 </div>
             </div>
         `;
-        if (resultContainer) resultContainer.innerHTML = html;
-    }
-
-    showError(message, container) {
-        if (container) {
-            container.innerHTML = `<div class="result-empty">⚠️ ${message}</div>`;
-        }
+        
+        resultContainer.innerHTML = html;
     }
 }
-
-
 
 /**
  * Main tools application
@@ -762,14 +944,11 @@ class ToolsApp {
 
     async init() {
         try {
-            // Load all game data from JSON files
             await this.dataManager.loadGameData();
-            
-            // Populate selects with dynamic data
             this.populateSelectsFromData();
+            this.initToolNavigation();
             
             // Initialize all tools
-            this.initToolNavigation();
             this.diceRoller.init();
             this.nameGenerator.init();
             this.adventureGenerator.init();
@@ -779,74 +958,46 @@ class ToolsApp {
             this.eventGenerator.init();
             this.bestemmieGenerator.init();
             
-            // Update dice history
             this.diceRoller.updateHistory();
-            
-            console.log('Tools initialized with dynamic JSON data');
+
         } catch (error) {
             console.error('Error initializing tools:', error);
         }
     }
 
     populateSelectsFromData() {
-        const gameData = this.dataManager.gameData;
+        const availableSettings = this.dataManager.getAvailableSettings();
 
-        // Populate treasure settings
-        clearAndFillSelect(
-            document.getElementById('treasure-setting'), 
-            Object.keys(gameData.treasures || {})
-        );
+        // Populate setting-based selects
+        clearAndFillSelect(document.getElementById('treasure-setting'), availableSettings);
+        clearAndFillSelect(document.getElementById('weapon-setting'), availableSettings);
+        clearAndFillSelect(document.getElementById('city-setting'), availableSettings);
+        clearAndFillSelect(document.getElementById('event-type'), availableSettings);
 
-        // Populate weapon settings
-        clearAndFillSelect(
-            document.getElementById('weapon-setting'), 
-            Object.keys(gameData.weapons || {})
-        );
+        // Adventure locations only
+        clearAndFillSelect(document.getElementById('adventure-location'), availableSettings);
+// Name categories
+        const nameCategories = ['character', 'luoghi', 'creature', 'locande'];
+        clearAndFillSelect(document.getElementById('name-category'), nameCategories);
 
-        // Populate city settings (exclude utility keys)
-        const cityKeys = Object.keys(gameData.cities || {}).filter(key => 
-            !['population_ranges', 'problems', 'economy', 'culture', 'government'].includes(key)
-        );
-        clearAndFillSelect(document.getElementById('city-setting'), cityKeys);
+        // Load imprecazioni/bestemmie data (non-religioso supportato)
+        this.loadBestemmieData();
+    }
 
-        // Populate adventure themes and locations
-        const adventures = gameData.adventures || {};
-        clearAndFillSelect(
-            document.getElementById('adventure-theme'), 
-            Object.keys(adventures.hooks || {})
-        );
-        clearAndFillSelect(
-            document.getElementById('adventure-location'), 
-            Object.keys(adventures.locations || {})
-        );
-
-        // Populate event types (exclude utility keys)
-        const events = gameData.events || {};
-        const eventTypes = Object.keys(events).filter(key => 
-            !['conseguenze', 'involvement_levels'].includes(key)
-        );
-        clearAndFillSelect(document.getElementById('event-type'), eventTypes);
-
-        // Populate bestemmie categories
-        const bestemmie = gameData.bestemmie || {};
-        clearAndFillSelect(
-            document.getElementById('bestemmie-divinita'), 
-            Object.keys(bestemmie.divinita || {})
-        );
-        clearAndFillSelect(
-            document.getElementById('bestemmie-stile'), 
-            Object.keys(bestemmie.stili || {})
-        );
-        clearAndFillSelect(
-            document.getElementById('bestemmie-creatura'), 
-            Object.keys(bestemmie.creature || {})
-        );
-
-        // Name categories are handled by NameGenerator.updateSubcategories()
-        clearAndFillSelect(
-            document.getElementById('name-category'), 
-            Object.keys(gameData.names || {})
-        );
+    async loadBestemmieData() {
+        try {
+            // Carica la versione non-religiosa pulita
+            const response = await fetch('data/bestemmie.json', { cache: "no-store" });
+            if (response.ok) {
+                const data = await response.json();
+                this.bestemmieGenerator.setBestemmieData(data);
+                this.bestemmieGenerator.populateControls();
+            } else {
+                console.warn("bestemmiejson non trovato (opzionale).");
+            }
+        } catch (error) {
+            console.warn('Errore caricamento imprecazioni (opzionale):', error);
+        }
     }
 
     initToolNavigation() {
@@ -857,11 +1008,9 @@ class ToolsApp {
             button.addEventListener('click', () => {
                 const targetTool = button.getAttribute('data-tool');
                 
-                // Remove active class from all buttons and panels
                 toolButtons.forEach(btn => btn.classList.remove('active'));
                 toolPanels.forEach(panel => panel.classList.remove('active'));
                 
-                // Add active class to clicked button and corresponding panel
                 button.classList.add('active');
                 const targetPanel = document.getElementById(targetTool);
                 if (targetPanel) {

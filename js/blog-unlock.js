@@ -4,7 +4,7 @@
 class BlogUnlockManager {
     constructor() {
         // No general blog lock - only individual article dates from JSON
-        console.log('Blog unlock system disabled - using individual article dates from JSON');
+
     }
 
     init() {

@@ -1,0 +1,21 @@
+
+/* --- Blog Comments (lightweight) --- */
+.comments-section { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border, #eee); }
+.comments-title { font-size: 1.4rem; margin-bottom: 0.8rem; }
+.comments-list { display: grid; gap: 1rem; margin-bottom: 1rem; }
+.comment { background: var(--card, #fafafa); padding: 1rem; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+.comment .header { display:flex; gap:.6rem; align-items:baseline; }
+.comment .header .date { font-size:.85rem; opacity:.7; }
+.comment .body { margin:.3rem 0 0; white-space:pre-wrap; }
+.comment-form { display:grid; gap:.8rem; }
+.comment-form .row { display:grid; gap:.3rem; }
+.comment-form input, .comment-form textarea { width:100%; padding:.7rem .9rem; border:1px solid var(--border,#ddd); border-radius:10px; font:inherit; background:var(--bg,#fff); }
+.comment-form .actions { display:flex; justify-content:flex-end; }
+.comment-form .btn { padding:.6rem 1rem; border-radius:10px; border:0; cursor:pointer; }
+.comment-form .privacy-note { font-size:.85rem; opacity:.75; }
+.comment-form .hp { display:none; } /* honeypot */
+@media (prefers-color-scheme: dark) {
+  .comment { background:#1e1e1e; }
+  .comments-section { border-top-color:#333; }
+  .comment-form input, .comment-form textarea { background:#111; border-color:#333; color:#eee; }
+}

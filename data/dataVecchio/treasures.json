@@ -1,0 +1,553 @@
+{
+  "fantasy": {
+    "items": [
+      "Anello del Potere Antico",
+      "Amuleto Protettivo Sacro",
+      "Bracciale della Forza Titanica",
+      "Collana Magica Stellare",
+      "Cintura dell'Eroe Leggendario",
+      "Corona Regale Benedetta",
+      "Medaglione Sacro Luminoso",
+      "Talismano Fortunato Eterno",
+      "Mantello dell'Invisibilità",
+      "Stivali del Vento Veloce",
+      "Guanti di Forza Sovrumana",
+      "Elmo della Saggezza Infinita",
+      "Pergamena di Palla di Fuoco",
+      "Scroll di Guarigione Divina",
+      "Pergamena di Teletrasporto",
+      "Scroll di Resurrezione",
+      "Pozione di Guarigione Maggiore",
+      "Elisir di Forza Gigante",
+      "Pozione di Invisibilità",
+      "Elisir di Saggezza Arcana",
+      "Sfera di Cristallo Profetica",
+      "Bacchetta delle Meraviglie",
+      "Borsa Conservante Magica",
+      "Corda Infinita Incantata",
+      "Lanterna Eterna Luminosa",
+      "Chiave Universale Magica",
+      "Specchio della Verità",
+      "Libro Parlante Antico",
+      "Diadema Regale Incantato",
+      "Orecchini della Luna Crescente",
+      "Spilla del Sole Ardente",
+      "Braccialetto delle Stelle",
+      "Reliquia del Santo Martire",
+      "Frammento di Divinità",
+      "Osso di Drago Antico",
+      "Lacrime di Angelo Caduto",
+      "Cavallo Alato Celestiale",
+      "Carro Volante Magico",
+      "Nave Dimensionale",
+      "Tappeto Volante Persiano"
+    ],
+    "origins": [
+      "Forgiato da un arcimago leggendario nei tempi antichi",
+      "Benedetto da una divinità durante un eclissi sacra",
+      "Trovato nelle profondità di una tomba reale perduta",
+      "Dono di matrimonio tra case nobiliari elfiche",
+      "Creato durante un rituale druidico millenario",
+      "Forgiato con gemme di un meteorite caduto dal cielo",
+      "Benedetto dalle lacrime di un unicorno morente",
+      "Creato nei laboratori segreti di un alchimista leggendario",
+      "Reliquia di un santo che compì miracoli divini",
+      "Frammento di un artefatto divino distrutto in battaglia",
+      "Creato da spiriti elementali durante un rituale antico",
+      "Dono di una divinità a un fedele servitore",
+      "Gioiello della corona di un regno perduto",
+      "Benedetto durante l'incoronazione di un re santo"
+    ],
+    "materials": [
+      "Mithril Elfico Puro",
+      "Argento Stellare Benedetto",
+      "Platino Lunare Incantato",
+      "Cristallo di Potere Primordiale",
+      "Gemma dell'Anima Eterna",
+      "Perla Oceanica Profonda",
+      "Diamante Eterno Indistruttibile",
+      "Rubino del Fuoco Drago",
+      "Smeraldo della Natura Selvaggia",
+      "Zaffiro del Cielo Infinito",
+      "Ametista della Mente Saggia",
+      "Topazio del Sole",
+      "Adamantio Nero Puro",
+      "Scaglia di Drago Antico",
+      "Piuma di Fenice Dorata",
+      "Corno di Unicorno Bianco",
+      "Osso di Demone Infernale",
+      "Ala di Angelo Celestiale",
+      "Metallo delle Stelle Cadenti",
+      "Pietra della Luna Piena",
+      "Ferro di Meteora Antica",
+      "Oro Benedetto Sacro",
+      "Essenza Elementale Pura",
+      "Energia Magica Concentrata"
+    ]
+  },
+  "moderno": {
+    "items": [
+      "Smartphone Quantico Avanzato",
+      "Smartwatch Bionico",
+      "Occhiali AR di Ultima Generazione",
+      "Auricolari Neurali",
+      "Tablet Olografico Pieghevole",
+      "Drone Personale Intelligente",
+      "Auto Elettrica Autonoma",
+      "Moto Volante Urbana",
+      "Zaino Anti-Gravità",
+      "Scarpe Auto-Allaccianti",
+      "Giacca Climatizzata Intelligente",
+      "Guanti Tattili Avanzati",
+      "Orologio Hacker Multifunzione",
+      "Chiavetta USB Quantica",
+      "Hard Drive Dimensionale",
+      "Processore Neurale",
+      "Batteria a Fusione Compatta",
+      "Generatore Solare Portatile",
+      "Purificatore d'Aria Personale",
+      "Traduttore Universale",
+      "Scanner Biometrico Portatile",
+      "Proiettore Olografico Tascabile",
+      "Stampante 3D Molecolare",
+      "Robot Assistente Domestico",
+      "Impianto Neurale Cognitivo",
+      "Lenti a Contatto Smart",
+      "Protesi Bionici Avanzate",
+      "Esoscheletro Potenziante",
+      "Hover Board Magnetico",
+      "Jet Pack Personale",
+      "Tuta Spaziale Compatta",
+      "Casco VR Immersivo Totale"
+    ],
+    "origins": [
+      "Prototipo segreto di una mega-corporazione tecnologica",
+      "Sviluppato nei laboratori di ricerca militare avanzata",
+      "Tecnologia aliena recuperata da un crash UFO",
+      "Invenzione di un genio della Silicon Valley",
+      "Progetto black budget del governo federale",
+      "Creazione di un hacker leggendario underground",
+      "Prototipo rubato da una startup rivoluzionaria",
+      "Tecnologia del futuro arrivata tramite viaggio temporale",
+      "Sviluppo di un'intelligenza artificiale avanzata",
+      "Risultato di esperimenti di ingegneria genetica",
+      "Tecnologia recuperata da una base militare abbandonata",
+      "Invenzione di uno scienziato pazzo geniale"
+    ],
+    "materials": [
+      "Grafene Superconduttore",
+      "Nanotubi di Carbonio",
+      "Titanio Aerospaziale",
+      "Polimeri Intelligenti Adattivi",
+      "Cristalli di Memoria Quantica",
+      "Leghe Metamateriali",
+      "Fibra Ottica Quantica",
+      "Ceramiche Avanzate Resistenti",
+      "Superconduttori a Temperatura Ambiente",
+      "Materiali a Memoria di Forma",
+      "Polimeri Auto-Riparanti",
+      "Metalli Liquidi Programmabili",
+      "Cristalli Piezoelettrici",
+      "Materiali Fotonici",
+      "Leghe Anti-Gravità",
+      "Tessuti Intelligenti Reattivi",
+      "Biomateriali Sintetici",
+      "Nanomateriali Programmabili"
+    ]
+  },
+  "postapocalittico": {
+    "items": [
+      "Filtro d’Acqua Prebellico",
+      "Batteria al Sale",
+      "Manuale del Rifugio",
+      "Badge di Accesso Rifugio",
+      "Contatore Geiger Tascabile",
+      "Semi Antichi Sigillati",
+      "Maschera a Carbone",
+      "Protesi Meccanica Grezza"
+    ],
+    "origins": [
+      "Bunker Sigillato",
+      "Città Fantasma",
+      "Convoglio Abbandonato",
+      "Silos Crollato",
+      "Archivio Comunale",
+      "Sfasciacarrozze"
+    ],
+    "materials": [
+      "Latta",
+      "Gomma",
+      "Piombo",
+      "Plexiglass",
+      "Tela Cerata",
+      "Legno Riciclato"
+    ],
+    "style": [
+      "consumato",
+      "giallo/nero",
+      "etichette sbiadite"
+    ]
+  },
+  "desertico": {
+    "items": [
+      "Coppa dell’Oasi",
+      "Pugnale a Damasco",
+      "Astrolabio del Caravan",
+      "Anello con Scarabeo",
+      "Velo della Sirocco",
+      "Ampolla di Sabbia del Tempo"
+    ],
+    "origins": [
+      "Tomba delle Dune",
+      "Carovanseraio",
+      "Oasi Nascosta",
+      "Fortezza d’Argilla",
+      "Tenda del Nomade",
+      "Mercato del Tè"
+    ],
+    "materials": [
+      "Ottone",
+      "Oro",
+      "Legno di Palma",
+      "Lino",
+      "Pelle di Capra",
+      "Ceramica Smaltata"
+    ],
+    "style": [
+      "intarsi",
+      "calligrafie",
+      "pietre colorate"
+    ]
+  },
+  "marino_pirati": {
+    "items": [
+      "Moneta del Relitto",
+      "Sestante del Corsaro",
+      "Carta Nautica Strappata",
+      "Serramanico da Borda",
+      "Perla Nera Opaca",
+      "Bussola Storta"
+    ],
+    "origins": [
+      "Relitto Ancorato",
+      "Covo dei Bucanieri",
+      "Faro",
+      "Scoglio del Kraken",
+      "Magazzino delle Spezie",
+      "Dogana Ombra"
+    ],
+    "materials": [
+      "Ottone",
+      "Legno Nautico",
+      "Cuoio Salmastro",
+      "Vetro Verde",
+      "Canna di Bambù"
+    ],
+    "style": [
+      "cordami",
+      "nodi marinari",
+      "sale cristallizzato"
+    ]
+  },
+  "gotico": {
+    "items": [
+      "Rosario d’Onice",
+      "Candelabro a Bracci",
+      "Chiave della Cripta",
+      "Anello Sigillare",
+      "Bestiario Incatenato",
+      "Specchio Tarnato"
+    ],
+    "origins": [
+      "Ossario",
+      "Biblioteca Incatenata",
+      "Convento",
+      "Cripta",
+      "Castello",
+      "Antiquario"
+    ],
+    "materials": [
+      "Ferro Battuto",
+      "Argento Brunito",
+      "Vetro Piombato",
+      "Ebano",
+      "Ossa",
+      "Pietra Calcarea"
+    ],
+    "style": [
+      "ornati",
+      "gigli",
+      "croci",
+      "gocce di cera"
+    ]
+  },
+  "romano": {
+    "items": [
+      "Sesterzio Raro",
+      "Gladio Cerimoniale",
+      "Phalera",
+      "Tessera da Terme",
+      "Ampolla di Murra",
+      "Intaglio su Cameo"
+    ],
+    "origins": [
+      "Castra",
+      "Foro",
+      "Thermae",
+      "Domus Patrizia",
+      "Tempio",
+      "Portus"
+    ],
+    "materials": [
+      "Bronzo",
+      "Marmo",
+      "Terracotta",
+      "Oro",
+      "Vetro Soffiato",
+      "Pergamena"
+    ],
+    "style": [
+      "motivi a greca",
+      "latinismi",
+      "sigilli",
+      "greche",
+      "mosaici"
+    ]
+  },
+  "lovecraftiano": {
+    "items": [
+      "Idolo di Dagon",
+      "Tomo Innominabile",
+      "Pietra Stellare",
+      "Conchiglia Risonante",
+      "Portolano Impensabile",
+      "Spugna di Y’ha-nthlei"
+    ],
+    "origins": [
+      "Biblioteca Miskatonic",
+      "Banchine Umide",
+      "Tempio Abissale",
+      "Casa dei Sussurri",
+      "Cripta Ciclopica"
+    ],
+    "materials": [
+      "Pietra Verde",
+      "Madreperla Scura",
+      "Alghe Fossili",
+      "Piombo Inciso",
+      "Carta Antica"
+    ],
+    "style": [
+      "glifi",
+      "odore di mare",
+      "patine"
+    ]
+  },
+  "far_west": {
+    "items": [
+      "Stella da Sceriffo",
+      "Pepita d’Oro",
+      "Fermapelo Navajo",
+      "Colt 1873 Scarica",
+      "Flacone di Whiskey",
+      "Cavallino Portafortuna"
+    ],
+    "origins": [
+      "Saloon",
+      "Miniera",
+      "Ranch",
+      "Ufficio Postale",
+      "Covo Banditi",
+      "Treno Diligenza"
+    ],
+    "materials": [
+      "Pelle",
+      "Ottone",
+      "Argento",
+      "Legno Grezzo",
+      "Acciaio Blu",
+      "Vetro"
+    ],
+    "style": [
+      "bulini",
+      "marchi a fuoco",
+      "pelli lavorate"
+    ]
+  },
+  "feudale_giapponese": {
+    "items": [
+      "Kanzashi",
+      "Tsuba Incisa",
+      "Omamori",
+      "Shamisen Antico",
+      "Pergamena Emaki",
+      "Ventaglio Uchiwa"
+    ],
+    "origins": [
+      "Castello",
+      "Dojo",
+      "Tempio",
+      "Mercato del Tè",
+      "Bottega del Fabbro",
+      "Casa da Tè"
+    ],
+    "materials": [
+      "Lacca",
+      "Acciaio Tamahagane",
+      "Bambù",
+      "Seta",
+      "Carta Washi",
+      "Avorio"
+    ],
+    "style": [
+      "motivi floreali",
+      "onde",
+      "nuvole stilizzate"
+    ]
+  },
+  "sci_fi": {
+    "items": [
+      "Nucleo a Curvatura",
+      "Tessera d’Attracco",
+      "Casco HUD Antico",
+      "Sfera d’Inerzia",
+      "Chip Stellare",
+      "Vite di Titanio Firma"
+    ],
+    "origins": [
+      "Dock Orbitale",
+      "Museo dei Relitti",
+      "Nodo Quantico",
+      "Cava Lunare",
+      "Archivio Stellare",
+      "Laboratorio Isolato"
+    ],
+    "materials": [
+      "Titanio",
+      "Grafene",
+      "Ceramica Tecnica",
+      "Vetro Rinforzato",
+      "Polimeri",
+      "Silicio"
+    ],
+    "style": [
+      "pulito",
+      "futuribile",
+      "modulare"
+    ]
+  },
+  "urbano_noir": {
+    "items": [
+      "Fiammiferi del Club",
+      "Rubrica Consumata",
+      "Distintivo Sbiadito",
+      "Zippo Inciso",
+      "Pellicola 35mm",
+      "Taccuino macchiato"
+    ],
+    "origins": [
+      "Vicolo",
+      "Stazione Centrale",
+      "Club del Fumo",
+      "Giornale",
+      "Ufficio Investigazioni",
+      "Teatro"
+    ],
+    "materials": [
+      "Pelle",
+      "Carta",
+      "Ottone",
+      "Vetro",
+      "Acciaio"
+    ],
+    "style": [
+      "neon",
+      "pioggia",
+      "fumo"
+    ]
+  },
+  "steampunk": {
+    "items": [
+      "Giroscopio d'Etere",
+      "Monocolo Aumentato",
+      "Carillon a Molla Runico",
+      "Mappa su Lamina d'Ottone",
+      "Chiave delle Valvole Perdute"
+    ],
+    "origins": [
+      "Officina Segreta",
+      "Dirigibile Naufragato",
+      "Accademia degli Ingegni",
+      "Cava di Eterite",
+      "Banca dei Gilde"
+    ],
+    "materials": [
+      "Ottone",
+      "Rame",
+      "Acciaio Brunito",
+      "Vetro Fumé",
+      "Eterite"
+    ],
+    "style": [
+      "ingranaggi",
+      "vernice smaltata",
+      "cuoio cerato"
+    ]
+  },
+  "cyberpunk": {
+    "items": [
+      "Shard di Memoria",
+      "Chip Quantico Sigillato",
+      "Badge di Accesso Alfa",
+      "Guanto Aptico",
+      "Occhiolo Cibernetico"
+    ],
+    "origins": [
+      "Deposito Megacorp",
+      "Mercato Nero",
+      "Nodo Peer-to-Peer",
+      "Zona Offgrid",
+      "Cimitero dei Server"
+    ],
+    "materials": [
+      "Carbonio",
+      "Grafene",
+      "Titanio",
+      "Bioplastica",
+      "Silicio Drogato"
+    ],
+    "style": [
+      "neon",
+      "cavi",
+      "vetro scuro"
+    ]
+  },
+  "nordico": {
+    "items": [
+      "Bracciale di Bronzo Runico",
+      "Corno per il Meade",
+      "Ascia Cerimoniale",
+      "Collana d’Ambra",
+      "Amuleto del Corvo"
+    ],
+    "origins": [
+      "Sala del Meadhall",
+      "Tumulo",
+      "Forgia del Ghiaccio",
+      "Tempio",
+      "Banchine del Fiordo"
+    ],
+    "materials": [
+      "Bronzo",
+      "Ferro",
+      "Legno di Frassino",
+      "Pelle",
+      "Ambra"
+    ],
+    "style": [
+      "intagli",
+      "rune",
+      "pelli"
+    ]
+  }
+}

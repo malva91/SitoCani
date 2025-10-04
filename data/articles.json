@@ -14,24 +14,16 @@
       "name": "Libri Game",
       "description": "Recensioni e approfondimenti sui librigame",
       "icon": "📚"
+    },
+    "eventi": {
+      "name": "Eventi",
+      "description": "Recensioni e approfondimenti su eventi a cui partecipiamo",
+      "icon": "📚"
     }
   },
   "articles": [
     {
       "id": 1,
-      "title": "Primi Articoli in Arrivo",
-      "slug": "coming-soon",
-      "excerpt": "Il blog dei Cani di Odino sta per iniziare! Presto guide per master, recensioni GDR, consigli per fiere ludiche e contenuti esclusivi.",
-      "category": "guide-master",
-      "categoryName": "Guide Master",
-      "author": "Cani di Odino",
-      "date": "2025-02-15T00:00:00",
-      "image": "./img/logo.png",
-      "imageAlt": "Logo Cani di Odino",
-      "tags": ["Coming Soon", "Blog", "Novità"]
-    },
-    {
-      "id": 2,
       "title": "I Misteri di Brindlewood Bay",
       "slug": "i-misteri-di-brindlewood-bay",
       "excerpt": "Un GdR investigativo dove le Signore del Giallo, tra tè, biscotti e misteri, indagano sui segreti di un villaggio del New England. Un gioco unico che mescola comicità e tensione.",
@@ -39,12 +31,17 @@
       "categoryName": "Recensioni GDR",
       "author": "Grim",
       "date": "2025-08-29T00:00:00",
-      "image": "./img/brindlewood.jpg",
+      "image": "../articoli/img-articoli/brindlewood/brindlewood.webp",
       "imageAlt": "I Misteri di Brindlewood Bay - Gioco di Ruolo",
-      "tags": ["GdR", "Investigativo", "Recensione", "Brindlewood Bay"]
+      "tags": [
+        "GdR",
+        "Investigativo",
+        "Recensione",
+        "Brindlewood Bay"
+      ]
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Hellwinter: La Porta della Luna",
       "slug": "hellwinter-la-porta-della-luna",
       "excerpt": "Un libro game immersivo e vincitore del Libro Game Magnifico 2025. Vivi l'avventura di Drystan Dragonhart nella Baronia di Hellwinter tra disperazione e speranza.",
@@ -52,9 +49,48 @@
       "categoryName": "Libri Game",
       "author": "Grim",
       "date": "2025-08-30T00:00:00",
-      "image": "./img/hellwinter.jpg",
+      "image": "../articoli/img-articoli/hellwinter/copertina.jpeg",
       "imageAlt": "Hellwinter: La Porta della Luna - Libro Game",
-      "tags": ["Libro Game", "Hellwinter", "Recensione", "Fantasy"]
+      "tags": [
+        "Libro Game",
+        "Hellwinter",
+        "Recensione",
+        "Fantasy"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Drakonia",
+      "slug": "drakonia",
+      "excerpt": "Drakonia è un gioco di ruolo ideato da Stefania Rossini e scritto da Stefania Rossini e Giordano Sardella su sistema di gioco di Andrea Rossi. Edito dalla Gamers Hunter.",
+      "category": "recensioni",
+      "categoryName": "Recensioni GDR",
+      "author": "Grim",
+      "date": "2025-09-16T00:00:00",
+      "image": "../articoli/img-articoli/drakonia/copertina.jpg",
+      "imageAlt": "Drakonia - Gioco Di Ruolo",
+      "tags": [
+        "GDR",
+        "Drakonia",
+        "Recensione",
+        "Fantasy"
+      ]
+    },
+        {
+      "id": 4,
+      "title": "ToPlay2025",
+      "slug": "torinoPlay2025",
+      "excerpt": "Uno dei più grandi eventi di Giochi di Ruolo e da tavola, un punto d'incontro per creator e giocatori",
+      "category": "eventi",
+      "categoryName": "Eventi",
+      "author": "Grim",
+      "date": "2025-09-17T00:00:00",
+      "image": "../articoli/img-articoli/toPlay2025/copertina.svg",
+      "imageAlt": "ToPlay - 2025",
+      "tags": [
+        "eventi",
+        "ToPlay2025"
+      ]
     }
   ]
 }

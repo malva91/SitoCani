@@ -428,7 +428,7 @@ if (product.apk) {
 
         // Focus management
         const closeButton = document.getElementById('carouselClose');
-        closeButton?.focus();
+        closeButton?.focus({ preventScroll: true });
     }
 
     /**
@@ -615,7 +615,7 @@ if (product.apk) {
                     }
 
                     if (nextIndex >= 0 && nextIndex < cards.length) {
-                        cards[nextIndex].focus();
+                        cards[nextIndex].focus({ preventScroll: true });
                     }
                 }
             }
@@ -630,7 +630,6 @@ if (product.apk) {
         productCards.forEach(card => {
             card.addEventListener('click', () => {
                 const productId = card.getAttribute('data-product-id');
-                console.log(`Product viewed: ${productId}`);
 
                 // Analytics removed to prevent redirect issues
             });

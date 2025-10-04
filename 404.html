@@ -1,29 +1,169 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Non Trovata | Cani di Odino - Creator GDR</title>
-    <meta name="description" content="Pagina non trovata. Torna alla taverna dei Cani di Odino per scoprire strumenti GDR, accessori gaming e contenuti per giochi di ruolo.">
-    <link rel="icon" type="image/png" href="./img/logo.png">
-    <link rel="stylesheet" href="css/style.css?v=2025.15" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/cani.css?v=2025.15" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/achievements.css?v=2025.15" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/tools-preview.css?v=2025.15" media="print" onload="this.media='all'"></head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0ZWMDRKM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WQ0ZWMDRKM');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 • Ti sei smarrito nelle nebbie</title>
+
+  <!-- Stili del sito -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Philosopher:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://www.canidiodino.it/css/style.css?v=2025.22">
+  <link rel="stylesheet" href="https://www.canidiodino.it/css/cani.css?v=2025.22">
+  <link rel="stylesheet" href="https://www.canidiodino.it/css/achievements.css?v=2025.22">
+  <link rel="stylesheet" href="https://www.canidiodino.it/css/tools-preview.css?v=2025.22">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Scena evocativa leggera -->
+  <style>
+    :root {
+      --mist: radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,.05) 0%, transparent 60%),
+              radial-gradient(900px 500px at 90% 30%, rgba(255,255,255,.04) 0%, transparent 60%),
+              radial-gradient(800px 400px at 50% 90%, rgba(255,255,255,.03) 0%, transparent 60%);
+    }
+    .veil {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45)),
+        var(--mist);
+      animation: drift 24s linear infinite;
+      mix-blend-mode: normal;
+    }
+    @keyframes drift {
+      0%   { background-position: 0 0, 0 0, 0 0, 0 0; }
+      50%  { background-position: 0 0, 20px -10px, -30px 15px, 0 0; }
+      100% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    }
+    .runedivider {
+      display:inline-flex; gap:.75rem; align-items:center; justify-content:center; opacity:.8;
+      margin:.75rem 0 1.25rem;
+    }
+    .runedivider svg { width:28px; height:28px; }
+    .glow { text-shadow: 0 0 18px rgba(255,255,255,.15); }
+    .not-found .btn { transition: transform .15s ease, opacity .15s ease; }
+    .not-found .btn:hover { transform: translateY(-2px); }
+    .runes {
+      font-family: 'Cinzel', serif;
+      letter-spacing: .2em;
+      opacity: .7;
+      font-size: .95rem;
+    }
+    @media (max-width: 640px) {
+      .not-found [aria-hidden="true"] { font-size: 5.2rem !important; }
+    }
+  </style>
+  <link rel="icon" href="https://www.canidiodino.it/img/logo.png" type="image/png">
+</head>
 <body>
-    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
-        <div>
-            <h1 style="font-family: var(--font-title); font-size: 4rem; color: var(--muted-brass); margin-bottom: 1rem;">404</h1>
-            <h2 style="font-family: var(--font-heading); color: var(--parchment); margin-bottom: 1rem;">Pagina Smarrita nelle Nebbie</h2>
-            <p style="color: var(--dark-parchment); margin-bottom: 2rem; max-width: 500px;">
-                Sembra che questa pagina si sia persa nelle nebbie di Niflheim. 
-                Torna alla taverna per scoprire i nostri <strong>strumenti GDR</strong>, 
-                <strong>accessori gaming</strong> e <strong>contenuti per fiere ludiche</strong>.
-            </p>
-            <a href="/" style="display: inline-block; padding: 1rem 2rem; background: var(--muted-brass); color: var(--charcoal-black); text-decoration: none; font-weight: 600; border-radius: 5px;">
-                Torna alla Taverna
-            </a>
-        </div>
+  <!-- Navbar coerente con il sito -->
+  <nav class="navbar" aria-label="Navigazione principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img alt="Cani di Odino Logo" src="https://www.canidiodino.it/img/logo.png" loading="lazy"/>
+        <span>Cani di Odino</span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a class="nav-link" href="https://www.canidiodino.it/index.html">Home</a>
+        <a class="nav-link" href="https://www.canidiodino.it/index.html#compagnia">Compagnia</a>
+        <a class="nav-link" href="https://www.canidiodino.it/index.html#enigmi">Enigmi</a>
+        <a class="nav-link" href="https://www.canidiodino.it/index.html#forgia">Forgia</a>
+        <a class="nav-link" href="https://www.canidiodino.it/index.html#imprese">Imprese</a>
+        <a class="nav-link" href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
+        <a class="nav-link" href="https://www.canidiodino.it/index.html#cani">Cani</a>
+        <a class="nav-link" href="https://www.canidiodino.it/galleria.html">Galleria</a>
+        <a class="nav-link" href="https://www.canidiodino.it/tools.html">Strumenti</a>
+        <a class="nav-link" href="https://www.canidiodino.it/blog.html">Blog</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Apri/chiudi menu" aria-expanded="false" role="button" tabindex="0">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
     </div>
+  </nav>
+
+  <!-- Contenuto principale -->
+  <main class="container not-found" style="min-height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:4rem 1rem; position:relative;">
+    <div class="veil" aria-hidden="true"></div>
+
+    <div style="position:relative; z-index:1; width:100%;">
+      <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1rem;">
+        <img src="https://www.canidiodino.it/img/logo.png" alt="Cani di Odino" style="height:56px; width:auto;" loading="lazy">
+        <h1 class="title glow" style="font-family:'Cinzel', serif; font-weight:700; letter-spacing:1px; margin:0;">
+          Sentiero smarrito nelle Nebbie
+        </h1>
+      </div>
+
+      <div class="runedivider" aria-hidden="true">
+        <!-- Piccole “rune” decorative come inline SVG -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 3-2 3-2-3 2-3zm0 14l2 3-2 3-2-3 2-3zm8-8l-3 2-3-2 3-2 3 2zM7 10L4 8l3-2 3 2-3 2zm10 7l-3-2 3-2 3 2-3 2zM7 17l-3-2 3-2 3 2-3 2z"/></svg>
+        <span class="runes">ᚠ ᚱ ᛟ ᛞ</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 3-2 3-2-3 2-3zm0 14l2 3-2 3-2-3 2-3zm8-8l-3 2-3-2 3-2 3 2zM7 10L4 8l3-2 3 2-3 2zm10 7l-3-2 3-2 3 2-3 2zM7 17l-3-2 3-2 3 2-3 2z"/></svg>
+      </div>
+
+      <p style="font-family:'Philosopher', sans-serif; font-size:1.15rem; opacity:.92; margin:0 auto .75rem; max-width:46rem;">
+        La pagina che cerchi non è qui. Forse un <em>Jötunn</em> l’ha nascosta… o forse il varco non è ancora stato forgiato.
+      </p>
+      <p class="runes" style="margin:0 auto 1.25rem; max-width:46rem;">
+        « Segui il canto dei dadi. Torna al focolare. »
+      </p>
+
+      <div aria-hidden="true" style="font-family:'Cinzel', serif; font-size:8rem; line-height:1; margin:.25rem 0 .75rem; font-weight:700;">
+        404
+      </div>
+
+      <div class="cta" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+        <a class="btn primary" href="https://www.canidiodino.it/index.html" style="padding:.9rem 1.15rem; border-radius:999px; text-decoration:none; display:inline-block;">
+          Torna alla Taverna (Home)
+        </a>
+        <a class="btn outline" href="https://www.canidiodino.it/galleria.html" style="padding:.85rem 1.1rem; border-radius:999px; text-decoration:none; display:inline-block;">
+          Ammira la Galleria
+        </a>
+        <a class="btn ghost" href="https://www.canidiodino.it/blog.html" style="padding:.85rem 1.1rem; border-radius:999px; text-decoration:none; display:inline-block;">
+          Leggi il Diario (Blog)
+        </a>
+        <a class="btn link" href="https://www.canidiodino.it/tools.html" style="padding:.85rem 1.1rem; border-radius:999px; text-decoration:none; display:inline-block;">
+          Apri la Forgia (Strumenti)
+        </a>
+      </div>
+
+      <p style="opacity:.75; font-size:.96rem; margin:0 auto .25rem;">
+        Ti serve una guida? <a href="mailto:info@canidiodino.it">info@canidiodino.it</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer coerente con il sito -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://www.canidiodino.it//img/logo.png" alt="Logo Cani di Odino - Master GDR professionali" loading="lazy">
+          <span>Cani di Odino</span>
+        </div>
+        <div class="footer-info">
+          <p>Email: <a href="mailto:info@canidiodino.it">info@canidiodino.it</a></p>
+          <div class="footer-social">
+            <a href="https://www.youtube.com/@canidiodino" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.tiktok.com/@canidiodino" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.instagram.com/canidiodino" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.twitch.tv/canidiodino" target="_blank" rel="noopener noreferrer">Twitch</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cani di Odino. Tutti i diritti riservati.</p>
+        <p class="footer-tagline">"Una taverna dove leggende nascono e dadi rotolano eternamente"</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
