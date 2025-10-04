@@ -11,18 +11,7 @@
     text-align: center;
     position: relative;
     padding: 0 var(--spacing);
-    background-image: url('/img/SfondoSmartphone.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(13, 13, 13, 0.6);
-    z-index: 1;
+    background: transparent;
 }
 
 .hero-content {
@@ -201,10 +190,6 @@
 
 /* === DESKTOP IMPROVEMENTS === */
 @media (min-width: 769px) {
-    .hero {
-        background-image: url('/img/SfondoPC.webp');
-    }
-
     .hero-content {
         max-width: 700px;
     }
