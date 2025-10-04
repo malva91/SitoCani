@@ -9,8 +9,7 @@ class PerformanceMonitor {
         if ('performance' in window) {
             window.addEventListener('load', function() {
                 setTimeout(() => {
-                    const perfData = performance.getEntriesByType('navigation')[0];
-
+                    // Performance data collected for monitoring
                 }, 0);
             });
         }

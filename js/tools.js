@@ -47,8 +47,6 @@ class DataManager {
 
             await Promise.all(loadPromises);
             this.createUnifiedStructures();
-            
-            console.log("Game data loaded from 10 modular JSON files:", Object.keys(this.gameData));
             return true;
         } catch (error) {
             console.error("Error loading game data:", error);
@@ -117,7 +115,7 @@ class DataManager {
             this.gameData.events.involvement_levels = data.involvement_levels || [];
         }
 
-        console.log("Unified structures created from modular data");
+        // Unified structures created
     }
 
     getAvailableSettings() {
@@ -976,7 +974,8 @@ class ToolsApp {
 
         // Adventure locations only
         clearAndFillSelect(document.getElementById('adventure-location'), availableSettings);
-// Name categories
+
+        // Name categories
         const nameCategories = ['character', 'luoghi', 'creature', 'locande'];
         clearAndFillSelect(document.getElementById('name-category'), nameCategories);
 

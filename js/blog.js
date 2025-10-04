@@ -450,23 +450,3 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { BlogManager };
 }
-
-// Initialize blog when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    const blog = new BlogManager();
-
-    // Simple API for external access
-    window.BlogAPI = {
-        addArticle: (articleData) => blog.addArticle(articleData),
-        getArticles: () => blog.articlesData,
-        getCategories: () => blog.categoriesData,
-        refresh: () => blog.loadArticlesData()
-    };
-
-    window.blogManager = blog;
-});
-
-// Export for testing
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { BlogManager };
-}
